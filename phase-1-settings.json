@@ -1,0 +1,18 @@
+{
+  "phase": 1,
+  "renderMode": "aligned-image-pair",
+  "driver": "kimi-antonelli",
+  "automaticReveal": true,
+  "pointerReveal": false,
+  "headParallax": false,
+  "driverCycling": false,
+  "cycleSeconds": 8,
+  "initialPortraitSeconds": 1,
+  "activeSweepSeconds": 5,
+  "clearPortraitSeconds": 2,
+  "maskStyle": "broad-curved-noise-warped-bands",
+  "startingBandCount": 2,
+  "seed": 42,
+  "backgroundWash": false,
+  "note": "Proposed starting settings, not measured original-site settings. Expose tuning in a developer-only view."
+}

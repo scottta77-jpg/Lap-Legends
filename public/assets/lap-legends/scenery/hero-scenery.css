@@ -1,0 +1,58 @@
+/* Lap Legends hero scenery. Decorative assets only; no dependencies. */
+.ll-hero {
+  --ll-paper: #faf9f3;
+  --ll-contour-color: #becd48;
+  --ll-outline-color: #b8cd39;
+  --ll-contour-opacity: .38;
+  --ll-outline-opacity: .62;
+  --ll-wordmark-top: 49%;
+  --ll-wordmark-width: calc(100% - clamp(24px, 3.2vw, 56px));
+  position: relative;
+  isolation: isolate;
+  background-color: var(--ll-paper);
+  overflow: hidden;
+}
+.ll-hero .ll-scenery {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+.ll-hero .ll-scenery__contours {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  color: var(--ll-contour-color);
+  opacity: var(--ll-contour-opacity);
+}
+.ll-hero .ll-scenery__wordmark {
+  position: absolute;
+  top: var(--ll-wordmark-top);
+  left: 50%;
+  width: var(--ll-wordmark-width);
+  height: auto;
+  display: block;
+  transform: translate(-50%, -50%);
+  color: var(--ll-outline-color);
+  opacity: var(--ll-outline-opacity);
+}
+.ll-hero .ll-scenery__wordmark--mobile,
+.ll-hero .ll-scenery__contours--mobile { display: none; }
+@media (max-width: 640px) {
+  .ll-hero {
+    --ll-wordmark-top: 47%;
+    --ll-wordmark-width: calc(100% - 24px);
+    --ll-outline-opacity: .48;
+    --ll-contour-opacity: .3;
+  }
+  .ll-hero .ll-scenery__wordmark--desktop { display: none; }
+  .ll-hero .ll-scenery__contours--desktop { display: none; }
+  .ll-hero .ll-scenery__wordmark--mobile { display: block; }
+  .ll-hero .ll-scenery__contours--mobile { display: block; }
+}
+/* Existing driver/canvas and UI need positioned layers with z-index 1 and 2.
+   Keep their existing positioning. Do not change pointer handling on them. */
