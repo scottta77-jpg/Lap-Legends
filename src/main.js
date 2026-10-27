@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Keyboard navigation support: Left / Right arrow keys
   window.addEventListener('keydown', (e) => {
-    if (menuDrawer.isOpen || cartDrawer.isOpen) return;
+    if ((menuDrawer && menuDrawer.isOpen) || (cartDrawer && cartDrawer.isOpen)) return;
 
     if (e.key === 'ArrowRight' && heroStage) {
       const next = (heroStage.currentIndex + 1) % DRIVERS.length;
@@ -297,12 +297,22 @@ document.addEventListener('DOMContentLoaded', async () => {
     modalBody.innerHTML = htmlContent;
     infoModal.classList.add('is-open');
     infoModal.setAttribute('aria-hidden', 'false');
+    if (typeof infoModal.showModal === 'function') {
+      try {
+        if (!infoModal.open) infoModal.showModal();
+      } catch (e) {}
+    }
   }
 
   function closeInfoModal() {
     if (!infoModal) return;
     infoModal.classList.remove('is-open');
     infoModal.setAttribute('aria-hidden', 'true');
+    if (typeof infoModal.close === 'function') {
+      try {
+        if (infoModal.open) infoModal.close();
+      } catch (e) {}
+    }
   }
 
   if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeInfoModal);
@@ -319,6 +329,18 @@ document.addEventListener('DOMContentLoaded', async () => {
         <p><strong>Lap Legends</strong> was founded by lifelong motorsport enthusiasts and graphic designers in the United Kingdom. We believe the exhilarating geometry of Formula 1 — the apex curves, telemetry graphics, and iconic helmet liveries — deserves museum-grade framing.</p>
         <p>Every print in our collection is precision-engineered on 250gsm archival silk museum stock with rich pigment inks and framed in bespoke black wooden moulding.</p>
         <p>Each driver print features digitally reproduced official signatures and championship livery details, designed ready to hang on your wall or stand on your desk.</p>
+      `);
+    });
+  });
+
+  document.querySelectorAll('.js-open-contact').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      openInfoModal('CONTACT LAP LEGENDS', `
+        <p><strong>Customer Care & Enquiries:</strong> support@laplegends.com</p>
+        <p><strong>Studio Location:</strong> London, United Kingdom (51.4545° N, 0.0721° W)</p>
+        <p><strong>Dispatch Hours:</strong> Monday – Friday, 09:00 – 17:00 GMT</p>
+        <p>Have questions about custom driver commissions, sizing or trade orders? Drop our studio an email and our team will get back to you within 24 hours.</p>
       `);
     });
   });

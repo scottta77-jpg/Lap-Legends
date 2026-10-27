@@ -113,6 +113,9 @@ export class StoreManager {
         if (grid) {
           setTimeout(() => grid.scrollIntoView({ behavior: 'smooth' }), 60);
         }
+      } else {
+        this.activeFilter = 'all';
+        this.renderCatalog();
       }
     }
   }
@@ -225,34 +228,53 @@ export class StoreManager {
   renderCatalog() {
     if (!this.catalogGridEl) return;
 
-    const filtered = getProductsByCategory(this.activeFilter);
+    const rawHash = window.location.hash || '';
+    const hash = rawHash.split('?')[0];
+    const isStoreHome = !hash || hash === '#store' || hash === '#home';
+    const titleEl = document.querySelector('.fan-favourites-title');
+    const viewAllEl = document.querySelector('.fan-favourites-view-all');
+
+    let filtered = getProductsByCategory(this.activeFilter);
+
+    if (isStoreHome && this.activeFilter === 'all') {
+      const fanFavouriteIds = ['lando-norris', 'lewis-hamilton', 'silverstone', 'race-calendar'];
+      filtered = fanFavouriteIds.map(id => getProductById(id)).filter(Boolean);
+      if (titleEl) titleEl.textContent = 'FAN FAVOURITES';
+      if (viewAllEl) {
+        viewAllEl.textContent = 'VIEW ALL →';
+        viewAllEl.href = '#shop';
+      }
+    } else {
+      if (titleEl) {
+        if (this.activeFilter === 'drivers') titleEl.textContent = 'DRIVER PRINTS';
+        else if (this.activeFilter === 'circuits') titleEl.textContent = 'CIRCUIT ART';
+        else if (this.activeFilter === 'calendars') titleEl.textContent = 'RACE CALENDARS';
+        else titleEl.textContent = 'ALL PRINTS';
+      }
+      if (viewAllEl) {
+        viewAllEl.textContent = 'FAN FAVOURITES →';
+        viewAllEl.href = '#store';
+      }
+    }
 
     this.catalogGridEl.innerHTML = filtered.map(product => {
       const defaultImg = product.styles.find(s => s.id === product.defaultStyle)?.image || product.styles[0].image;
+      const displayImg = product.homeFrame || defaultImg;
 
       return `
-        <article class="catalog-product-card" data-product-id="${product.id}">
-          <a href="#product/${product.id}" class="card-visual-link js-open-product" data-product-id="${product.id}" aria-label="View ${product.title}">
-            <div class="card-frame-box">
-              <img src="${defaultImg}" alt="${product.title}" class="card-print-img" loading="lazy" />
-              <div class="card-overlay-badge">
-                <span>VIEW PRINT</span>
-              </div>
-            </div>
-          </a>
-          <div class="card-info-box">
-            <h3 class="card-title">
-              <a href="#product/${product.id}" class="js-open-product" data-product-id="${product.id}">
-                ${product.title}
-              </a>
-            </h3>
-            <div class="card-price-row">
-              <span class="card-price">£${product.price.toFixed(2)} GBP</span>
-              <button class="quick-add-btn js-quick-add" data-product-id="${product.id}" aria-label="Quick add ${product.title} to bag">
+        <article class="product-card" data-product-id="${product.id}">
+          <a href="#product/${product.id}" class="product-card-link js-open-product" data-product-id="${product.id}" aria-label="View ${product.title}">
+            <div class="product-card-media">
+              <img src="${displayImg}" alt="${product.title}" class="product-card-img" loading="lazy" />
+              <button type="button" class="product-card-quick-add js-quick-add" data-product-id="${product.id}" aria-label="Add ${product.shortTitle || product.title} to bag">
                 + BAG
               </button>
             </div>
-          </div>
+            <div class="product-card-info">
+              <h3 class="product-card-title">${product.shortTitle || product.title}</h3>
+              <span class="product-card-price">£${product.price.toFixed(2)}</span>
+            </div>
+          </a>
         </article>
       `;
     }).join('');
@@ -276,7 +298,7 @@ export class StoreManager {
           <span class="breadcrumb-sep">/</span>
           <a href="#shop?category=${product.category}" class="breadcrumb-link">${product.categoryLabel || 'DRIVER PRINTS'}</a>
           <span class="breadcrumb-sep">/</span>
-          <span class="breadcrumb-current">${product.title}</span>
+          <span class="breadcrumb-current">${product.shortTitle || product.title}</span>
         </nav>
 
         <!-- Main Product Section (Mockup Image 1 Reference) -->
@@ -444,17 +466,22 @@ export class StoreManager {
         <!-- "YOU MIGHT ALSO LIKE" Related Products Section (Mockup Image 1 Reference) -->
         <section class="pdp-related-section">
           <div class="section-container">
-            <h2 class="related-heading">YOU MIGHT ALSO LIKE</h2>
-            <div class="related-products-grid">
+            <div class="fan-favourites-header">
+              <h2 class="fan-favourites-title">YOU MIGHT ALSO LIKE</h2>
+            </div>
+            <div class="fan-favourites-grid">
               ${relatedProducts.map(rel => `
-                <article class="related-card">
-                  <a href="#product/${rel.id}" class="related-card-link js-open-product" data-product-id="${rel.id}">
-                    <div class="related-frame-box">
-                      <img src="${rel.styles[0].image}" alt="${rel.title}" class="related-img" loading="lazy" />
+                <article class="product-card" data-product-id="${rel.id}">
+                  <a href="#product/${rel.id}" class="product-card-link js-open-product" data-product-id="${rel.id}" aria-label="View ${rel.title}">
+                    <div class="product-card-media">
+                      <img src="${rel.homeFrame || rel.styles[0].image}" alt="${rel.title}" class="product-card-img" loading="lazy" />
+                      <button type="button" class="product-card-quick-add js-quick-add" data-product-id="${rel.id}" aria-label="Add ${rel.shortTitle || rel.title} to bag">
+                        + BAG
+                      </button>
                     </div>
-                    <div class="related-meta">
-                      <h3 class="related-title">${rel.title}</h3>
-                      <span class="related-price">£${rel.price.toFixed(2)} GBP</span>
+                    <div class="product-card-info">
+                      <h3 class="product-card-title">${rel.shortTitle || rel.title}</h3>
+                      <span class="product-card-price">£${rel.price.toFixed(2)}</span>
                     </div>
                   </a>
                 </article>
@@ -463,47 +490,6 @@ export class StoreManager {
           </div>
         </section>
       </div>
-
-      <!-- Shared Store Footer -->
-      <footer class="site-global-footer">
-        <div class="footer-top-row">
-          <div class="footer-col brand-col">
-            <a href="#store" class="footer-brand-link">
-              <img src="/assets/logo_transparent.png" alt="Lap Legends" class="footer-logo-img" />
-            </a>
-            <p class="footer-tagline">Motorsport, made personal. Premium framed driver portraits, circuit topography and race calendars.</p>
-          </div>
-          <div class="footer-col links-col">
-            <h4 class="footer-col-title">LAP LEGENDS</h4>
-            <a href="#shop">SHOP</a>
-            <a href="#about" class="js-open-story">OUR STORY</a>
-            <a href="#contact" class="js-open-story">CONTACT</a>
-            <a href="#landing">INTERACTIVE HERO ⚡</a>
-          </div>
-          <div class="footer-col links-col">
-            <h4 class="footer-col-title">SUPPORT</h4>
-            <a href="#delivery" class="js-open-delivery">DELIVERY</a>
-            <a href="#returns" class="js-open-delivery">RETURNS</a>
-            <a href="#faqs" class="js-open-support">FAQS</a>
-          </div>
-          <div class="footer-col newsletter-col">
-            <h4 class="footer-col-title">STAY IN THE LOOP</h4>
-            <p class="newsletter-sub">Receive new driver drop alerts and circuit release updates.</p>
-            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Lap Legends updates!');">
-              <input type="email" placeholder="YOUR EMAIL ADDRESS" required class="newsletter-input" aria-label="Your email address" />
-              <button type="submit" class="newsletter-submit" aria-label="Subscribe">→</button>
-            </form>
-          </div>
-        </div>
-        <div class="footer-bottom-row">
-          <p class="copyright">© 2024 LAP LEGENDS. ALL RIGHTS RESERVED.</p>
-          <div class="footer-socials">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X">X</a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">YT</a>
-          </div>
-        </div>
-      </footer>
     `;
 
     this.bindPdpEvents(product);
