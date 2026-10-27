@@ -4,6 +4,7 @@ import { MenuDrawer } from './menu.js';
 import { sound } from './audio.js';
 import { CartDrawerUI } from './cart.js';
 import { StoreManager } from './store.js';
+import { DriverLandingStage } from './driver-landing.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
   const container = document.getElementById('lapLegendsHero');
@@ -25,11 +26,14 @@ document.addEventListener('DOMContentLoaded', async () => {
   const modalTitle = document.getElementById('modalTitle');
   const modalBody = document.getElementById('modalBody');
 
-  // Background seamless dual-buffer video crossfader
+  // Mask Reveal toggle (kept fully preserved in codebase so it can be reinstated anytime)
+  const ENABLE_MASK_REVEAL = false;
+
+  // Background seamless dual-buffer video crossfader (for mask reveal)
   const videoA = document.getElementById('heroBgVideoA');
   const videoB = document.getElementById('heroBgVideoB');
 
-  if (videoA && videoB) {
+  if (ENABLE_MASK_REVEAL && videoA && videoB) {
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (reducedMotion) {
       videoA.pause();
@@ -141,30 +145,35 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
-  // Initialize WebGL Hero Stage for Kimi Antonelli Phase 1 Automatic Reveal
+  // Initialize WebGL Hero Stage for Kimi Antonelli Phase 1 Automatic Reveal (only if enabled)
   let heroStage = null;
-  if (container && stageElement) {
+  if (ENABLE_MASK_REVEAL && container && stageElement) {
     heroStage = new KimiRevealStage({
       container,
       stageElement,
       onProgress: onProgressTick,
     });
     storeManager.setHeroStage(heroStage);
-    storeManager.handleRoute();
     window.heroStage = heroStage;
   }
 
-  // Initialize Menu Drawer
-  const menuDrawer = new MenuDrawer({
-    triggerBtn: hamburgerBtn,
-    drawerEl: menuDrawerEl,
-    closeBtn: menuCloseBtn,
-    onSelectDriver: (index) => {
-      if (heroStage) {
-        heroStage.switchToDriver(index);
-      }
-    },
-  });
+  // Always initialize store route
+  storeManager.handleRoute();
+
+  // Initialize Menu Drawer (for mask reveal)
+  let menuDrawer = null;
+  if (ENABLE_MASK_REVEAL && hamburgerBtn && menuDrawerEl) {
+    menuDrawer = new MenuDrawer({
+      triggerBtn: hamburgerBtn,
+      drawerEl: menuDrawerEl,
+      closeBtn: menuCloseBtn,
+      onSelectDriver: (index) => {
+        if (heroStage) {
+          heroStage.switchToDriver(index);
+        }
+      },
+    });
+  }
 
   if (drawerShopBtn) {
     drawerShopBtn.addEventListener('click', (e) => {
@@ -180,6 +189,32 @@ document.addEventListener('DOMContentLoaded', async () => {
       e.preventDefault();
       sound.playDriverSwitch();
       window.location.hash = '#store';
+    });
+  }
+
+  // Initialize Lap Legends Driver Landing Stage (Recreation of AI Agency Hero mockups)
+  const driverLandingEl = document.getElementById('landingView');
+  let driverStage = null;
+  if (driverLandingEl) {
+    driverStage = new DriverLandingStage({ container: driverLandingEl });
+    window.driverStage = driverStage;
+    window.pufferStage = driverStage; // for backward compatibility with store.js
+  }
+
+  const llHeroCtaBtn = document.getElementById('llHeroCtaBtn');
+  if (llHeroCtaBtn) {
+    llHeroCtaBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      sound.playDriverSwitch();
+      window.location.hash = '#store';
+    });
+  }
+
+  const llMenuBtn = document.getElementById('llMenuBtn');
+  if (llMenuBtn && menuDrawer) {
+    llMenuBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      menuDrawer.open();
     });
   }
 

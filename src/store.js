@@ -151,6 +151,12 @@ export class StoreManager {
     if (this.heroStage) {
       this.heroStage.resume();
     }
+    if (window.driverStage) {
+      window.driverStage.resume();
+    }
+    if (window.pufferStage) {
+      window.pufferStage.resume();
+    }
     const bgVideo = document.querySelector('.hero-bg-video');
     if (bgVideo && bgVideo.paused && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       bgVideo.play().catch(() => {});
@@ -169,6 +175,12 @@ export class StoreManager {
 
     if (this.heroStage) {
       this.heroStage.pause();
+    }
+    if (window.driverStage) {
+      window.driverStage.pause();
+    }
+    if (window.pufferStage) {
+      window.pufferStage.pause();
     }
     const bgVideo = document.querySelector('.hero-bg-video');
     if (bgVideo && !bgVideo.paused) {
@@ -194,6 +206,12 @@ export class StoreManager {
 
     if (this.heroStage) {
       this.heroStage.pause();
+    }
+    if (window.driverStage) {
+      window.driverStage.pause();
+    }
+    if (window.pufferStage) {
+      window.pufferStage.pause();
     }
     const bgVideo = document.querySelector('.hero-bg-video');
     if (bgVideo && !bgVideo.paused) {

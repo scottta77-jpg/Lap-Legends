@@ -6,11 +6,12 @@
   <title>Lap Legends — The Drivers. The Helmets. The Legends.</title>
   <meta name="description" content="Experience Lap Legends: front-facing monumental Formula 1 driver portraits with interactive pointer-driven helmet reveals. Motorsport made personal." />
 
-  <!-- Google Fonts: Syne, Space Grotesk, Plus Jakarta Sans -->
+  <!-- Google Fonts: Montserrat, DM Sans, Plus Jakarta Sans, Space Grotesk, Syne -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700;800&family=Syne:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700;800&family=Syne:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet" />
 
+  <link rel="stylesheet" href="/src/driver-landing.css" />
   <link rel="stylesheet" href="/src/style.css" />
 </head>
 <body class="page-is-landing">
@@ -22,10 +23,110 @@
   </div>
 
   <!-- =========================================================================
-       PAGE 1: STANDALONE INTERACTIVE LANDING SHOWCASE
-       (Kept exactly as it was: monumental portrait, WebGL helmet reveal, 100vh)
+       PAGE 1: LAP LEGENDS F1 DRIVER HERO SHOWCASE
+       (Faithfully styled from AI AGENCY - Lap legends hero mockups)
        ========================================================================= -->
-  <div id="landingView" class="page-view-landing">
+  <div id="landingView" class="ll-landing-wrapper theme-cream">
+
+    <!-- Dual-layer background with seamless gradient crossfade -->
+    <div class="ll-bg-layer ll-bg-layer-a" id="llBgLayerA"></div>
+    <div class="ll-bg-layer ll-bg-layer-b" id="llBgLayerB"></div>
+    <div class="ll-topo-overlay" aria-hidden="true"></div>
+    <div class="ll-driver-spotlight" aria-hidden="true"></div>
+
+    <!-- Top Navigation Header matching AI Agency Mockups -->
+    <header class="ll-hero-header">
+      <!-- Left: Stacked LAP LEGENDS Branding -->
+      <div class="ll-header-left">
+        <a href="#landing" class="ll-brand-block" aria-label="Lap Legends">
+          <span class="ll-brand-wordmark" id="llBrandWordmark">LAP<br />LEGENDS</span>
+        </a>
+      </div>
+
+      <!-- Center: Monogram Badge -->
+      <div class="ll-header-center">
+        <div class="ll-monogram-badge" id="llHeaderMonogram">
+          <img src="/assets/hero/monogram_ll.png" alt="Monogram" class="ll-monogram-img" id="llMonogramImg" />
+        </div>
+      </div>
+
+      <!-- Right: STORE Button and Menu Trigger -->
+      <div class="ll-header-right">
+        <a href="#store" class="ll-store-pill-btn js-store-btn" aria-label="Enter Store">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span>STORE</span>
+        </a>
+        <button class="ll-menu-btn" id="llMenuBtn" aria-label="Toggle Navigation Menu">
+          <span class="ll-menu-line"></span>
+          <span class="ll-menu-line"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Foreground Content Layer -->
+    <div class="ll-content-grid">
+      <!-- Left Column: Tagline & Next Race Card -->
+      <div class="ll-col-left">
+        <div class="ll-tagline-wrap">
+          <p class="ll-subheadline">THE DRIVERS. THE HELMETS. THE LEGENDS.</p>
+        </div>
+
+        <!-- Next Race Card (From AI Agency Mockup) -->
+        <div class="ll-race-card" id="llRaceCard">
+          <div class="ll-race-badge">NEXT RACE</div>
+          <div class="ll-race-track-wrap">
+            <img src="/assets/circuit_transparent.png" alt="Miami GP Circuit" class="ll-race-track-img" id="llRaceTrackImg" />
+          </div>
+          <div class="ll-race-title" id="llRaceTitle">MIAMI GP</div>
+          <div class="ll-race-divider"></div>
+          <div class="ll-race-wreath-wrap">
+            <img src="/assets/hero/wreath_globe.png" alt="Team Crest" class="ll-race-wreath-img" id="llRaceWreathImg" />
+          </div>
+          <div class="ll-race-team-title" id="llRaceTeamTitle">MCLAREN F1</div>
+          <div class="ll-race-team-sub" id="llRaceTeamSub">SINCE 2019</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Center Bottom: Primary Neon Lime CTA Button & Subtitle -->
+    <div class="ll-col-center">
+      <a href="#store" class="ll-hero-cta js-store-btn" id="llHeroCtaBtn" aria-label="Enter Lap Legends Store">
+        <span>ENTER LAP LEGENDS STORE</span>
+        <svg class="ll-cta-arrow" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <polyline points="14 6 20 12 14 18"></polyline>
+        </svg>
+      </a>
+      <p class="ll-hero-subtag">MOTORSPORT. MADE PERSONAL.</p>
+    </div>
+
+    <!-- Drivers Stage (Hero Slide Change Animation) -->
+    <div class="ll-drivers-stage" id="llDriversStage">
+      <!-- Driver 0: Lando Norris (McLaren) -->
+      <div class="ll-driver-item state-main" id="driver-0" data-index="0">
+        <img src="/assets/drivers/lando_hero_full.png" alt="Lando Norris Split Helmet Portrait" class="ll-driver-img" />
+      </div>
+      <!-- Driver 1: Lewis Hamilton (Scuderia Ferrari) -->
+      <div class="ll-driver-item state-future" id="driver-1" data-index="1">
+        <img src="/assets/drivers/lewis_hero_full.png" alt="Lewis Hamilton Split Helmet Portrait" class="ll-driver-img" />
+      </div>
+      <!-- Driver 2: Kimi Antonelli (Mercedes-AMG F1) -->
+      <div class="ll-driver-item state-future" id="driver-2" data-index="2">
+        <img src="/assets/drivers/kimi_hero_full.png" alt="Kimi Antonelli Split Helmet Portrait" class="ll-driver-img" />
+      </div>
+    </div>
+
+  </div>
+
+  <!-- =========================================================================
+       PREVIOUS FLUID SHADER MASK REVEAL SHOWCASE
+       (100% PRESERVED so we can reinstate or switch back anytime as requested)
+       ========================================================================= -->
+  <div id="fluidShaderRevealShowcase" style="display: none;" aria-hidden="true">
 
     <main class="hero-container" id="lapLegendsHero" role="region" aria-label="Lap Legends Interactive Showcase">
 

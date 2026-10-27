@@ -265,7 +265,8 @@ export class KimiRevealStage {
     this.setupThreeScene();
     this.setupEventListeners();
     await this.loadTextures();
-    this.setupDebugPanel();
+    // HERO DEV debug panel removed per user request
+    // this.setupDebugPanel();
 
     // Start render loop
     requestAnimationFrame(this.render.bind(this));
