@@ -16,7 +16,7 @@ export const DRIVER_SLIDES = [
     theme: 'theme-cream',
     bgGradient: 'radial-gradient(ellipse at 50% 40%, #ffffff 0%, #f7f4ed 50%, #eee8dc 100%)',
     trackD: MIAMI_PATH_D,
-    trackViewBox: '-6 -4 208 106',
+    trackViewBox: '-8 -10 212 114',
     wreathImg: '/assets/hero/wreath_helmet_clean.png'
   },
   {
@@ -28,7 +28,7 @@ export const DRIVER_SLIDES = [
     theme: 'theme-black',
     bgGradient: 'radial-gradient(ellipse at 50% 45%, #14151b 0%, #090a0d 60%, #030405 100%)',
     trackD: SILVERSTONE_PATH_D,
-    trackViewBox: '43.5 41.7 734.2 540.4',
+    trackViewBox: '40 20 740 565',
     wreathImg: '/assets/hero/wreath_helmet_clean.png'
   },
   {
@@ -40,7 +40,7 @@ export const DRIVER_SLIDES = [
     theme: 'theme-red',
     bgGradient: 'radial-gradient(ellipse at 50% 45%, #b20a0a 0%, #820404 50%, #460101 100%)',
     trackD: MONZA_PATH_D,
-    trackViewBox: '128.3 59.4 527.0 500.2',
+    trackViewBox: '115 30 550 540',
     wreathImg: '/assets/hero/wreath_helmet_clean.png'
   }
 ];
