@@ -532,18 +532,6 @@
   white-space: nowrap;
 }
 
-.ll-next-race-label {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--ll-text-primary);
-  margin-bottom: 6px;
-  margin-left: 1px;
-  transition: color 0.6s ease;
-}
-
 /* Track & Race Team Card (Stepped Tab Badge with SVG light ray) */
 .ll-race-card {
   position: relative;

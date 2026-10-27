@@ -28,7 +28,7 @@ export const DRIVER_SLIDES = [
     theme: 'theme-black',
     bgGradient: 'radial-gradient(ellipse at 50% 45%, #14151b 0%, #090a0d 60%, #030405 100%)',
     trackD: SILVERSTONE_PATH_D,
-    trackViewBox: '40 20 740 565',
+    trackViewBox: '8 4 150 114',
     wreathImg: '/assets/hero/wreath_helmet_clean.png'
   },
   {
@@ -40,7 +40,7 @@ export const DRIVER_SLIDES = [
     theme: 'theme-red',
     bgGradient: 'radial-gradient(ellipse at 50% 45%, #b20a0a 0%, #820404 50%, #460101 100%)',
     trackD: MONZA_PATH_D,
-    trackViewBox: '115 30 550 540',
+    trackViewBox: '24 6 116 114',
     wreathImg: '/assets/hero/wreath_helmet_clean.png'
   }
 ];
