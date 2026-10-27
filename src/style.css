@@ -880,14 +880,31 @@ body.menu-locked, body.cart-open {
   }
 
   .hero-left-meta {
-    width: 100%;
+    width: auto;
+    max-width: 92vw;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
+    background: rgba(18, 20, 15, 0.72);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 8px 18px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
   }
 
   .utility-caption {
-    font-size: 9.5px;
+    font-size: 9px;
     text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .driver-counter {
+    color: #FFFFFF !important;
+  }
+
+  .driver-team-tag span:last-child {
+    color: #E2E8DD !important;
   }
 
   .counter-progress-group {
@@ -917,6 +934,8 @@ body.menu-locked, body.cart-open {
 
   .store-subtitle {
     font-size: 9px;
+    color: #FAFAFA;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
   }
 
   .hero-right-hint {
@@ -2782,14 +2801,14 @@ body.menu-locked, body.cart-open {
 }
 
 /* ==========================================================================
-   LAP LEGENDS HERO SCENERY (Contour Lines & Outlined Lettering)
+   LAP LEGENDS HERO SCENERY & VIDEO BACKGROUND
    ========================================================================== */
 .ll-hero {
   --ll-paper: #faf9f3;
   --ll-contour-color: #becd48;
   --ll-outline-color: #b8cd39;
   --ll-contour-opacity: .38;
-  --ll-outline-opacity: .62;
+  --ll-outline-opacity: .72;
   --ll-wordmark-top: 49%;
   --ll-wordmark-width: calc(100% - clamp(24px, 3.2vw, 56px));
   position: relative;
@@ -2797,50 +2816,41 @@ body.menu-locked, body.cart-open {
   background-color: var(--ll-paper);
   overflow: hidden;
 }
-.ll-hero .ll-scenery {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  overflow: hidden;
-  pointer-events: none;
-  user-select: none;
-}
-.ll-hero .ll-scenery__contours {
+
+/* Background Animated Video Layer (Layer 1 - Bottom) */
+.hero-video-wrapper {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  display: block;
-  color: var(--ll-contour-color);
-  opacity: var(--ll-contour-opacity);
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  background-color: var(--ll-paper, #faf9f3);
 }
-.ll-hero .ll-scenery__wordmark {
+
+.hero-bg-video {
   position: absolute;
-  top: var(--ll-wordmark-top);
+  top: 50%;
   left: 50%;
-  width: var(--ll-wordmark-width);
-  height: auto;
-  display: block;
+  width: 100%;
+  height: 100%;
   transform: translate(-50%, -50%);
-  color: var(--ll-outline-color);
-  opacity: var(--ll-outline-opacity);
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  opacity: 0;
+  transition: opacity 1.4s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity;
 }
-.ll-hero .ll-scenery__wordmark--mobile,
-.ll-hero .ll-scenery__contours--mobile { display: none; }
-@media (max-width: 640px) {
-  .ll-hero {
-    --ll-wordmark-top: 47%;
-    --ll-wordmark-width: calc(100% - 24px);
-    --ll-outline-opacity: .48;
-    --ll-contour-opacity: .3;
-  }
-  .ll-hero .ll-scenery__wordmark--desktop { display: none; }
-  .ll-hero .ll-scenery__contours--desktop { display: none; }
-  .ll-hero .ll-scenery__wordmark--mobile { display: block; }
-  .ll-hero .ll-scenery__contours--mobile { display: block; }
+
+.hero-bg-video.is-active {
+  opacity: 1;
 }
 
 /* ==========================================================================
+
    DEVELOPER DEBUG OVERLAY (Kimi Antonelli Phase 1 Reveal Tuning)
    ========================================================================== */
 .kimi-debug-badge {
@@ -3049,6 +3059,7 @@ body.menu-locked, body.cart-open {
   color: #A0A89C;
   text-align: right;
 }
+
 .debug-reset-btn {
   width: 100%;
   background: rgba(232, 77, 61, 0.15);

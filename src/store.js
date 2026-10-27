@@ -89,7 +89,8 @@ export class StoreManager {
   }
 
   handleRoute() {
-    const hash = window.location.hash || '';
+    const rawHash = window.location.hash || '';
+    const hash = rawHash.split('?')[0];
 
     // Route 1: Landing Page (Default: /, #, #/, #landing)
     if (!hash || hash === '#' || hash === '#/' || hash === '#landing') {
@@ -103,8 +104,8 @@ export class StoreManager {
     // Route 2: Store Homepage (#store, #home, #shop...)
     else {
       this.showStoreHomeView();
-      if (hash.startsWith('#shop')) {
-        const query = hash.replace(/^#shop\??/, '');
+      if (hash.startsWith('#shop') || rawHash.includes('category=')) {
+        const query = rawHash.includes('?') ? rawHash.split('?')[1] : '';
         const params = new URLSearchParams(query);
         const cat = params.get('category') || 'all';
         this.setFilter(cat);
@@ -150,6 +151,10 @@ export class StoreManager {
     if (this.heroStage) {
       this.heroStage.resume();
     }
+    const bgVideo = document.querySelector('.hero-bg-video');
+    if (bgVideo && bgVideo.paused && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      bgVideo.play().catch(() => {});
+    }
     window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
@@ -164,6 +169,10 @@ export class StoreManager {
 
     if (this.heroStage) {
       this.heroStage.pause();
+    }
+    const bgVideo = document.querySelector('.hero-bg-video');
+    if (bgVideo && !bgVideo.paused) {
+      bgVideo.pause();
     }
     window.scrollTo({ top: 0, behavior: 'instant' });
   }
@@ -185,6 +194,10 @@ export class StoreManager {
 
     if (this.heroStage) {
       this.heroStage.pause();
+    }
+    const bgVideo = document.querySelector('.hero-bg-video');
+    if (bgVideo && !bgVideo.paused) {
+      bgVideo.pause();
     }
 
     this.renderProductPage(product);

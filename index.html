@@ -29,21 +29,16 @@
 
     <main class="hero-container" id="lapLegendsHero" role="region" aria-label="Lap Legends Interactive Showcase">
 
-      <!-- Background Flowing Topographic Contour Lines -->
-      <svg class="hero-contours-svg" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M-100 140 C 320 140, 500 240, 820 230 C 1140 220, 1420 120, 2020 130" stroke="rgba(210, 255, 0, 0.45)" stroke-width="1.2" />
-        <path d="M-100 210 C 300 200, 480 320, 800 310 C 1120 300, 1400 190, 2020 200" stroke="rgba(210, 255, 0, 0.35)" stroke-width="1" />
-        <path d="M-100 280 C 280 270, 460 400, 780 390 C 1100 380, 1380 260, 2020 270" stroke="rgba(40, 44, 32, 0.08)" stroke-width="1" />
-        <path d="M-100 350 C 260 340, 440 480, 760 470 C 1080 460, 1360 330, 2020 340" stroke="rgba(40, 44, 32, 0.06)" stroke-width="1" />
-        <path d="M-100 780 C 400 760, 680 920, 1020 900 C 1360 880, 1680 760, 2020 780" stroke="rgba(210, 255, 0, 0.3)" stroke-width="1" />
-        <path d="M-100 860 C 380 840, 660 980, 1000 960 C 1340 940, 1660 830, 2020 850" stroke="rgba(40, 44, 32, 0.06)" stroke-width="1" />
-      </svg>
-
-      <!-- Giant Faint Outlined Lettering Behind Portrait -->
-      <div class="hero-bg-lettering" aria-hidden="true">
-        <span>LAP</span>
-        <span>LEGENDS</span>
+      <!-- Background Animated Video: Seamless Dual-Buffer Looping -->
+      <div class="hero-video-wrapper" aria-hidden="true">
+        <video class="hero-bg-video is-active" id="heroBgVideoA" autoplay loop muted playsinline preload="auto">
+          <source src="/assets/lap-legends/video/background-seamless.mp4" type="video/mp4" />
+        </video>
+        <video class="hero-bg-video" id="heroBgVideoB" muted playsinline preload="auto">
+          <source src="/assets/lap-legends/video/background-seamless.mp4" type="video/mp4" />
+        </video>
       </div>
+
 
       <!-- Landing Page Minimal Header -->
       <header class="hero-header">

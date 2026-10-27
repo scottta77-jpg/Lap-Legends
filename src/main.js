@@ -25,21 +25,75 @@ document.addEventListener('DOMContentLoaded', async () => {
   const modalTitle = document.getElementById('modalTitle');
   const modalBody = document.getElementById('modalBody');
 
-  // Inject client-supplied authentic scenery (Silverstone contours and outlined wordmark)
-  if (container) {
-    try {
-      const sceneryRes = await fetch('/assets/lap-legends/scenery/hero-scenery.html');
-      if (sceneryRes.ok) {
-        const sceneryHtml = await sceneryRes.text();
-        const existingContours = container.querySelector('.hero-contours-svg');
-        const existingLettering = container.querySelector('.hero-bg-lettering');
-        if (existingContours) existingContours.remove();
-        if (existingLettering) existingLettering.remove();
-        container.classList.add('ll-hero');
-        container.insertAdjacentHTML('afterbegin', sceneryHtml);
-      }
-    } catch (err) {
-      console.warn('Scenery load fallback:', err);
+  // Background seamless dual-buffer video crossfader
+  const videoA = document.getElementById('heroBgVideoA');
+  const videoB = document.getElementById('heroBgVideoB');
+
+  if (videoA && videoB) {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reducedMotion) {
+      videoA.pause();
+      videoB.pause();
+    } else {
+      const crossfadeDuration = 1.4; // in seconds
+      let activeVideo = videoA;
+      let nextVideo = videoB;
+      let isTransitioning = false;
+
+      videoA.classList.add('is-active');
+      videoB.classList.remove('is-active');
+      videoA.play().catch(() => {});
+
+      const triggerCrossfade = () => {
+        if (isTransitioning) return;
+        isTransitioning = true;
+
+        nextVideo.currentTime = 0;
+        nextVideo.play().then(() => {
+          nextVideo.classList.add('is-active');
+          activeVideo.classList.remove('is-active');
+
+          setTimeout(() => {
+            activeVideo.pause();
+            activeVideo.currentTime = 0;
+            const temp = activeVideo;
+            activeVideo = nextVideo;
+            nextVideo = temp;
+            isTransitioning = false;
+          }, crossfadeDuration * 1000);
+        }).catch((err) => {
+          console.warn('Seamless video swap failed:', err);
+          isTransitioning = false;
+        });
+      };
+
+      const checkVideoLoop = () => {
+        if (activeVideo && activeVideo.duration && !isTransitioning) {
+          const timeLeft = activeVideo.duration - activeVideo.currentTime;
+          if (timeLeft <= crossfadeDuration) {
+            triggerCrossfade();
+          }
+        }
+        requestAnimationFrame(checkVideoLoop);
+      };
+
+      videoA.addEventListener('timeupdate', () => {
+        if (activeVideo === videoA && !isTransitioning && videoA.duration) {
+          if (videoA.duration - videoA.currentTime <= crossfadeDuration) {
+            triggerCrossfade();
+          }
+        }
+      });
+
+      videoB.addEventListener('timeupdate', () => {
+        if (activeVideo === videoB && !isTransitioning && videoB.duration) {
+          if (videoB.duration - videoB.currentTime <= crossfadeDuration) {
+            triggerCrossfade();
+          }
+        }
+      });
+
+      requestAnimationFrame(checkVideoLoop);
     }
   }
 
@@ -97,6 +151,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
     storeManager.setHeroStage(heroStage);
     storeManager.handleRoute();
+    window.heroStage = heroStage;
   }
 
   // Initialize Menu Drawer
