@@ -192,49 +192,57 @@
   letter-spacing: -0.5px;
   color: var(--ll-text-primary);
   text-transform: uppercase;
-  transition: color 0.6s ease, opacity 0.3s ease;
+  transition: none !important;
+  transform: none !important;
+  animation: none !important;
 }
 
-/* Center: Monogram */
+/* Center: Crossed Chequered Racing Flags */
 .ll-header-center {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) !important;
   pointer-events: auto;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.ll-flags-badge,
 .ll-monogram-badge {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease;
+  transform: none !important;
+  transition: none !important;
+  animation: none !important;
 }
 
-.ll-monogram-badge:hover {
-  transform: scale(1.08);
-}
-
+.ll-chequered-flags-img,
 .ll-monogram-img {
-  height: 32px;
+  height: 36px;
   width: auto;
+  max-width: 95px;
   object-fit: contain;
-  transition: filter 0.6s ease, opacity 0.3s ease;
+  transition: none !important;
+  transform: none !important;
+  animation: none !important;
 }
 
+#landingView.theme-cream .ll-chequered-flags-img,
 #landingView.theme-cream .ll-monogram-img {
   filter: none;
 }
 
+#landingView.theme-black .ll-chequered-flags-img,
 #landingView.theme-black .ll-monogram-img,
+#landingView.theme-red .ll-chequered-flags-img,
 #landingView.theme-red .ll-monogram-img {
   filter: invert(1) brightness(1.2);
 }
 
-/* Right: STORE Pill Button and Hamburger Trigger */
+/* Right: Solid Yellow STORE Button and Menu Trigger */
 .ll-header-right {
   display: flex;
   align-items: center;
@@ -248,11 +256,9 @@
   gap: 8px;
   padding: 10px 22px;
   border-radius: 10px;
-  border: 1.5px solid var(--ll-border);
-  background: var(--ll-glass-bg);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  color: var(--ll-text-primary);
+  border: none;
+  background: #c8f700;
+  color: #0c0d10;
   font-family: 'Montserrat', sans-serif;
   font-size: 12.5px;
   font-weight: 800;
@@ -260,28 +266,27 @@
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 18px rgba(200, 247, 0, 0.42), 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .ll-store-pill-btn svg {
-  stroke: currentColor;
+  stroke: #0c0d10;
 }
 
 .ll-store-pill-btn:hover {
-  background: var(--ll-text-primary);
+  background: #d4ff00;
   color: #0c0d10;
-  border-color: var(--ll-text-primary);
-  transform: translateY(-1px);
+  transform: translateY(-1px) scale(1.03);
+  box-shadow: 0 6px 24px rgba(200, 247, 0, 0.65), 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .ll-menu-btn {
   width: 44px;
   height: 39px;
   border-radius: 10px;
-  border: 1.5px solid var(--ll-border);
-  background: var(--ll-glass-bg);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  border: none;
+  background: #c8f700;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -289,15 +294,16 @@
   gap: 4px;
   cursor: pointer;
   padding: 0;
-  transition: all 0.25s ease;
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 18px rgba(200, 247, 0, 0.42), 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .ll-menu-line {
   display: block;
   height: 2px;
-  background: var(--ll-text-primary);
+  background: #0c0d10;
   border-radius: 2px;
-  transition: all 0.25s ease;
+  transition: width 0.25s ease;
 }
 
 .ll-menu-line:nth-child(1) {
@@ -309,9 +315,9 @@
 }
 
 .ll-menu-btn:hover {
-  background: var(--ll-text-primary);
-  border-color: var(--ll-text-primary);
+  background: #d4ff00;
   transform: scale(1.05);
+  box-shadow: 0 6px 24px rgba(200, 247, 0, 0.65), 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .ll-menu-btn:hover .ll-menu-line {
@@ -475,18 +481,13 @@
 .ll-hero-subtag {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 9.5px;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--ll-text-primary);
+  color: #ffffff;
   margin-top: 13px;
   transition: color 0.6s ease;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-}
-
-#landingView.theme-cream .ll-hero-subtag {
-  color: #121316;
-  text-shadow: none;
+  text-shadow: -1px -1px 0 rgba(0,0,0,0.9), 1px -1px 0 rgba(0,0,0,0.9), -1px 1px 0 rgba(0,0,0,0.9), 1px 1px 0 rgba(0,0,0,0.9), 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 /* =========================================================================
@@ -515,7 +516,7 @@
 }
 
 .ll-tagline-wrap {
-  margin-bottom: 18px;
+  margin-bottom: 12px;
 }
 
 .ll-subheadline {
@@ -531,102 +532,169 @@
   white-space: nowrap;
 }
 
-/* Next Race Card */
+.ll-next-race-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--ll-text-primary);
+  margin-bottom: 6px;
+  margin-left: 1px;
+  transition: color 0.6s ease;
+}
+
+/* Track & Race Team Card (Stepped Tab Badge with SVG light ray) */
 .ll-race-card {
   position: relative;
-  width: 140px;
-  border: 1.5px solid var(--ll-border);
-  border-radius: 10px;
-  padding: 18px 12px 14px 12px;
+  width: 146px;
+  height: 232px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: var(--ll-card-bg);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transition: border-color 0.6s ease, background 0.6s ease, transform 0.3s ease;
+  padding: 27px 10px 14px 10px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .ll-race-card:hover {
   transform: translateY(-2px);
 }
 
-/* Top-left notched pill badge */
-.ll-race-badge {
+.ll-card-bg-svg {
   position: absolute;
-  top: -10px;
-  left: 8px;
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 8px;
-  font-weight: 700;
-  letter-spacing: 0.6px;
-  text-transform: uppercase;
-  color: var(--ll-text-primary);
-  padding: 2px 8px;
-  border: 1.5px solid var(--ll-border);
-  border-radius: 12px;
-  background: var(--ll-bg-surface);
-  transition: all 0.6s ease;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
 }
 
+.ll-card-bg-border {
+  transition: fill 0.6s ease, stroke 0.6s ease;
+}
+
+/* Cream theme: white card with crisp border matching user reference */
+#landingView.theme-cream .ll-card-bg-border {
+  fill: rgba(255, 255, 255, 0.78);
+  stroke: rgba(18, 19, 22, 0.32);
+  stroke-width: 1.8;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Black theme: sleek dark translucent card with crisp border */
+#landingView.theme-black .ll-card-bg-border {
+  fill: rgba(18, 20, 26, 0.72);
+  stroke: rgba(255, 255, 255, 0.25);
+  stroke-width: 1.8;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Red theme: deep crimson translucent card */
+#landingView.theme-red .ll-card-bg-border {
+  fill: rgba(45, 4, 4, 0.72);
+  stroke: rgba(255, 255, 255, 0.28);
+  stroke-width: 1.8;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.ll-card-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Track Circuit SVG & Flashing Light Ray */
 .ll-race-track-wrap {
   width: 100%;
-  height: 38px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 4px;
 }
 
-.ll-race-track-img {
-  max-width: 68px;
-  max-height: 36px;
-  object-fit: contain;
-  transition: filter 0.6s ease, opacity 0.3s ease;
+.ll-track-svg {
+  width: 100%;
+  height: 100%;
+  max-height: 46px;
+  overflow: visible;
 }
 
-#landingView.theme-cream .ll-race-track-img {
-  filter: none;
+.ll-track-path-base {
+  fill: none;
+  stroke: var(--ll-text-primary);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke 0.6s ease;
 }
 
-#landingView.theme-black .ll-race-track-img,
-#landingView.theme-red .ll-race-track-img {
-  filter: invert(1) brightness(1.2);
+.ll-track-path-ray {
+  fill: none;
+  stroke: #c8f700;
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 4px #c8f700) drop-shadow(0 0 8px #c8f700);
+  stroke-dasharray: 14 86;
+  stroke-dashoffset: 100;
+  animation: traceTrackRay 2.4s linear infinite;
+}
+
+@keyframes traceTrackRay {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
 }
 
 .ll-race-title {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 9.5px;
-  font-weight: 700;
-  letter-spacing: 1px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
   color: var(--ll-text-primary);
-  margin-top: 6px;
+  margin-top: 4px;
   text-align: center;
   transition: color 0.6s ease;
 }
 
 .ll-race-divider {
-  width: 78%;
-  height: 1px;
+  width: 82%;
+  height: 1.2px;
   background: var(--ll-border);
-  margin: 8px 0;
+  margin: 7px 0 6px 0;
   transition: background 0.6s ease;
 }
 
 .ll-race-wreath-wrap {
   width: 100%;
-  height: 38px;
+  height: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 3px 0 4px 0;
 }
 
 .ll-race-wreath-img {
-  max-width: 58px;
-  max-height: 36px;
+  width: 106px;
+  max-width: 106px;
+  height: 52px;
+  max-height: 52px;
   object-fit: contain;
-  transition: filter 0.6s ease, opacity 0.3s ease;
+  transition: filter 0.6s ease;
 }
 
 #landingView.theme-cream .ll-race-wreath-img {
@@ -640,26 +708,25 @@
 
 .ll-race-team-title {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 8.5px;
+  font-size: 9.5px;
   font-weight: 800;
   letter-spacing: 0.6px;
   text-transform: uppercase;
   color: var(--ll-text-primary);
   text-align: center;
-  line-height: 1.25;
-  margin-top: 4px;
+  line-height: 1.2;
   transition: color 0.6s ease;
 }
 
 .ll-race-team-sub {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 7.5px;
-  font-weight: 600;
-  letter-spacing: 0.6px;
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
   color: var(--ll-text-muted);
-  margin-top: 2px;
   text-align: center;
+  margin-top: 2px;
   transition: color 0.6s ease;
 }
 
@@ -705,8 +772,10 @@
     font-size: 18px;
   }
 
+  .ll-chequered-flags-img,
   .ll-monogram-img {
-    height: 26px;
+    height: 28px;
+    max-width: 75px;
   }
 
   .ll-store-pill-btn {
@@ -720,8 +789,9 @@
   }
 
   .ll-race-card {
-    width: 120px;
-    padding: 14px 10px 10px 10px;
+    width: 122px;
+    height: 186px;
+    padding: 22px 8px 10px 8px;
   }
 
   .ll-subheadline {

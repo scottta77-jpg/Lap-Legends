@@ -43,10 +43,10 @@
         </a>
       </div>
 
-      <!-- Center: Monogram Badge -->
+      <!-- Center: Chequered Racing Flags Icon (Permanent across all slides) -->
       <div class="ll-header-center">
-        <div class="ll-monogram-badge" id="llHeaderMonogram">
-          <img src="/assets/hero/monogram_ll.png" alt="Monogram" class="ll-monogram-img" id="llMonogramImg" />
+        <div class="ll-flags-badge" id="llHeaderFlags">
+          <img src="/assets/hero/chequered_flags.png" alt="Chequered Racing Flags" class="ll-chequered-flags-img" id="llFlagsImg" />
         </div>
       </div>
 
@@ -75,19 +75,28 @@
           <p class="ll-subheadline">THE DRIVERS. THE HELMETS. THE LEGENDS.</p>
         </div>
 
-        <!-- Next Race Card (From AI Agency Mockup) -->
+        <div class="ll-next-race-label">NEXT RACE</div>
+
+        <!-- Track & Race Team Card (Stepped-Tab Badge with Light Ray Circuit) -->
         <div class="ll-race-card" id="llRaceCard">
-          <div class="ll-race-badge">NEXT RACE</div>
-          <div class="ll-race-track-wrap">
-            <img src="/assets/circuit_transparent.png" alt="Miami GP Circuit" class="ll-race-track-img" id="llRaceTrackImg" />
+          <svg class="ll-card-bg-svg" viewBox="0 0 160 244" fill="none" preserveAspectRatio="none">
+            <path class="ll-card-bg-border" d="M 0,230 A 14,14 0 0,0 14,244 L 146,244 A 14,14 0 0,0 160,230 L 160,14 A 14,14 0 0,0 146,0 L 110,0 C 102,0 96,7 92,12 L 86,21 C 82,27 76,28 68,28 L 14,28 A 14,14 0 0,0 0,42 Z" />
+          </svg>
+          <div class="ll-card-inner">
+            <div class="ll-race-track-wrap">
+              <svg class="ll-track-svg" id="llTrackSvg" viewBox="-6 -4 208 106">
+                <path id="llTrackBase" class="ll-track-path-base" />
+                <path id="llTrackRay" class="ll-track-path-ray" pathLength="100" />
+              </svg>
+            </div>
+            <div class="ll-race-title" id="llRaceTitle">MIAMI GP</div>
+            <div class="ll-race-divider"></div>
+            <div class="ll-race-wreath-wrap">
+              <img src="/assets/hero/wreath_helmet_clean.png" alt="Wreath Helmet Crest" class="ll-race-wreath-img" id="llRaceWreathImg" />
+            </div>
+            <div class="ll-race-team-title" id="llRaceTeamTitle">MCLAREN F1</div>
+            <div class="ll-race-team-sub" id="llRaceTeamSub">SINCE 2019</div>
           </div>
-          <div class="ll-race-title" id="llRaceTitle">MIAMI GP</div>
-          <div class="ll-race-divider"></div>
-          <div class="ll-race-wreath-wrap">
-            <img src="/assets/hero/wreath_globe.png" alt="Team Crest" class="ll-race-wreath-img" id="llRaceWreathImg" />
-          </div>
-          <div class="ll-race-team-title" id="llRaceTeamTitle">MCLAREN F1</div>
-          <div class="ll-race-team-sub" id="llRaceTeamSub">SINCE 2019</div>
         </div>
       </div>
     </div>
@@ -108,7 +117,7 @@
     <div class="ll-drivers-stage" id="llDriversStage">
       <!-- Driver 0: Lando Norris (McLaren) -->
       <div class="ll-driver-item state-main" id="driver-0" data-index="0">
-        <img src="/assets/drivers/lando_hero_full.png" alt="Lando Norris Split Helmet Portrait" class="ll-driver-img" />
+        <img src="/assets/drivers/lando_hero_full.png?v=5" alt="Lando Norris Split Helmet Portrait" class="ll-driver-img" />
       </div>
       <!-- Driver 1: Lewis Hamilton (Scuderia Ferrari) -->
       <div class="ll-driver-item state-future" id="driver-1" data-index="1">

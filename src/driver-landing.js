@@ -1,3 +1,5 @@
+import { MIAMI_PATH_D, SILVERSTONE_PATH_D, MONZA_PATH_D } from './circuit-paths.js';
+
 /**
  * Lap Legends F1 Driver Hero Showcase Controller
  * Faithfully matches AI AGENCY reference mockups with monumental driver framing
@@ -8,47 +10,38 @@ export const DRIVER_SLIDES = [
   {
     id: 0,
     key: 'norris',
-    brandWordmark: 'LAP<br />LEGENDS',
-    monogramImg: '/assets/hero/monogram_ll.png',
-    monogramAlt: 'LL',
     team: 'MCLAREN F1',
     era: 'SINCE 2019',
     nextRace: 'MIAMI GP',
     theme: 'theme-cream',
     bgGradient: 'radial-gradient(ellipse at 50% 40%, #ffffff 0%, #f7f4ed 50%, #eee8dc 100%)',
-    trackImg: '/assets/circuit_transparent.png',
-    trackAlt: 'Miami GP Circuit',
-    wreathImg: '/assets/hero/wreath_globe.png'
+    trackD: MIAMI_PATH_D,
+    trackViewBox: '-6 -4 208 106',
+    wreathImg: '/assets/hero/wreath_helmet_clean.png'
   },
   {
     id: 1,
     key: 'hamilton',
-    brandWordmark: 'LANDO<br />NORRIS', // Matches reference image 1
-    monogramImg: '/assets/hero/monogram_ln.png',
-    monogramAlt: 'LN',
-    team: 'MCLAREN F1',
-    era: 'SINCE 2019',
-    nextRace: 'AUSTIN GP',
+    team: 'SCUDERIA FERRARI',
+    era: 'SINCE 2025',
+    nextRace: 'SILVERSTONE GP',
     theme: 'theme-black',
     bgGradient: 'radial-gradient(ellipse at 50% 45%, #14151b 0%, #090a0d 60%, #030405 100%)',
-    trackImg: '/assets/hero/track_austin.png',
-    trackAlt: 'Austin GP Circuit',
-    wreathImg: '/assets/hero/wreath_helmet.png'
+    trackD: SILVERSTONE_PATH_D,
+    trackViewBox: '43.5 41.7 734.2 540.4',
+    wreathImg: '/assets/hero/wreath_helmet_clean.png'
   },
   {
     id: 2,
     key: 'antonelli',
-    brandWordmark: 'LANDO<br />NORRIS', // Matches reference image 3
-    monogramImg: '/assets/hero/monogram_ln.png',
-    monogramAlt: 'LN',
-    team: 'MCLAREN F1',
-    era: 'SINCE 2019',
-    nextRace: 'AUSTIN GP',
+    team: 'MERCEDES-AMG F1',
+    era: 'SINCE 2025',
+    nextRace: 'MONZA GP',
     theme: 'theme-red',
     bgGradient: 'radial-gradient(ellipse at 50% 45%, #b20a0a 0%, #820404 50%, #460101 100%)',
-    trackImg: '/assets/hero/track_austin.png',
-    trackAlt: 'Austin GP Circuit',
-    wreathImg: '/assets/hero/wreath_helmet.png'
+    trackD: MONZA_PATH_D,
+    trackViewBox: '128.3 59.4 527.0 500.2',
+    wreathImg: '/assets/hero/wreath_helmet_clean.png'
   }
 ];
 
@@ -69,12 +62,12 @@ export class DriverLandingStage {
     this.bgContainerB = document.getElementById('llBgLayerB');
     this.drivers = Array.from(document.querySelectorAll('.ll-driver-item'));
 
-    // Dynamic UI Elements
-    this.brandWordmark = document.getElementById('llBrandWordmark');
-    this.monogramImg = document.getElementById('llMonogramImg');
+    // Dynamic UI Elements (Static elements like LAP LEGENDS, chequered flags, and store button remain untouched)
     this.raceCard = document.getElementById('llRaceCard');
     this.raceTitle = document.getElementById('llRaceTitle');
-    this.raceTrackImg = document.getElementById('llRaceTrackImg');
+    this.trackSvg = document.getElementById('llTrackSvg');
+    this.trackBase = document.getElementById('llTrackBase');
+    this.trackRay = document.getElementById('llTrackRay');
     this.raceWreathImg = document.getElementById('llRaceWreathImg');
     this.raceTeamTitle = document.getElementById('llRaceTeamTitle');
     this.raceTeamSub = document.getElementById('llRaceTeamSub');
@@ -92,6 +85,18 @@ export class DriverLandingStage {
     if (this.container) {
       this.container.classList.remove('theme-cream', 'theme-black', 'theme-red');
       this.container.classList.add(DRIVER_SLIDES[0].theme);
+    }
+
+    // Set initial track circuit path & viewbox
+    const initialSlide = DRIVER_SLIDES[0];
+    if (this.trackSvg && initialSlide.trackViewBox) {
+      this.trackSvg.setAttribute('viewBox', initialSlide.trackViewBox);
+    }
+    if (this.trackBase && initialSlide.trackD) {
+      this.trackBase.setAttribute('d', initialSlide.trackD);
+    }
+    if (this.trackRay && initialSlide.trackD) {
+      this.trackRay.setAttribute('d', initialSlide.trackD);
     }
 
     // Set initial driver states
@@ -183,37 +188,24 @@ export class DriverLandingStage {
   updateDetails(targetIndex) {
     const slide = DRIVER_SLIDES[targetIndex];
 
-    // Subtle micro-fade for header and race card
-    if (this.brandWordmark) {
-      this.brandWordmark.style.opacity = '0';
-      setTimeout(() => {
-        this.brandWordmark.innerHTML = slide.brandWordmark;
-        this.brandWordmark.style.opacity = '1';
-      }, 180);
-    }
-
-    if (this.monogramImg) {
-      this.monogramImg.style.opacity = '0';
-      this.monogramImg.style.transform = 'scale(0.85)';
-      setTimeout(() => {
-        this.monogramImg.src = slide.monogramImg;
-        this.monogramImg.alt = slide.monogramAlt;
-        this.monogramImg.style.opacity = '1';
-        this.monogramImg.style.transform = 'scale(1)';
-      }, 180);
-    }
-
+    // Subtle micro-fade for Next Race card
+    // (Note: LAP LEGENDS logo, chequered flags icon, STORE button, and CTA buttons remain fixed)
     if (this.raceCard) {
       this.raceCard.style.opacity = '0.4';
       this.raceCard.style.transform = 'translateY(4px)';
 
       setTimeout(() => {
         if (this.raceTitle) this.raceTitle.textContent = slide.nextRace;
-        if (this.raceTrackImg) {
-          this.raceTrackImg.src = slide.trackImg;
-          this.raceTrackImg.alt = slide.trackAlt;
+        if (this.trackSvg && slide.trackViewBox) {
+          this.trackSvg.setAttribute('viewBox', slide.trackViewBox);
         }
-        if (this.raceWreathImg) {
+        if (this.trackBase && slide.trackD) {
+          this.trackBase.setAttribute('d', slide.trackD);
+        }
+        if (this.trackRay && slide.trackD) {
+          this.trackRay.setAttribute('d', slide.trackD);
+        }
+        if (this.raceWreathImg && slide.wreathImg) {
           this.raceWreathImg.src = slide.wreathImg;
         }
         if (this.raceTeamTitle) this.raceTeamTitle.textContent = slide.team;
