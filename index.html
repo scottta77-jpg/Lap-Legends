@@ -527,38 +527,53 @@
   <!-- =========================================================================
        GLOBAL SLIDE-OUT SHOPPING BAG DRAWER
        ========================================================================= -->
-  <aside class="cart-drawer-overlay" id="cartDrawerOverlay" aria-hidden="true">
-    <div class="cart-drawer-panel" id="cartDrawerPanel" role="dialog" aria-modal="true" aria-label="Shopping Bag">
-      <div class="cart-drawer-header">
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-panel" id="cartDrawerPanel" role="dialog" aria-modal="true" aria-label="Shopping Bag">
+      <div class="cart-header">
         <div class="cart-header-title-wrap">
-          <h2 class="cart-drawer-title">YOUR BAG</h2>
-          <span class="cart-header-count" id="cartHeaderCount">(0)</span>
+          <h2 class="cart-title">YOUR BAG</h2>
+          <span class="cart-count-badge js-cart-count" id="cartHeaderCount">0</span>
         </div>
-        <button class="cart-drawer-close-btn" id="cartCloseBtn" aria-label="Close Shopping Bag">&times;</button>
+        <button class="cart-close-btn" id="cartCloseBtn" aria-label="Close Shopping Bag">&times;</button>
       </div>
 
       <!-- Free Shipping Perk Bar -->
-      <div class="cart-shipping-perk">
-        <span class="shipping-icon">✓</span>
+      <div class="cart-delivery-perk" style="padding: 12px 28px; background: rgba(40, 44, 32, 0.04); margin-bottom: 0; border-bottom: 1px solid rgba(40, 44, 32, 0.06);">
+        <span style="font-weight: 900; color: #2F6932;">✓</span>
         <span>FREE UK TRACKED DELIVERY INCLUDED</span>
       </div>
 
+      <!-- Empty State -->
+      <div class="cart-empty-state" id="cartEmptyState">
+        <svg class="empty-bag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+        <h3 class="empty-title">YOUR BAG IS EMPTY</h3>
+        <p class="empty-desc">Explore the collection and add your favorite framed driver portraits or circuit prints.</p>
+        <a href="#shop" class="btn-lime js-close-cart-to-shop" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; font-size: 11.5px; border-radius: 6px; text-decoration: none; color: var(--dark-olive); background: var(--electric-lime); font-family: var(--font-tech); font-weight: 800;">
+          <span>EXPLORE PRINTS</span>
+          <span>→</span>
+        </a>
+      </div>
+
       <!-- Items List -->
-      <div class="cart-items-container" id="cartItemsList">
+      <div class="cart-items-list" id="cartItemsList">
         <!-- Rendered by cart.js -->
       </div>
 
       <!-- Cart Drawer Footer -->
-      <div class="cart-drawer-footer">
+      <div class="cart-footer" id="cartFooter" style="display: none;">
         <div class="cart-subtotal-row">
           <span class="subtotal-label">SUBTOTAL:</span>
-          <span class="subtotal-amount" id="cartSubtotalAmount">£0.00 GBP</span>
+          <span class="cart-subtotal-val" id="cartSubtotalAmount">£0.00</span>
         </div>
-        <p class="cart-shipping-note">Taxes included. Free UK shipping applied at checkout.</p>
-        <a href="https://www.amazon.co.uk/stores/LapLegends/page/4F106B9E-4F21-44E2-866C-C6AA25125C89" target="_blank" rel="noopener noreferrer" class="btn-checkout-amazon" id="cartCheckoutBtn">
+        <p style="font-size: 11.5px; opacity: 0.65; margin-bottom: 14px; line-height: 1.4;">Taxes included. Free UK shipping applied at checkout.</p>
+        <button class="cart-checkout-btn" id="cartCheckoutBtn">
           <span>CHECKOUT WITH AMAZON</span>
-          <span class="amazon-arrow">↗</span>
-        </a>
+          <span>↗</span>
+        </button>
       </div>
     </div>
   </aside>

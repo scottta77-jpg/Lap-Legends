@@ -48,7 +48,8 @@ body.page-is-landing {
   height: 100dvh !important;
 }
 
-body.page-is-landing #storeViewsWrapper {
+body.page-is-landing #storeViewsWrapper,
+body.page-is-landing .cart-drawer:not(.is-open) {
   display: none !important;
 }
 

@@ -136,6 +136,11 @@ export class CartDrawerUI {
       this.closeBtn.addEventListener('click', () => this.close());
     }
 
+    const shopBtn = this.drawerEl ? this.drawerEl.querySelector('.js-close-cart-to-shop') : null;
+    if (shopBtn) {
+      shopBtn.addEventListener('click', () => this.close());
+    }
+
     if (this.drawerEl) {
       this.drawerEl.addEventListener('click', (e) => {
         if (e.target === this.drawerEl) {

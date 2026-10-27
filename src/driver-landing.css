@@ -27,6 +27,15 @@
   transform: scale(0.98);
 }
 
+/* Ensure no store drawers or modals appear behind landing view */
+body.page-is-landing .cart-drawer:not(.is-open),
+body.page-is-landing .cart-drawer-overlay:not(.is-open) {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
 /* =========================================================================
    THEME PALETTES & DUAL BACKGROUND CROSSFADE
    Exact color matching for Cream (Lando), Black (Lewis), Red (Kimi)
