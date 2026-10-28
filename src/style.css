@@ -2355,18 +2355,18 @@ body.menu-locked, body.cart-open {
 }
 
 .footer-bg-img {
-  width: 44rem;
-  max-width: 48vw;
+  width: 32rem;
+  max-width: 36vw;
   height: auto;
   object-fit: contain;
   position: relative;
-  bottom: -2.5rem;
+  bottom: 0;
   display: block;
 }
 
 .footer-bg-bottom-btn-w {
   position: absolute;
-  bottom: 2.2rem;
+  bottom: 2rem;
   pointer-events: auto;
   z-index: 5;
 }
@@ -2465,8 +2465,8 @@ body.menu-locked, body.cart-open {
     font-size: 1.6rem;
   }
   .footer-bg-img {
-    width: 36rem;
-    max-width: 52vw;
+    width: 26rem;
+    max-width: 40vw;
   }
 }
 
@@ -2482,8 +2482,8 @@ body.menu-locked, body.cart-open {
     font-size: 1.35rem;
   }
   .footer-bg-img {
-    width: 30rem;
-    max-width: 56vw;
+    width: 22rem;
+    max-width: 44vw;
   }
 }
 
@@ -2516,8 +2516,8 @@ body.menu-locked, body.cart-open {
     font-size: 1.15rem;
   }
   .footer-bg-img {
-    width: 22rem;
-    max-width: 80vw;
+    width: 16rem;
+    max-width: 65vw;
   }
   .footer-legal-links-w {
     flex-direction: column;
