@@ -3693,7 +3693,7 @@ dialog.info-modal[open] .info-modal-card {
   width: 100%;
   min-height: clamp(380px, 31vw, 620px);
   padding: clamp(64px, 5.5vw, 100px) 24px clamp(68px, 6vw, 110px);
-  background-color: #171d15;
+  background-color: #262c1e;
   background-image: url('/assets/lifestyle/statement_ribbon_bg.png');
   background-position: center center;
   background-size: cover;
