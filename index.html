@@ -311,6 +311,13 @@
 
       <!-- 1. Legends Framed Editorial Hero Section (Top of Store) -->
       <section class="editorial-hero-section">
+        <!-- Top Tab Notch Cutout matching Hero reference -->
+        <div class="editorial-hero-notch" aria-hidden="true">
+          <svg viewBox="0 0 320 36" preserveAspectRatio="none">
+            <path d="M 0,0 L 40,0 C 56,0 66,16 78,28 C 88,36 98,36 112,36 L 208,36 C 222,36 232,36 242,28 C 254,16 264,0 280,0 L 320,0 Z" fill="#F5F3EC" />
+          </svg>
+        </div>
+
         <div class="section-container hero-container-layout">
           <div class="editorial-grid">
             <div class="editorial-text-col">
@@ -326,7 +333,12 @@
               </div>
             </div>
             <div class="editorial-visual-col">
-              <img src="/assets/lifestyle/hero_group_framed_clean.png" alt="Lap Legends Framed Prints Collection on Wall" class="editorial-hero-art" />
+              <div class="hero-corner-tag">
+                <span>TURN PASSION</span><br>
+                <span>INTO ART</span>
+                <span class="arrow">→</span>
+              </div>
+              <img src="/assets/lifestyle/hero_standing_frames.png" alt="Lap Legends Framed Prints Collection - Lewis Hamilton, Lando Norris, and Silverstone" class="editorial-hero-art" />
             </div>
           </div>
         </div>
@@ -413,7 +425,307 @@
         </div>
       </section>
 
-      <!-- 4. Fan Favourites 4-Column Product Grid -->
+      <!-- 4. Circuit Art Collection Section -->
+      <section class="collection-section" id="circuitArtSection">
+        <div class="section-container">
+          <div class="collection-header">
+            <div class="collection-title-wrap">
+              <h2 class="collection-title">CIRCUIT ART</h2>
+              <p class="collection-subtitle">Iconic racetracks, reimagined as minimalist wall art.</p>
+            </div>
+            <div class="collection-actions-wrap">
+              <a href="#shop?category=circuits" class="collection-view-all-btn">
+                <span>VIEW ALL (32)</span>
+                <span class="arrow">↗</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Filter Pills -->
+          <div class="collection-pills-row" data-collection="circuits">
+            <button class="collection-pill is-active" data-filter="all">ALL</button>
+            <button class="collection-pill" data-filter="formula1">FORMULA 1</button>
+            <button class="collection-pill" data-filter="classic">CLASSIC</button>
+            <button class="collection-pill" data-filter="street">STREET</button>
+            <button class="collection-pill" data-filter="historic">HISTORIC</button>
+          </div>
+
+          <!-- Cards Grid -->
+          <div class="collection-cards-grid" id="circuitCollectionGrid">
+            <!-- Card 1: Silverstone -->
+            <article class="collection-card" data-category="classic" data-product-id="silverstone">
+              <div class="collection-media-box">
+                <a href="#product/silverstone" class="collection-media-link" aria-label="View Silverstone Framed Print">
+                  <img src="/assets/products/silverstone_circuit_art.jpg" alt="Silverstone Circuit Wall Art" class="collection-card-img" />
+                </a>
+              </div>
+              <div class="collection-card-body">
+                <div class="collection-title-row">
+                  <a href="#product/silverstone" class="collection-card-title-link">
+                    <h3 class="collection-card-title">Silverstone, Great Britain</h3>
+                  </a>
+                  <img src="/assets/products/track_silverstone.png" alt="Silverstone Track Outline" class="collection-icon-img" />
+                </div>
+                <div class="collection-card-sub">Available in A4, A3, A2</div>
+                <div class="collection-card-footer">
+                  <div class="collection-rating-stars" aria-label="4.5 out of 5 stars">
+                    <span class="star-filled">★</span><span class="star-filled">★</span><span class="star-filled">★</span><span class="star-filled">★</span><span class="star-half">★</span>
+                  </div>
+                  <div class="collection-price-col">
+                    <span class="collection-price-val">£19.99</span>
+                  </div>
+                  <button class="collection-quick-add-btn js-quick-add" data-product-id="silverstone" aria-label="Quick add Silverstone to cart">
+                    <span>QUICK ADD</span>
+                    <span class="plus">+</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 2: Monaco -->
+            <article class="collection-card" data-category="street" data-product-id="monaco">
+              <div class="collection-media-box">
+                <span class="collection-badge-bestseller">BESTSELLER</span>
+                <a href="#product/monaco" class="collection-media-link" aria-label="View Monaco Framed Print">
+                  <img src="/assets/products/monaco_circuit_art.jpg" alt="Monaco Circuit Wall Art" class="collection-card-img" />
+                </a>
+              </div>
+              <div class="collection-card-body">
+                <div class="collection-title-row">
+                  <a href="#product/monaco" class="collection-card-title-link">
+                    <h3 class="collection-card-title">Monaco, Monte Carlo</h3>
+                  </a>
+                  <img src="/assets/products/track_monaco.png" alt="Monaco Track Outline" class="collection-icon-img" />
+                </div>
+                <div class="collection-card-sub">Available in A4, A3, A2</div>
+                <div class="collection-card-footer">
+                  <div class="collection-rating-stars" aria-label="5 out of 5 stars">
+                    <span class="star-filled">★</span><span class="star-filled">★</span><span class="star-filled">★</span><span class="star-filled">★</span><span class="star-filled">★</span>
+                  </div>
+                  <div class="collection-price-col">
+                    <span class="collection-price-val">£19.99</span>
+                  </div>
+                  <button class="collection-quick-add-btn js-quick-add" data-product-id="monaco" aria-label="Quick add Monaco to cart">
+                    <span>QUICK ADD</span>
+                    <span class="plus">+</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 3: Hungaroring -->
+            <article class="collection-card" data-category="formula1" data-product-id="hungaroring">
+              <div class="collection-media-box">
+                <a href="#product/hungaroring" class="collection-media-link" aria-label="View Hungaroring Framed Print">
+                  <img src="/assets/products/hungaroring_circuit_art.jpg" alt="Hungaroring Circuit Wall Art" class="collection-card-img" />
+                </a>
+              </div>
+              <div class="collection-card-body">
+                <div class="collection-title-row">
+                  <a href="#product/hungaroring" class="collection-card-title-link">
+                    <h3 class="collection-card-title">Hungaroring, Hungary</h3>
+                  </a>
+                  <img src="/assets/products/track_hungaroring.png" alt="Hungaroring Track Outline" class="collection-icon-img" />
+                </div>
+                <div class="collection-card-sub">Available in A4, A3, A2</div>
+                <div class="collection-card-footer">
+                  <div class="collection-rating-stars" aria-label="4 out of 5 stars">
+                    <span class="star-filled">★</span><span class="star-filled">★</span><span class="star-filled">★</span><span class="star-filled">★</span><span class="star-empty">★</span>
+                  </div>
+                  <div class="collection-price-col">
+                    <span class="collection-price-val">£19.99</span>
+                  </div>
+                  <button class="collection-quick-add-btn js-quick-add" data-product-id="hungaroring" aria-label="Quick add Hungaroring to cart">
+                    <span>QUICK ADD</span>
+                    <span class="plus">+</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 4: Barcelona -->
+            <article class="collection-card" data-category="formula1" data-product-id="barcelona">
+              <div class="collection-media-box">
+                <a href="#product/barcelona" class="collection-media-link" aria-label="View Barcelona Framed Print">
+                  <img src="/assets/products/barcelona_circuit_art.jpg" alt="Barcelona Circuit Wall Art" class="collection-card-img" />
+                </a>
+              </div>
+              <div class="collection-card-body">
+                <div class="collection-title-row">
+                  <a href="#product/barcelona" class="collection-card-title-link">
+                    <h3 class="collection-card-title">Barcelona, Spain</h3>
+                  </a>
+                  <img src="/assets/products/track_barcelona.png" alt="Barcelona Track Outline" class="collection-icon-img" />
+                </div>
+                <div class="collection-card-sub">Available in A4, A3, A2</div>
+                <div class="collection-card-footer">
+                  <div class="collection-rating-stars" aria-label="5 out of 5 stars">
+                    <span class="star-filled">★</span><span class="star-filled">★</span><span class="star-filled">★</span><span class="star-filled">★</span><span class="star-filled">★</span>
+                  </div>
+                  <div class="collection-price-col">
+                    <span class="collection-price-val">£19.99</span>
+                  </div>
+                  <button class="collection-quick-add-btn js-quick-add" data-product-id="barcelona" aria-label="Quick add Barcelona to cart">
+                    <span>QUICK ADD</span>
+                    <span class="plus">+</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Driver Art Collection Section -->
+      <section class="collection-section" id="driverArtSection">
+        <div class="section-container">
+          <div class="collection-header">
+            <div class="collection-title-wrap">
+              <h2 class="collection-title">DRIVER ART</h2>
+              <p class="collection-subtitle">Racing icons, reimagined as wall art.</p>
+            </div>
+            <div class="collection-actions-wrap">
+              <a href="#shop?category=drivers" class="collection-view-all-btn">
+                <span>VIEW ALL (32)</span>
+                <span class="arrow">↗</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Filter Pills -->
+          <div class="collection-pills-row" data-collection="drivers">
+            <button class="collection-pill is-active" data-filter="all">ALL</button>
+            <button class="collection-pill" data-filter="current">CURRENT</button>
+            <button class="collection-pill" data-filter="legends">LEGENDS</button>
+            <button class="collection-pill" data-filter="champions">CHAMPIONS</button>
+          </div>
+
+          <!-- Cards Grid -->
+          <div class="collection-cards-grid" id="driverCollectionGrid">
+            <!-- Card 1: Racing Legend (Charles Leclerc) -->
+            <article class="collection-card" data-category="current" data-product-id="racing-legend-leclerc">
+              <div class="collection-media-box">
+                <a href="#product/racing-legend-leclerc" class="collection-media-link" aria-label="View Racing Legend Leclerc Framed Print">
+                  <img src="/assets/products/driver_art_leclerc.png" alt="Charles Leclerc Racing Legend Wall Art" class="collection-card-img" />
+                </a>
+              </div>
+              <div class="collection-card-body">
+                <div class="collection-title-row">
+                  <a href="#product/racing-legend-leclerc" class="collection-card-title-link">
+                    <h3 class="collection-card-title">Racing Legend</h3>
+                  </a>
+                  <img src="/assets/products/sig_leclerc.png" alt="Charles Leclerc Signature" class="collection-icon-img" />
+                </div>
+                <div class="collection-card-sub">Available in A4, A3, A2</div>
+                <div class="collection-card-footer">
+                  <div class="collection-rating-stars" aria-label="4.5 out of 5 stars">
+                    <span class="star-filled">★</span><span class="star-filled">★</span><span class="star-filled">★</span><span class="star-filled">★</span><span class="star-half">★</span>
+                  </div>
+                  <div class="collection-price-col">
+                    <span class="collection-price-val">£19.99</span>
+                  </div>
+                  <button class="collection-quick-add-btn js-quick-add" data-product-id="racing-legend-leclerc" aria-label="Quick add Racing Legend to cart">
+                    <span>QUICK ADD</span>
+                    <span class="plus">+</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 2: Race Day (Max Verstappen) -->
+            <article class="collection-card" data-category="champions" data-product-id="race-day-verstappen">
+              <div class="collection-media-box">
+                <a href="#product/race-day-verstappen" class="collection-media-link" aria-label="View Race Day Verstappen Framed Print">
+                  <img src="/assets/products/driver_art_verstappen.png" alt="Max Verstappen Race Day Wall Art" class="collection-card-img" />
+                </a>
+              </div>
+              <div class="collection-card-body">
+                <div class="collection-title-row">
+                  <a href="#product/race-day-verstappen" class="collection-card-title-link">
+                    <h3 class="collection-card-title">Race Day</h3>
+                  </a>
+                  <img src="/assets/products/sig_verstappen.png" alt="Max Verstappen Signature" class="collection-icon-img" />
+                </div>
+                <div class="collection-card-sub">Available in A4, A3, A2</div>
+                <div class="collection-card-footer">
+                  <div class="collection-rating-stars" aria-label="5 out of 5 stars">
+                    <span class="star-filled">★</span><span class="star-filled">★</span><span class="star-filled">★</span><span class="star-filled">★</span><span class="star-filled">★</span>
+                  </div>
+                  <div class="collection-price-col">
+                    <span class="collection-price-val">£19.99</span>
+                  </div>
+                  <button class="collection-quick-add-btn js-quick-add" data-product-id="race-day-verstappen" aria-label="Quick add Race Day to cart">
+                    <span>QUICK ADD</span>
+                    <span class="plus">+</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 3: The Champion (Lewis Hamilton) -->
+            <article class="collection-card" data-category="champions" data-product-id="the-champion-hamilton">
+              <div class="collection-media-box">
+                <a href="#product/the-champion-hamilton" class="collection-media-link" aria-label="View The Champion Hamilton Framed Print">
+                  <img src="/assets/products/driver_art_hamilton.png" alt="Lewis Hamilton The Champion Wall Art" class="collection-card-img" />
+                </a>
+              </div>
+              <div class="collection-card-body">
+                <div class="collection-title-row">
+                  <a href="#product/the-champion-hamilton" class="collection-card-title-link">
+                    <h3 class="collection-card-title">The Champion</h3>
+                  </a>
+                  <img src="/assets/products/sig_hamilton.png" alt="Lewis Hamilton Signature" class="collection-icon-img" />
+                </div>
+                <div class="collection-card-sub">Available in A4, A3, A2</div>
+                <div class="collection-card-footer">
+                  <div class="collection-rating-stars" aria-label="4.5 out of 5 stars">
+                    <span class="star-filled">★</span><span class="star-filled">★</span><span class="star-filled">★</span><span class="star-filled">★</span><span class="star-half">★</span>
+                  </div>
+                  <div class="collection-price-col">
+                    <span class="collection-price-val">£19.99</span>
+                  </div>
+                  <button class="collection-quick-add-btn js-quick-add" data-product-id="the-champion-hamilton" aria-label="Quick add The Champion to cart">
+                    <span>QUICK ADD</span>
+                    <span class="plus">+</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 4: Pole Position (Lando Norris) -->
+            <article class="collection-card" data-category="current" data-product-id="pole-position-norris">
+              <div class="collection-media-box">
+                <a href="#product/pole-position-norris" class="collection-media-link" aria-label="View Pole Position Norris Framed Print">
+                  <img src="/assets/products/driver_art_norris.png" alt="Lando Norris Pole Position Wall Art" class="collection-card-img" />
+                </a>
+              </div>
+              <div class="collection-card-body">
+                <div class="collection-title-row">
+                  <a href="#product/pole-position-norris" class="collection-card-title-link">
+                    <h3 class="collection-card-title">Pole Position</h3>
+                  </a>
+                  <img src="/assets/products/sig_norris.png" alt="Lando Norris Signature" class="collection-icon-img" />
+                </div>
+                <div class="collection-card-sub">Available in A4, A3, A2</div>
+                <div class="collection-card-footer">
+                  <div class="collection-rating-stars" aria-label="5 out of 5 stars">
+                    <span class="star-filled">★</span><span class="star-filled">★</span><span class="star-filled">★</span><span class="star-filled">★</span><span class="star-filled">★</span>
+                  </div>
+                  <div class="collection-price-col">
+                    <span class="collection-price-val">£19.99</span>
+                  </div>
+                  <button class="collection-quick-add-btn js-quick-add" data-product-id="pole-position-norris" aria-label="Quick add Pole Position to cart">
+                    <span>QUICK ADD</span>
+                    <span class="plus">+</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Fan Favourites 4-Column Product Grid -->
       <section class="store-catalog-section" id="shopCatalogSection">
         <div class="section-container">
           <div class="fan-favourites-header">
@@ -428,7 +740,7 @@
         </div>
       </section>
 
-      <!-- 5. Editorial Display Banner ("YOUR PASSION. ON DISPLAY.") -->
+      <!-- 7. Editorial Display Banner ("YOUR PASSION. ON DISPLAY.") -->
       <section class="editorial-display-section">
         <div class="section-container">
           <div class="display-banner-card">
@@ -441,7 +753,7 @@
               </a>
             </div>
             <div class="display-banner-visual">
-              <img src="/assets/lifestyle/monaco_banner_clean.png" alt="Monaco Grand Prix Framed Print in Home Decor" class="display-banner-img" />
+              <img src="/assets/lifestyle/monaco_banner_sunlit.png" alt="Monaco Grand Prix Framed Print in Sunlit Room with Motorsport Books" class="display-banner-img" />
             </div>
           </div>
         </div>

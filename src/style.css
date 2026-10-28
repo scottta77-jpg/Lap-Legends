@@ -1111,23 +1111,43 @@ body.menu-locked, body.cart-open {
    EDITORIAL HERO SECTION (LEGENDS. FRAMED.)
    ========================================================================== */
 .editorial-hero-section {
-  background: #1e2419;
+  background-color: #121512;
+  background-image: radial-gradient(circle at 68% 46%, rgba(28, 36, 26, 0.4) 0%, rgba(14, 17, 14, 0.95) 75%), url('/assets/lifestyle/hero_bg_clean.jpg');
+  background-size: cover;
+  background-position: center bottom;
   color: var(--bg-ivory);
   position: relative;
   overflow: hidden;
+  border-bottom: 2px solid var(--electric-lime);
+}
+
+.editorial-hero-notch {
+  position: absolute;
+  top: -1px;
+  left: 44px;
+  width: 170px;
+  height: 20px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.editorial-hero-notch svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .hero-container-layout {
   max-width: 1360px;
   margin: 0 auto;
-  padding: 44px 44px 36px 44px;
+  padding: 44px 44px 32px 44px;
 }
 
 .editorial-grid {
   display: grid;
   grid-template-columns: 1fr 1.25fr;
   align-items: center;
-  gap: 48px;
+  gap: 40px;
   position: relative;
   z-index: 2;
 }
@@ -1154,9 +1174,11 @@ body.menu-locked, body.cart-open {
 }
 
 .editorial-main-title em {
+  font-family: 'Playfair Display', 'Bodoni Moda', Georgia, serif;
   font-style: italic;
   font-weight: 700;
   color: #FFFFFF;
+  letter-spacing: -0.01em;
 }
 
 .editorial-desc {
@@ -1219,15 +1241,40 @@ body.menu-locked, body.cart-open {
 .editorial-visual-col {
   display: flex;
   justify-content: flex-end;
+  position: relative;
+}
+
+.hero-corner-tag {
+  position: absolute;
+  top: 6px;
+  right: 12px;
+  font-family: var(--font-tech);
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: rgba(247, 245, 236, 0.5);
+  text-transform: uppercase;
+  line-height: 1.35;
+  text-align: right;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.hero-corner-tag .arrow {
+  color: var(--electric-lime);
+  font-size: 13px;
+  font-weight: 900;
+  margin-left: 2px;
 }
 
 .editorial-hero-art {
   width: 100%;
-  max-width: 660px;
+  max-width: 680px;
   height: auto;
   display: block;
-  filter: none;
-  border-radius: 4px;
+  filter: drop-shadow(0 20px 36px rgba(0, 0, 0, 0.55));
+  transform: scale(1.02);
+  transform-origin: right bottom;
 }
 
 /* ==========================================================================
@@ -1427,6 +1474,379 @@ body.menu-locked, body.cart-open {
   display: inline-block;
   font-family: system-ui, sans-serif;
   transition: transform 0.25s var(--ease-out-expo);
+}
+
+/* ==========================================================================
+   COLLECTION SECTIONS (CIRCUIT ART & DRIVER ART)
+   ========================================================================== */
+.collection-section {
+  background-color: var(--bg-ivory, #F5F3EC);
+  padding: 68px 0 56px 0;
+  border-bottom: 1px solid rgba(40, 44, 32, 0.08);
+  position: relative;
+}
+
+.collection-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 22px;
+  gap: 24px;
+}
+
+.collection-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.collection-title {
+  font-family: 'Syne', 'Space Grotesk', sans-serif;
+  font-size: clamp(2.4rem, 4.4vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: #111111;
+  line-height: 0.95;
+  text-transform: uppercase;
+  margin: 0;
+  transform: scaleX(1.02);
+  transform-origin: left;
+}
+
+.collection-subtitle {
+  font-family: var(--font-ui, 'Plus Jakarta Sans', sans-serif);
+  font-size: 14.5px;
+  font-weight: 500;
+  color: #555555;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.collection-actions-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.collection-view-all-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 1.5px solid #111111;
+  color: #111111;
+  background: transparent;
+  font-family: var(--font-tech, 'Space Grotesk', sans-serif);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.2s var(--ease-out-expo);
+}
+
+.collection-view-all-btn:hover {
+  background: #111111;
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.collection-view-all-btn .arrow {
+  font-size: 13px;
+  transition: transform 0.2s ease;
+}
+
+.collection-view-all-btn:hover .arrow {
+  transform: translate(2px, -2px);
+}
+
+.collection-pills-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.collection-pill {
+  font-family: var(--font-tech, 'Space Grotesk', sans-serif);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(17, 17, 17, 0.16);
+  background: #FFFFFF;
+  color: #222222;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  line-height: 1;
+}
+
+.collection-pill:hover {
+  border-color: #111111;
+  background: #FAF8F2;
+}
+
+.collection-pill.is-active {
+  background: #181A18;
+  color: #FFFFFF;
+  border-color: #181A18;
+}
+
+.collection-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+@media (max-width: 1100px) {
+  .collection-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .collection-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.collection-card {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  position: relative;
+  transition: transform 0.25s var(--ease-out-expo);
+}
+
+.collection-card:hover {
+  transform: translateY(-4px);
+}
+
+.collection-card.is-hidden {
+  display: none !important;
+}
+
+.collection-media-box {
+  position: relative;
+  background: #EDE8DE;
+  border-radius: 12px;
+  aspect-ratio: 1 / 1.04;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  overflow: hidden;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.collection-media-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.collection-card-img {
+  max-width: 90%;
+  max-height: 92%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  transition: transform 0.35s var(--ease-out-expo);
+  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.14));
+}
+
+.collection-card:hover .collection-card-img {
+  transform: scale(1.03);
+}
+
+.collection-badge-bestseller {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: #181A18;
+  color: #FFFFFF;
+  font-family: var(--font-tech, 'Space Grotesk', sans-serif);
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  z-index: 3;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.collection-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.collection-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.collection-card-title-link {
+  text-decoration: none;
+  color: inherit;
+  flex: 1;
+}
+
+.collection-card-title {
+  font-family: var(--font-ui, 'Plus Jakarta Sans', sans-serif);
+  font-size: 15px;
+  font-weight: 700;
+  color: #111111;
+  margin: 0;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  transition: color 0.15s ease;
+}
+
+.collection-card-title-link:hover .collection-card-title {
+  color: #555555;
+}
+
+.collection-icon-img {
+  height: 24px;
+  max-width: 52px;
+  object-fit: contain;
+  flex-shrink: 0;
+  opacity: 0.9;
+  mix-blend-mode: multiply;
+}
+
+.collection-card-sub {
+  font-family: var(--font-ui, 'Plus Jakarta Sans', sans-serif);
+  font-size: 12.5px;
+  color: #777777;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.collection-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  min-height: 36px;
+}
+
+.collection-rating-stars {
+  display: inline-flex;
+  gap: 2px;
+  color: #111111;
+  font-size: 13px;
+  line-height: 1;
+  transition: opacity 0.2s ease;
+}
+
+.collection-rating-stars .star-filled {
+  color: #111111;
+}
+
+.collection-rating-stars .star-half {
+  color: #111111;
+  opacity: 0.38;
+}
+
+.collection-rating-stars .star-empty {
+  color: #111111;
+  opacity: 0.18;
+}
+
+.collection-price-col {
+  display: flex;
+  align-items: center;
+  transition: opacity 0.2s ease;
+}
+
+.collection-price-val {
+  font-family: var(--font-tech, 'Space Grotesk', sans-serif);
+  font-size: 15px;
+  font-weight: 700;
+  color: #111111;
+  line-height: 1;
+}
+
+.collection-quick-add-btn {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 999px;
+  border: 1.5px solid #111111;
+  background: var(--bg-ivory, #F5F3EC);
+  color: #111111;
+  font-family: var(--font-tech, 'Space Grotesk', sans-serif);
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.97);
+  transition: all 0.2s var(--ease-out-expo);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.collection-card:hover .collection-quick-add-btn {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+.collection-card:hover .collection-price-col,
+.collection-card:hover .collection-rating-stars {
+  opacity: 0;
+}
+
+.collection-quick-add-btn:hover {
+  background: #111111;
+  color: #FFFFFF;
+}
+
+.collection-quick-add-btn .plus {
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+@media (hover: none), (max-width: 768px) {
+  .collection-card-footer {
+    min-height: auto;
+    gap: 8px;
+  }
+  .collection-quick-add-btn {
+    position: static;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+    padding: 8px 14px;
+    font-size: 11px;
+    margin-top: 6px;
+    width: 100%;
+  }
+  .collection-card:hover .collection-price-col,
+  .collection-card:hover .collection-rating-stars {
+    opacity: 1;
+  }
+  .collection-card-body {
+    gap: 6px;
+  }
 }
 
 /* ==========================================================================

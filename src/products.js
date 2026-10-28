@@ -481,6 +481,272 @@ export const PRODUCTS = [
       glazing: 'Shatterproof acrylic'
     },
     relatedIds: ['race-calendar', 'lando-norris', 'lewis-hamilton', 'silverstone']
+  },
+  {
+    id: 'racing-legend-leclerc',
+    slug: 'racing-legend-charles-leclerc',
+    title: 'RACING LEGEND (CHARLES LECLERC) FRAMED PRINT',
+    shortTitle: 'Racing Legend',
+    category: 'drivers',
+    categoryLabel: 'DRIVER ART',
+    subcategory: 'current',
+    price: 19.99,
+    currency: 'GBP',
+    formattedPrice: '£19.99 GBP',
+    driver: 'Charles Leclerc',
+    number: '16',
+    team: 'Scuderia Ferrari HP',
+    description: 'The Monegasque virtuoso. Distinctive split helmet and Ferrari scarlet livery portrait with digitally reproduced Charles Leclerc signature, framed in black timber.',
+    format: 'A4 / BLACK FRAME',
+    signature: 'Reproduced Charles Leclerc signature.',
+    amazonUrl: AMAZON_STORE_URL,
+    homeFrame: '/assets/products/driver_art_leclerc.png',
+    signatureIcon: '/assets/products/sig_leclerc.png',
+    rating: 4.5,
+    defaultStyle: 'framed',
+    styles: [
+      { id: 'framed', label: 'FRAMED ART', image: '/assets/products/driver_art_leclerc.png', caption: 'Charles Leclerc #16 Racing Legend Art' }
+    ],
+    gallery: [
+      '/assets/products/driver_art_leclerc.png',
+      '/assets/products/frame_spec.jpg'
+    ],
+    details: [
+      'Black wooden gallery frame with satin finish',
+      'Archival 250gsm museum print',
+      'Digitally reproduced Charles Leclerc signature',
+      'Ready to display on wall or tabletop'
+    ],
+    dimensions: {
+      frame: '22.5 x 32.5 cm',
+      print: 'A4 (21 x 29.7 cm)',
+      depth: '18 mm',
+      glazing: 'Optical grade acrylic front'
+    },
+    relatedIds: ['race-day-verstappen', 'the-champion-hamilton', 'pole-position-norris', 'monaco']
+  },
+  {
+    id: 'race-day-verstappen',
+    slug: 'race-day-max-verstappen',
+    title: 'RACE DAY (MAX VERSTAPPEN) FRAMED PRINT',
+    shortTitle: 'Race Day',
+    category: 'drivers',
+    categoryLabel: 'DRIVER ART',
+    subcategory: 'champions',
+    price: 19.99,
+    currency: 'GBP',
+    formattedPrice: '£19.99 GBP',
+    driver: 'Max Verstappen',
+    number: '1',
+    team: 'Red Bull Racing',
+    description: 'Championship dominance in frame. Official #1 race day portrait with Max Verstappen digital signature and gold championship styling, pre-framed in satin black timber.',
+    format: 'A4 / BLACK FRAME',
+    signature: 'Reproduced Max Verstappen signature.',
+    amazonUrl: AMAZON_STORE_URL,
+    homeFrame: '/assets/products/driver_art_verstappen.png',
+    signatureIcon: '/assets/products/sig_verstappen.png',
+    rating: 5.0,
+    defaultStyle: 'framed',
+    styles: [
+      { id: 'framed', label: 'FRAMED ART', image: '/assets/products/driver_art_verstappen.png', caption: 'Max Verstappen #1 Race Day Art' }
+    ],
+    gallery: [
+      '/assets/products/driver_art_verstappen.png',
+      '/assets/products/frame_spec.jpg'
+    ],
+    details: [
+      'Solid wooden gallery frame with satin finish',
+      'Archival 250gsm museum paper',
+      'Digitally reproduced Max Verstappen signature',
+      'Ready to hang or stand'
+    ],
+    dimensions: {
+      frame: '22.5 x 32.5 cm',
+      print: 'A4 (21 x 29.7 cm)',
+      depth: '18 mm',
+      glazing: 'Optical grade acrylic front'
+    },
+    relatedIds: ['racing-legend-leclerc', 'the-champion-hamilton', 'pole-position-norris', 'silverstone']
+  },
+  {
+    id: 'the-champion-hamilton',
+    slug: 'the-champion-lewis-hamilton',
+    title: 'THE CHAMPION (LEWIS HAMILTON) FRAMED PRINT',
+    shortTitle: 'The Champion',
+    category: 'drivers',
+    categoryLabel: 'DRIVER ART',
+    subcategory: 'champions',
+    price: 19.99,
+    currency: 'GBP',
+    formattedPrice: '£19.99 GBP',
+    driver: 'Lewis Hamilton',
+    number: '44',
+    team: 'Mercedes-AMG Petronas F1 Team',
+    description: 'The seven-time World Champion. Iconic #44 podium back portrait with neon yellow helmet accents and authentic digital signature, mounted in black timber moulding.',
+    format: 'A4 / BLACK FRAME',
+    signature: 'Reproduced Lewis Hamilton signature.',
+    amazonUrl: AMAZON_STORE_URL,
+    homeFrame: '/assets/products/driver_art_hamilton.png',
+    signatureIcon: '/assets/products/sig_hamilton.png',
+    rating: 4.5,
+    defaultStyle: 'framed',
+    styles: [
+      { id: 'framed', label: 'FRAMED ART', image: '/assets/products/driver_art_hamilton.png', caption: 'Lewis Hamilton #44 The Champion Art' }
+    ],
+    gallery: [
+      '/assets/products/driver_art_hamilton.png',
+      '/assets/products/frame_spec.jpg'
+    ],
+    details: [
+      'Black wooden gallery frame with satin finish',
+      'Archival 250gsm museum print',
+      'Digitally reproduced Lewis Hamilton signature',
+      'Ready to display on wall or tabletop'
+    ],
+    dimensions: {
+      frame: '22.5 x 32.5 cm',
+      print: 'A4 (21 x 29.7 cm)',
+      depth: '18 mm',
+      glazing: 'Optical grade acrylic front'
+    },
+    relatedIds: ['racing-legend-leclerc', 'race-day-verstappen', 'pole-position-norris', 'silverstone']
+  },
+  {
+    id: 'pole-position-norris',
+    slug: 'pole-position-lando-norris',
+    title: 'POLE POSITION (LANDO NORRIS) FRAMED PRINT',
+    shortTitle: 'Pole Position',
+    category: 'drivers',
+    categoryLabel: 'DRIVER ART',
+    subcategory: 'current',
+    price: 19.99,
+    currency: 'GBP',
+    formattedPrice: '£19.99 GBP',
+    driver: 'Lando Norris',
+    number: '4',
+    team: 'McLaren F1 Team',
+    description: 'Formula 1 sensation. High-impact Papaya livery artwork with Lando Norris neon helmet detail and digital signature, framed in black timber.',
+    format: 'A4 / BLACK FRAME',
+    signature: 'Reproduced Lando Norris signature.',
+    amazonUrl: AMAZON_STORE_URL,
+    homeFrame: '/assets/products/driver_art_norris.png',
+    signatureIcon: '/assets/products/sig_norris.png',
+    rating: 5.0,
+    defaultStyle: 'framed',
+    styles: [
+      { id: 'framed', label: 'FRAMED ART', image: '/assets/products/driver_art_norris.png', caption: 'Lando Norris #4 Pole Position Art' }
+    ],
+    gallery: [
+      '/assets/products/driver_art_norris.png',
+      '/assets/products/frame_spec.jpg'
+    ],
+    details: [
+      'Black wooden gallery frame with satin finish',
+      'Archival 250gsm museum print',
+      'Digitally reproduced Lando Norris signature',
+      'Ready to display on wall or tabletop'
+    ],
+    dimensions: {
+      frame: '22.5 x 32.5 cm',
+      print: 'A4 (21 x 29.7 cm)',
+      depth: '18 mm',
+      glazing: 'Optical grade acrylic front'
+    },
+    relatedIds: ['racing-legend-leclerc', 'race-day-verstappen', 'the-champion-hamilton', 'silverstone']
+  }
+];
+
+export const CIRCUIT_COLLECTION_PRODUCTS = [
+  {
+    id: 'silverstone',
+    title: 'Silverstone, Great Britain',
+    subtitle: 'Available in A4, A3, A2',
+    image: '/assets/products/silverstone_circuit_art.jpg',
+    trackIcon: '/assets/products/track_silverstone.png',
+    rating: 4.5,
+    price: 19.99,
+    category: 'classic',
+    badge: null
+  },
+  {
+    id: 'monaco',
+    title: 'Monaco, Monte Carlo',
+    subtitle: 'Available in A4, A3, A2',
+    image: '/assets/products/monaco_circuit_art.jpg',
+    trackIcon: '/assets/products/track_monaco.png',
+    rating: 5.0,
+    price: 19.99,
+    category: 'street',
+    badge: 'BESTSELLER'
+  },
+  {
+    id: 'hungaroring',
+    title: 'Hungaroring, Hungary',
+    subtitle: 'Available in A4, A3, A2',
+    image: '/assets/products/hungaroring_circuit_art.jpg',
+    trackIcon: '/assets/products/track_hungaroring.png',
+    rating: 4.0,
+    price: 19.99,
+    category: 'formula1',
+    badge: null
+  },
+  {
+    id: 'barcelona',
+    title: 'Barcelona, Spain',
+    subtitle: 'Available in A4, A3, A2',
+    image: '/assets/products/barcelona_circuit_art.jpg',
+    trackIcon: '/assets/products/track_barcelona.png',
+    rating: 5.0,
+    price: 19.99,
+    category: 'formula1',
+    badge: null
+  }
+];
+
+export const DRIVER_COLLECTION_PRODUCTS = [
+  {
+    id: 'racing-legend-leclerc',
+    title: 'Racing Legend',
+    subtitle: 'Available in A4, A3, A2',
+    image: '/assets/products/driver_art_leclerc.png',
+    sigIcon: '/assets/products/sig_leclerc.png',
+    rating: 4.5,
+    price: 19.99,
+    category: 'current',
+    badge: null
+  },
+  {
+    id: 'race-day-verstappen',
+    title: 'Race Day',
+    subtitle: 'Available in A4, A3, A2',
+    image: '/assets/products/driver_art_verstappen.png',
+    sigIcon: '/assets/products/sig_verstappen.png',
+    rating: 5.0,
+    price: 19.99,
+    category: 'champions',
+    badge: null
+  },
+  {
+    id: 'the-champion-hamilton',
+    title: 'The Champion',
+    subtitle: 'Available in A4, A3, A2',
+    image: '/assets/products/driver_art_hamilton.png',
+    sigIcon: '/assets/products/sig_hamilton.png',
+    rating: 4.5,
+    price: 19.99,
+    category: 'champions',
+    badge: null
+  },
+  {
+    id: 'pole-position-norris',
+    title: 'Pole Position',
+    subtitle: 'Available in A4, A3, A2',
+    image: '/assets/products/driver_art_norris.png',
+    sigIcon: '/assets/products/sig_norris.png',
+    rating: 5.0,
+    price: 19.99,
+    category: 'current',
+    badge: null
   }
 ];
 

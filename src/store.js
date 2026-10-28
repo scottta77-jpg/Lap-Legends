@@ -86,6 +86,30 @@ export class StoreManager {
         }
       }
     });
+
+    // Collection section filter pills (Circuit Art and Driver Art)
+    document.querySelectorAll('.collection-pills-row').forEach(row => {
+      const pills = row.querySelectorAll('.collection-pill');
+      const section = row.closest('.collection-section');
+      const cards = section ? section.querySelectorAll('.collection-card') : [];
+
+      pills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          pills.forEach(p => p.classList.remove('is-active'));
+          pill.classList.add('is-active');
+          const filter = pill.dataset.filter || 'all';
+
+          cards.forEach(card => {
+            const cardCat = card.dataset.category || '';
+            if (filter === 'all' || cardCat === filter) {
+              card.classList.remove('is-hidden');
+            } else {
+              card.classList.add('is-hidden');
+            }
+          });
+        });
+      });
+    });
   }
 
   handleRoute() {
