@@ -2355,12 +2355,12 @@ body.menu-locked, body.cart-open {
 }
 
 .footer-bg-img {
-  width: 32rem;
-  max-width: 36vw;
+  width: 33rem;
+  max-width: 38vw;
   height: auto;
   object-fit: contain;
   position: relative;
-  bottom: 0;
+  bottom: -0.75rem;
   display: block;
 }
 
