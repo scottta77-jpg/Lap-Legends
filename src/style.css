@@ -1048,26 +1048,6 @@ body.menu-locked, body.cart-open {
   opacity: 0.85;
 }
 
-.header-hero-pill {
-  font-family: var(--font-tech);
-  font-size: 9.5px;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  background: rgba(210, 255, 0, 0.4);
-  color: #181A18;
-  padding: 3px 9px;
-  border-radius: 999px;
-  text-decoration: none;
-  line-height: 1;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.header-hero-pill:hover {
-  background: var(--electric-lime);
-  transform: translateY(-1px);
-}
-
 .header-nav-links {
   display: flex;
   align-items: center;
