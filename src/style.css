@@ -3926,6 +3926,7 @@ dialog.info-modal[open] .info-modal-card {
   gap: 12px;
 }
 
+.collection-reel-title .txt-the,
 .collection-reel-title .txt-sans {
   font-family: var(--font-tech, 'Syne', sans-serif);
   font-weight: 800;
@@ -3933,10 +3934,12 @@ dialog.info-modal[open] .info-modal-card {
   letter-spacing: 0.01em;
 }
 
+.collection-reel-title .txt-collection,
 .collection-reel-title .txt-italic-lime {
   font-family: 'Playfair Display', Georgia, serif;
   font-style: italic;
   font-weight: 400;
+  font-size: 1.1em;
   color: var(--electric-lime, #d2ff00);
   text-shadow: 0 0 24px rgba(210, 255, 0, 0.35);
 }
