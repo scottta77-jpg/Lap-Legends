@@ -3686,66 +3686,56 @@ dialog.info-modal[open] .info-modal-card {
 
 /* --------------------------------------------------------------------------
    1. Typographic Statement Banner ("FOR THE FANS. FOR THE MOMENTS. FOR THE WALL.")
+      Full Bleed Edge-to-Edge Section
    -------------------------------------------------------------------------- */
 .statement-banner-section {
-  padding: 60px 0;
-  background: var(--dark-olive, #161b13);
-  position: relative;
-  overflow: hidden;
-}
-
-.statement-banner-container {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 32px;
-}
-
-.statement-banner-card {
   position: relative;
   width: 100%;
-  aspect-ratio: 1024 / 342;
-  min-height: 320px;
-  border-radius: 16px;
-  overflow: hidden;
+  min-height: clamp(380px, 31vw, 620px);
+  padding: clamp(64px, 5.5vw, 100px) 24px clamp(68px, 6vw, 110px);
   background-color: #171d15;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  background-image: url('/assets/lifestyle/statement_ribbon_bg.png');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
 }
 
-.statement-banner-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(210, 255, 0, 0.12);
-}
-
-.statement-banner-bg-img {
+.statement-banner-bg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
   pointer-events: none;
   z-index: 1;
 }
 
-.statement-banner-content {
+.statement-banner-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.statement-banner-inner {
   position: relative;
   z-index: 2;
   width: 100%;
-  height: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 24px 20px;
   user-select: text;
 }
 
+.statement-banner-inner *::selection,
 .statement-banner-content *::selection {
   background: var(--electric-lime, #d2ff00);
   color: #161b13;
@@ -4222,21 +4212,12 @@ dialog.info-modal[open] .info-modal-card {
 
 @media (max-width: 860px) {
   .statement-banner-section {
-    padding: 40px 0;
+    min-height: 280px;
+    padding: 50px 16px;
   }
 
-  .statement-banner-container {
-    padding: 0 16px;
-  }
-
-  .statement-banner-card {
-    aspect-ratio: auto;
-    min-height: 250px;
-    padding: 32px 14px;
-  }
-
-  .statement-banner-content {
-    padding: 16px 8px;
+  .statement-banner-inner {
+    padding: 10px 8px;
   }
 
   .moments-gallery-section {
