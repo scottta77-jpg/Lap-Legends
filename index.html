@@ -266,34 +266,55 @@
        ========================================================================= -->
   <div id="storeViewsWrapper" class="store-wrapper" style="display: none;">
 
-    <!-- Store Global Header Navigation (Matches Reference Mockup) -->
+    <!-- Top Announcement Bar -->
+    <div class="store-announcement-bar">
+      <span>MOTORSPORT. MADE PERSONAL. — FREE UK TRACKED DELIVERY ON ALL FRAMED PRINTS</span>
+    </div>
+
+    <!-- Store Global Header Navigation (Matches Reference) -->
     <header class="site-global-header" id="siteHeader">
       <div class="header-inner">
-        <!-- Left: Logo -->
+        <!-- Left: Logo + Track + Hero Pill -->
         <div class="header-left">
           <a href="#store" class="brand-link" aria-label="Lap Legends Store Home">
             <img src="/assets/logo_transparent.png" alt="Lap Legends" class="brand-logo-img" />
           </a>
+          <div class="header-circuit-badge">
+            <img src="/assets/circuit_transparent.png" alt="Silverstone Circuit" class="header-circuit-icon" />
+            <a href="#landing" class="header-hero-pill" aria-label="Go to interactive hero showcase">HERO</a>
+          </div>
         </div>
 
         <!-- Center: Store Navigation Links -->
         <nav class="header-nav-links" aria-label="Main Navigation">
+          <a href="#store" class="nav-item">HOME</a>
           <a href="#shop" class="nav-item">SHOP</a>
           <a href="#shop?category=drivers" class="nav-item">DRIVERS</a>
           <a href="#shop?category=circuits" class="nav-item">CIRCUITS</a>
+          <a href="#circuitArtSection" class="nav-item">COLLECTIONS</a>
           <a href="#about" class="nav-item js-open-story">OUR STORY</a>
+          <a href="#landing" class="nav-showcase-pill" aria-label="Interactive 3D Showcase">SHOWCASE ⚡</a>
         </nav>
 
-        <!-- Right: Shop Collection CTA & Shopping Bag Trigger -->
+        <!-- Right: Currency, Support, Search & Shopping Bag Trigger -->
         <div class="header-actions">
-          <a href="#shopCatalogSection" class="btn-store-lime-cta">
-            <span>SHOP COLLECTION</span>
-            <span class="arrow">→</span>
-          </a>
+          <div class="header-currency-pill" title="Currency: GBP (£)">
+            <span>GBP (£)</span>
+          </div>
+
+          <a href="#support" class="nav-item header-support-link js-open-support">SUPPORT</a>
+
+          <!-- Search Trigger -->
+          <button class="action-icon-btn search-trigger js-search-trigger" aria-label="Search prints">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
 
           <!-- Shopping Bag Trigger -->
           <button class="action-icon-btn cart-trigger js-cart-trigger" aria-label="Open Shopping Bag">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
               <line x1="3" y1="6" x2="21" y2="6"></line>
               <path d="M16 10a4 4 0 0 1-8 0"></path>
@@ -311,12 +332,6 @@
 
       <!-- 1. Legends Framed Editorial Hero Section (Top of Store) -->
       <section class="editorial-hero-section">
-        <!-- Top Tab Notch Cutout matching Hero reference -->
-        <div class="editorial-hero-notch" aria-hidden="true">
-          <svg viewBox="0 0 320 36" preserveAspectRatio="none">
-            <path d="M 0,0 L 40,0 C 56,0 66,16 78,28 C 88,36 98,36 112,36 L 208,36 C 222,36 232,36 242,28 C 254,16 264,0 280,0 L 320,0 Z" fill="#F5F3EC" />
-          </svg>
-        </div>
 
         <div class="section-container hero-container-layout">
           <div class="editorial-grid">
