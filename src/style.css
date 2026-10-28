@@ -2134,7 +2134,7 @@ body.menu-locked, body.cart-open {
 .s.is-footer {
   position: relative;
   background-color: #d2ff00;
-  padding: 1.25rem 1.25rem 0.5rem 1.25rem;
+  padding: 1.25rem 1.25rem 0 1.25rem;
   overflow: hidden;
   z-index: 10;
   box-sizing: border-box;
@@ -2402,22 +2402,32 @@ body.menu-locked, body.cart-open {
 }
 
 
-/* Legal Links Bar at Bottom */
+/* Legal Links Bar at Bottom (Slots into the side cutout notches of the card mask) */
 .footer-legal-links-w {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 0.65rem 1.8rem 0.25rem 1.8rem;
-  position: relative;
+  position: absolute;
+  bottom: 0.45rem;
+  left: 0;
+  right: 0;
+  padding: 0 1.6rem;
   z-index: 10;
+  pointer-events: none;
   box-sizing: border-box;
+}
+
+.footer-legal-links-col {
+  pointer-events: auto;
 }
 
 .text-legal-copyright {
   font-family: 'Mona Sans Variable', 'Syne', sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: #111112;
+  white-space: nowrap;
+  line-height: 1;
 }
 
 .text-legal-copyright strong {
@@ -2427,17 +2437,19 @@ body.menu-locked, body.cart-open {
 .links-legal-items {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .text-legal-link {
   font-family: 'Mona Sans Variable', 'Syne', sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 800;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #111112;
   text-decoration: none;
+  white-space: nowrap;
+  line-height: 1;
   transition: opacity 0.2s ease;
 }
 
@@ -2520,10 +2532,16 @@ body.menu-locked, body.cart-open {
     max-width: 65vw;
   }
   .footer-legal-links-w {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
     flex-direction: column;
     gap: 0.5rem;
     text-align: center;
     padding: 0.75rem 0.5rem;
+    margin-top: 1rem;
+    pointer-events: auto;
   }
 }
 
