@@ -2615,6 +2615,82 @@ body.menu-locked, body.cart-open {
   grid-template-columns: 1fr 1fr;
   gap: 10px;
   font-size: 13px;
+  margin-bottom: 18px;
+}
+
+.pdp-dimension-box {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(210, 255, 0, 0.22);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-top: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s var(--ease-out-expo);
+}
+
+.pdp-dimension-box:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--electric-lime);
+  transform: translateY(-2px);
+}
+
+.pdp-dimension-img {
+  width: 80px;
+  height: 96px;
+  object-fit: contain;
+  background: rgba(245, 243, 236, 0.96);
+  border-radius: 6px;
+  padding: 5px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s var(--ease-out-expo), box-shadow 0.25s ease;
+}
+
+.pdp-dimension-box:hover .pdp-dimension-img {
+  transform: scale(1.06);
+  box-shadow: 0 6px 18px rgba(210, 255, 0, 0.35);
+}
+
+.pdp-dimension-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+.pdp-dimension-info strong {
+  font-family: var(--font-tech);
+  color: var(--electric-lime);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
+
+.pdp-dimension-info span {
+  opacity: 0.85;
+}
+
+.pdp-dimension-action {
+  font-family: var(--font-tech);
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--electric-lime);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 2px;
+  opacity: 1 !important;
+}
+
+@media (max-width: 600px) {
+  .pdp-dimension-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 /* Related Products Section (YOU MIGHT ALSO LIKE) */

@@ -34,7 +34,7 @@ export const PRODUCTS = [
       '/assets/products/lando_home_frame.png',
       '/assets/products/lando_helmet_framed.png',
       '/assets/products/lando_standing_frame.png',
-      '/assets/products/frame_spec.jpg'
+      '/assets/products/frame_spec.png'
     ],
     details: [
       'Black wooden frame with satin finish',
@@ -77,7 +77,7 @@ export const PRODUCTS = [
     gallery: [
       '/assets/products/lewis_home_frame.png',
       '/assets/products/lewis_framed.png',
-      '/assets/products/frame_spec.jpg'
+      '/assets/products/frame_spec.png'
     ],
     details: [
       'Black wooden frame with clean bevelled edge',
@@ -117,7 +117,7 @@ export const PRODUCTS = [
     ],
     gallery: [
       '/assets/products/silverstone_home_frame.png',
-      '/assets/products/frame_spec.jpg'
+      '/assets/products/frame_spec.png'
     ],
     details: [
       'Precision circuit contour on matte museum card',
@@ -157,7 +157,7 @@ export const PRODUCTS = [
     ],
     gallery: [
       '/assets/products/calendar_home_frame.png',
-      '/assets/products/frame_spec.jpg'
+      '/assets/products/frame_spec.png'
     ],
     details: [
       'All 24 Grand Prix tracks plotted in accurate scale',
@@ -197,7 +197,7 @@ export const PRODUCTS = [
     ],
     gallery: [
       '/assets/products/oscar_home_frame.png',
-      '/assets/products/frame_spec.jpg'
+      '/assets/products/frame_spec.png'
     ],
     details: [
       'Solid timber frame with deep matte black finish',
@@ -236,7 +236,7 @@ export const PRODUCTS = [
     ],
     gallery: [
       '/assets/products/monaco_home_frame.png',
-      '/assets/products/frame_spec.jpg'
+      '/assets/products/frame_spec.png'
     ],
     details: [
       'Crisp high-contrast technical typography',
@@ -275,7 +275,7 @@ export const PRODUCTS = [
     ],
     gallery: [
       '/assets/products/charles_home_frame.png',
-      '/assets/products/frame_spec.jpg'
+      '/assets/products/frame_spec.png'
     ],
     details: [
       'Official Ferrari red and white helmet livery art',
@@ -314,7 +314,7 @@ export const PRODUCTS = [
     ],
     gallery: [
       '/assets/products/kimi_home_frame.png',
-      '/assets/products/frame_spec.jpg'
+      '/assets/products/frame_spec.png'
     ],
     details: [
       'Black wooden frame with satin finish',
@@ -353,7 +353,7 @@ export const PRODUCTS = [
     ],
     gallery: [
       '/assets/products/russell_home_frame.png',
-      '/assets/products/frame_spec.jpg'
+      '/assets/products/frame_spec.png'
     ],
     details: [
       'Black wooden gallery frame with satin finish',
@@ -391,7 +391,7 @@ export const PRODUCTS = [
     ],
     gallery: [
       '/assets/products/hungaroring_home_frame.png',
-      '/assets/products/frame_spec.jpg'
+      '/assets/products/frame_spec.png'
     ],
     details: [
       'Archival 250gsm museum paper',
@@ -429,7 +429,7 @@ export const PRODUCTS = [
     ],
     gallery: [
       '/assets/products/barcelona_home_frame.png',
-      '/assets/products/frame_spec.jpg'
+      '/assets/products/frame_spec.png'
     ],
     details: [
       'High-clarity print with official sector turns',
@@ -467,7 +467,7 @@ export const PRODUCTS = [
     ],
     gallery: [
       '/assets/products/helmets_home_frame.png',
-      '/assets/products/frame_spec.jpg'
+      '/assets/products/frame_spec.png'
     ],
     details: [
       'All 20 F1 driver helmets in official team liveries',
@@ -509,7 +509,7 @@ export const PRODUCTS = [
     ],
     gallery: [
       '/assets/products/driver_art_leclerc.png',
-      '/assets/products/frame_spec.jpg'
+      '/assets/products/frame_spec.png'
     ],
     details: [
       'Black wooden gallery frame with satin finish',
@@ -552,7 +552,7 @@ export const PRODUCTS = [
     ],
     gallery: [
       '/assets/products/driver_art_verstappen.png',
-      '/assets/products/frame_spec.jpg'
+      '/assets/products/frame_spec.png'
     ],
     details: [
       'Solid wooden gallery frame with satin finish',
@@ -595,7 +595,7 @@ export const PRODUCTS = [
     ],
     gallery: [
       '/assets/products/driver_art_hamilton.png',
-      '/assets/products/frame_spec.jpg'
+      '/assets/products/frame_spec.png'
     ],
     details: [
       'Black wooden gallery frame with satin finish',
@@ -638,7 +638,7 @@ export const PRODUCTS = [
     ],
     gallery: [
       '/assets/products/driver_art_norris.png',
-      '/assets/products/frame_spec.jpg'
+      '/assets/products/frame_spec.png'
     ],
     details: [
       'Black wooden gallery frame with satin finish',

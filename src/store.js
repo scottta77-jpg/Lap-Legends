@@ -457,6 +457,14 @@ export class StoreManager {
                     <div><strong>Depth:</strong> ${product.dimensions.depth || '18 mm solid wood'}</div>
                     <div><strong>Glazing:</strong> ${product.dimensions.glazing || 'Optical-grade styrene'}</div>
                   </div>
+                  <div class="pdp-dimension-box" id="pdpDimensionBox" title="Click to view full dimension markings in showcase">
+                    <img src="/assets/products/frame_spec.png" alt="Black Frame Dimensions (22.5cm x 32.5cm)" class="pdp-dimension-img" id="pdpDimensionThumb" />
+                    <div class="pdp-dimension-info">
+                      <strong>Black Wooden Profile (22.5 × 32.5 cm)</strong>
+                      <span>Includes rear fold-out easel support and dual wall mounting brackets for vertical or horizontal placement.</span>
+                      <span class="pdp-dimension-action">CLICK TO VIEW IN SHOWCASE ↗</span>
+                    </div>
+                  </div>
                 </div>
               </details>
 
@@ -580,7 +588,43 @@ export class StoreManager {
             mainImg.style.opacity = '1';
           }, 150);
         }
+        if (styleCaption) {
+          if (nextImgUrl.includes('frame_spec')) {
+            styleCaption.textContent = 'Black Frame Specifications & Dimension Markings (22.5cm × 32.5cm)';
+          } else {
+            const activeStyle = product.styles.find(s => s.id === this.selectedStyleId) || product.styles[0];
+            styleCaption.textContent = activeStyle.caption || '';
+          }
+        }
         counterEl.textContent = `0${this.currentGalleryIndex + 1} / 0${product.gallery.length}`;
+        sound.playRevealWhoosh(0.3);
+      });
+    }
+
+    // Click on dimension preview box to switch showcase directly to the frame dimensions
+    const dimBox = this.pdpViewEl.querySelector('#pdpDimensionBox');
+    if (dimBox && mainImg) {
+      dimBox.addEventListener('click', () => {
+        const frameIndex = product.gallery.findIndex(img => img.includes('frame_spec'));
+        if (frameIndex !== -1) {
+          this.currentGalleryIndex = frameIndex;
+          if (counterEl) {
+            counterEl.textContent = `0${frameIndex + 1} / 0${product.gallery.length}`;
+          }
+        }
+        mainImg.style.opacity = '0';
+        setTimeout(() => {
+          mainImg.src = '/assets/products/frame_spec.png';
+          mainImg.style.opacity = '1';
+        }, 150);
+        if (styleCaption) {
+          styleCaption.textContent = 'Black Frame Specifications & Dimension Markings (22.5cm × 32.5cm)';
+        }
+        // If on mobile or scrolled down, smoothly scroll to showcase
+        const showcase = this.pdpViewEl.querySelector('.pdp-framed-showcase');
+        if (showcase && window.innerWidth < 900) {
+          showcase.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
         sound.playRevealWhoosh(0.3);
       });
     }
