@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/scottta77-jpg/Lap-Legends#readme",
   "dependencies": {
+    "gsap": "^3.15.0",
     "three": "^0.186.1",
     "vite": "^8.3.5"
   }

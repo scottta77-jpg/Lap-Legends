@@ -5,6 +5,7 @@ import { sound } from './audio.js';
 import { CartDrawerUI } from './cart.js';
 import { StoreManager } from './store.js';
 import { DriverLandingStage } from './driver-landing.js';
+import { initTextHoverEffects } from './text-hover.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
   const container = document.getElementById('lapLegendsHero');
@@ -366,4 +367,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       setTimeout(() => preloader.remove(), 600);
     }
   }, 350);
+
+  // Initialize Lando Norris text hover effects across the site
+  initTextHoverEffects();
 });
