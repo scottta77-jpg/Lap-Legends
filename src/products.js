@@ -19,36 +19,35 @@ export const PRODUCTS = [
     driver: 'Lando Norris',
     number: '4',
     team: 'McLaren F1 Team',
-    description: 'Bring your passion for racing into your space. A detailed motorsport print, presented in a black wooden frame and ready to display.',
+    description: 'Bring your passion for racing into your space. Official McLaren #1 livery artwork featuring Lando Norris’s neon yellow helmet and car, presented in an elegant black wooden frame ready to display.',
     format: 'A4 / BLACK FRAME',
     signature: 'Reproduced digital signature.',
     amazonUrl: AMAZON_STORE_URL,
     homeFrame: '/assets/products/lando_home_frame.png',
     defaultStyle: 'car',
     styles: [
-      { id: 'car', label: 'CAR', image: '/assets/products/lando_car_frame.png', caption: 'McLaren MCL38 Frontal Livery & Signature' },
+      { id: 'car', label: 'CAR & HELMET', image: '/assets/products/lando_home_frame.png', caption: 'McLaren MCL38 Livery, Helmet & Driver Signature' },
       { id: 'helmet', label: 'HELMET', image: '/assets/products/lando_helmet_framed.png', caption: 'Lando Norris Neon Yellow & Carbon Livery Helmet' },
-      { id: 'bold', label: 'BOLD', image: '/assets/products/lando_bold_frame.png', caption: 'Split Composite Artwork — Car & Helmet' }
+      { id: 'standing', label: 'PORTRAIT', image: '/assets/products/lando_standing_frame.png', caption: 'Lando Norris Official Team Portrait & Livery' }
     ],
     gallery: [
       '/assets/products/lando_home_frame.png',
-      '/assets/products/lando_car_frame.png',
       '/assets/products/lando_helmet_framed.png',
-      '/assets/products/lando_bold_frame.png',
-      '/assets/lifestyle/cat_drivers.png'
+      '/assets/products/lando_standing_frame.png',
+      '/assets/products/frame_spec.jpg'
     ],
     details: [
       'Black wooden frame with satin finish',
       'A4 printed artwork (210 x 297 mm)',
-      'Wall hanging hook or tabletop fold-out display',
+      'Wall hanging hook and tabletop fold-out easel display',
       'Digitally reproduced official driver signature',
       'High-clarity shatterproof acrylic front'
     ],
     dimensions: {
-      frame: '23.5 x 32.2 cm (9.25 x 12.7 in)',
+      frame: '22.5 x 32.5 cm (A4 Frame)',
       print: 'Standard A4 (21 x 29.7 cm)',
       depth: '18 mm solid wood profile',
-      glazing: '1.2 mm optical-grade styrene glazing'
+      glazing: '1.2 mm optical-grade shatterproof front'
     },
     relatedIds: ['lewis-hamilton', 'silverstone', 'oscar-piastri', 'race-calendar']
   },
@@ -64,21 +63,21 @@ export const PRODUCTS = [
     formattedPrice: '£19.99 GBP',
     driver: 'Lewis Hamilton',
     number: '44',
-    team: 'Mercedes-AMG Petronas F1 Team',
-    description: 'Celebrate the seven-time World Champion. High-definition helmet portrait in royal purple and neon yellow, set in an elegant black wooden frame.',
+    team: 'Scuderia Ferrari / Mercedes-AMG',
+    description: 'Celebrate the seven-time World Champion. Official #44 helmet portrait and livery, mounted in an elegant black wooden frame ready to hang or stand.',
     format: 'A4 / BLACK FRAME',
     signature: 'Reproduced digital signature.',
     amazonUrl: AMAZON_STORE_URL,
     homeFrame: '/assets/products/lewis_home_frame.png',
     defaultStyle: 'helmet',
     styles: [
-      { id: 'helmet', label: 'HELMET', image: '/assets/products/lewis_framed.png', caption: 'Official #44 Helmet in Royal Purple & Electric Yellow' },
-      { id: 'bold', label: 'BOLD', image: '/assets/products/lewis_framed.png', caption: 'Signature Presentation' }
+      { id: 'helmet', label: 'HELMET & CAR', image: '/assets/products/lewis_home_frame.png', caption: 'Official #44 Helmet & Car with Signature' },
+      { id: 'standing', label: 'PORTRAIT', image: '/assets/products/lewis_framed.png', caption: 'Lewis Hamilton Scuderia Ferrari Race Suit Portrait' }
     ],
     gallery: [
       '/assets/products/lewis_home_frame.png',
       '/assets/products/lewis_framed.png',
-      '/assets/lifestyle/hero_group_framed.png'
+      '/assets/products/frame_spec.jpg'
     ],
     details: [
       'Black wooden frame with clean bevelled edge',
@@ -87,7 +86,7 @@ export const PRODUCTS = [
       'Digitally reproduced Lewis Hamilton signature'
     ],
     dimensions: {
-      frame: '23.5 x 32.2 cm',
+      frame: '22.5 x 32.5 cm',
       print: 'A4 (21 x 29.7 cm)',
       depth: '18 mm',
       glazing: 'Crystal-clear shatterproof acrylic'
@@ -107,41 +106,38 @@ export const PRODUCTS = [
     driver: null,
     number: 'GB',
     team: 'Great Britain (52.0786° N, 1.0169° W)',
-    description: 'The home of British motorsport. Minimalist technical track layout of the Silverstone Grand Prix Circuit with coordinates and national insignia.',
+    description: 'The home of British motorsport. Minimalist technical track layout of the Silverstone Grand Prix Circuit with coordinates, track map, and national insignia.',
     format: 'A4 / BLACK FRAME',
     signature: 'Technical circuit specification.',
     amazonUrl: AMAZON_STORE_URL,
     homeFrame: '/assets/products/silverstone_home_frame.png',
     defaultStyle: 'circuit',
     styles: [
-      { id: 'circuit', label: 'CIRCUIT', image: '/assets/products/silverstone_framed.png', caption: 'Technical Track Layout on Pitch Black' },
-      { id: 'wet', label: 'WET TRACK', image: '/assets/products/silverstone_wet_frame.png', caption: 'Sunset Rain Hangar Straight Photography' }
+      { id: 'circuit', label: 'CIRCUIT', image: '/assets/products/silverstone_home_frame.png', caption: 'Technical Track Layout and Grand Prix Photography' }
     ],
     gallery: [
       '/assets/products/silverstone_home_frame.png',
-      '/assets/products/silverstone_framed.png',
-      '/assets/products/silverstone_wet_frame.png',
-      '/assets/lifestyle/cat_circuits.png'
+      '/assets/products/frame_spec.jpg'
     ],
     details: [
       'Precision circuit contour on matte museum card',
-      'Official geographic GPS coordinates included',
+      'Official geographic GPS coordinates and circuit stats',
       'Pre-mounted in black timber gallery frame',
       'Ready to hang or stand'
     ],
     dimensions: {
-      frame: '23.5 x 32.2 cm',
+      frame: '22.5 x 32.5 cm',
       print: 'A4 (21 x 29.7 cm)',
       depth: '18 mm',
       glazing: 'Optical grade shatterproof acrylic'
     },
-    relatedIds: ['monaco', 'lando-norris', 'race-calendar', 'lewis-hamilton']
+    relatedIds: ['monaco', 'lando-norris', 'race-calendar', 'hungaroring']
   },
   {
     id: 'race-calendar',
     slug: 'race-calendar-framed-print',
-    title: '2024 RACE CALENDAR FRAMED PRINT',
-    shortTitle: '2024 Race Calendar',
+    title: '2027 RACE CALENDAR FRAMED PRINT',
+    shortTitle: '2027 Race Calendar',
     category: 'calendars',
     categoryLabel: 'RACE CALENDARS',
     price: 19.99,
@@ -150,28 +146,27 @@ export const PRODUCTS = [
     driver: null,
     number: '24',
     team: 'Formula 1 World Championship',
-    description: 'The ultimate season overview. All 24 Formula 1 championship circuits meticulously outlined with track names, flags, and circuit layouts.',
+    description: 'The ultimate season overview. All 24 Formula 1 championship circuits meticulously outlined with track names, national flags, and accurate circuit layouts.',
     format: 'A4 / BLACK FRAME',
     signature: 'Championship Season Edition.',
     amazonUrl: AMAZON_STORE_URL,
     homeFrame: '/assets/products/calendar_home_frame.png',
     defaultStyle: 'calendar',
     styles: [
-      { id: 'calendar', label: 'FULL CALENDAR', image: '/assets/products/calendar_framed.png', caption: 'All 24 Championship Circuits on Black' }
+      { id: 'calendar', label: 'FULL CALENDAR', image: '/assets/products/calendar_home_frame.png', caption: 'All 24 Championship Circuits on Black' }
     ],
     gallery: [
       '/assets/products/calendar_home_frame.png',
-      '/assets/products/calendar_framed.png',
-      '/assets/lifestyle/cat_calendars.png'
+      '/assets/products/frame_spec.jpg'
     ],
     details: [
       'All 24 Grand Prix tracks plotted in accurate scale',
-      'High-contrast technical typography',
+      'High-contrast technical typography with sprint flags',
       'Solid wooden frame with protective front',
       'Ready to hang or stand'
     ],
     dimensions: {
-      frame: '23.5 x 32.2 cm',
+      frame: '22.5 x 32.5 cm',
       print: 'A4 (21 x 29.7 cm)',
       depth: '18 mm',
       glazing: 'Clear acrylic glazing'
@@ -191,18 +186,18 @@ export const PRODUCTS = [
     driver: 'Oscar Piastri',
     number: '81',
     team: 'McLaren F1 Team',
-    description: 'Showcase the sensational Australian McLaren ace. High-impact aerodynamic livery artwork featuring car #81 and Piastri’s official signature.',
+    description: 'Showcase the sensational Australian McLaren ace. High-impact aerodynamic livery artwork featuring car #81, Piastri’s official helmet, and digital signature.',
     format: 'A4 / BLACK FRAME',
     signature: 'Reproduced digital signature.',
     amazonUrl: AMAZON_STORE_URL,
     homeFrame: '/assets/products/oscar_home_frame.png',
     defaultStyle: 'car',
     styles: [
-      { id: 'car', label: 'CAR', image: '/assets/products/oscar_framed.png', caption: 'McLaren Car #81 Front View' }
+      { id: 'car', label: 'HELMET & CAR', image: '/assets/products/oscar_home_frame.png', caption: 'McLaren Car #81 and Helmet Presentation' }
     ],
     gallery: [
-      '/assets/products/oscar_framed.png',
-      '/assets/lifestyle/cat_drivers.png'
+      '/assets/products/oscar_home_frame.png',
+      '/assets/products/frame_spec.jpg'
     ],
     details: [
       'Solid timber frame with deep matte black finish',
@@ -210,7 +205,7 @@ export const PRODUCTS = [
       'Digitally reproduced Oscar Piastri signature'
     ],
     dimensions: {
-      frame: '23.5 x 32.2 cm',
+      frame: '22.5 x 32.5 cm',
       print: 'A4 (21 x 29.7 cm)',
       depth: '18 mm',
       glazing: 'UV-resistant protective styrene'
@@ -230,26 +225,26 @@ export const PRODUCTS = [
     driver: null,
     number: 'MC',
     team: 'Monte Carlo, Principality of Monaco',
-    description: 'The jewel in motorsport’s crown. The iconic Monaco street circuit layout with Casino Square, Grand Hotel Hairpin, and Portier corner markings.',
+    description: 'The jewel in motorsport’s crown. The iconic Monaco street circuit layout with harbor photo, turn specifications, and Principality emblem.',
     format: 'A4 / BLACK FRAME',
     signature: 'Historic Circuit Edition.',
     amazonUrl: AMAZON_STORE_URL,
     homeFrame: '/assets/products/monaco_home_frame.png',
     defaultStyle: 'circuit',
     styles: [
-      { id: 'circuit', label: 'CIRCUIT', image: '/assets/products/monaco_home_frame.png', caption: 'Monaco Street Circuit Layout' }
+      { id: 'circuit', label: 'CIRCUIT', image: '/assets/products/monaco_home_frame.png', caption: 'Monaco Street Circuit Layout & Grand Prix Photo' }
     ],
     gallery: [
       '/assets/products/monaco_home_frame.png',
-      '/assets/lifestyle/monaco_banner_clean.png'
+      '/assets/products/frame_spec.jpg'
     ],
     details: [
-      'Deep emerald dark olive card background',
-      'Minimalist white circuit line vector artwork',
+      'Crisp high-contrast technical typography',
+      'Circuit contour with official GPS coordinates',
       'Black wooden gallery frame ready to display'
     ],
     dimensions: {
-      frame: '23.5 x 32.2 cm',
+      frame: '22.5 x 32.5 cm',
       print: 'A4 (21 x 29.7 cm)',
       depth: '18 mm',
       glazing: 'Shatterproof styrene front'
@@ -269,17 +264,18 @@ export const PRODUCTS = [
     driver: 'Charles Leclerc',
     number: '16',
     team: 'Scuderia Ferrari HP',
-    description: 'The Monegasque maestro. Detailed Scuderia Ferrari helmet livery in scarlet red and Monegasque national accents, mounted in black timber moulding.',
+    description: 'The Monegasque maestro. Detailed Scuderia Ferrari helmet livery and #16 car in scarlet red, mounted in black timber moulding.',
     format: 'A4 / BLACK FRAME',
     signature: 'Reproduced digital signature.',
     amazonUrl: AMAZON_STORE_URL,
     homeFrame: '/assets/products/charles_home_frame.png',
     defaultStyle: 'helmet',
     styles: [
-      { id: 'helmet', label: 'HELMET', image: '/assets/products/charles_framed.png', caption: 'Scuderia Ferrari #16 Official Helmet' }
+      { id: 'helmet', label: 'HELMET & CAR', image: '/assets/products/charles_home_frame.png', caption: 'Scuderia Ferrari #16 Official Helmet & Car' }
     ],
     gallery: [
-      '/assets/products/charles_framed.png'
+      '/assets/products/charles_home_frame.png',
+      '/assets/products/frame_spec.jpg'
     ],
     details: [
       'Official Ferrari red and white helmet livery art',
@@ -287,12 +283,204 @@ export const PRODUCTS = [
       'Ready to display on wall or desktop'
     ],
     dimensions: {
-      frame: '23.5 x 32.2 cm',
+      frame: '22.5 x 32.5 cm',
       print: 'A4 (21 x 29.7 cm)',
       depth: '18 mm',
       glazing: 'Optical grade styrene front'
     },
     relatedIds: ['lewis-hamilton', 'monaco', 'lando-norris', 'silverstone']
+  },
+  {
+    id: 'kimi-antonelli',
+    slug: 'kimi-antonelli-framed-print',
+    title: 'ANDREA KIMI ANTONELLI FRAMED PRINT',
+    shortTitle: 'Kimi Antonelli',
+    category: 'drivers',
+    categoryLabel: 'DRIVER PRINTS',
+    price: 19.99,
+    currency: 'GBP',
+    formattedPrice: '£19.99 GBP',
+    driver: 'Andrea Kimi Antonelli',
+    number: '12',
+    team: 'Mercedes-AMG Petronas F1 Team',
+    description: 'The new Silver Arrows era begins. Official #12 Mercedes helmet in Italian tricolore accents and silver aerodynamic car artwork.',
+    format: 'A4 / BLACK FRAME',
+    signature: 'Reproduced digital signature.',
+    amazonUrl: AMAZON_STORE_URL,
+    homeFrame: '/assets/products/kimi_home_frame.png',
+    defaultStyle: 'helmet',
+    styles: [
+      { id: 'helmet', label: 'HELMET & CAR', image: '/assets/products/kimi_home_frame.png', caption: 'Mercedes-AMG #12 Helmet & Car Livery' }
+    ],
+    gallery: [
+      '/assets/products/kimi_home_frame.png',
+      '/assets/products/frame_spec.jpg'
+    ],
+    details: [
+      'Black wooden frame with satin finish',
+      'A4 printed artwork (210 x 297 mm)',
+      'Digitally reproduced official driver signature'
+    ],
+    dimensions: {
+      frame: '22.5 x 32.5 cm',
+      print: 'A4 (21 x 29.7 cm)',
+      depth: '18 mm',
+      glazing: 'Optical grade shatterproof acrylic'
+    },
+    relatedIds: ['george-russell', 'lewis-hamilton', 'silverstone', 'race-calendar']
+  },
+  {
+    id: 'george-russell',
+    slug: 'george-russell-framed-print',
+    title: 'GEORGE RUSSELL FRAMED PRINT',
+    shortTitle: 'George Russell',
+    category: 'drivers',
+    categoryLabel: 'DRIVER PRINTS',
+    price: 19.99,
+    currency: 'GBP',
+    formattedPrice: '£19.99 GBP',
+    driver: 'George Russell',
+    number: '63',
+    team: 'Mercedes-AMG Petronas F1 Team',
+    description: 'Mr. Saturday. Official Mercedes-AMG #63 blue helmet portrait and car in solid black timber frame.',
+    format: 'A4 / BLACK FRAME',
+    signature: 'Reproduced digital signature.',
+    amazonUrl: AMAZON_STORE_URL,
+    homeFrame: '/assets/products/russell_home_frame.png',
+    defaultStyle: 'helmet',
+    styles: [
+      { id: 'helmet', label: 'HELMET & CAR', image: '/assets/products/russell_home_frame.png', caption: 'Mercedes-AMG #63 Helmet & Car Livery' }
+    ],
+    gallery: [
+      '/assets/products/russell_home_frame.png',
+      '/assets/products/frame_spec.jpg'
+    ],
+    details: [
+      'Black wooden gallery frame with satin finish',
+      'Official #63 driver details and signature'
+    ],
+    dimensions: {
+      frame: '22.5 x 32.5 cm',
+      print: 'A4 (21 x 29.7 cm)',
+      depth: '18 mm',
+      glazing: 'Clear acrylic'
+    },
+    relatedIds: ['kimi-antonelli', 'lewis-hamilton', 'silverstone', 'lando-norris']
+  },
+  {
+    id: 'hungaroring',
+    slug: 'hungaroring-framed-print',
+    title: 'HUNGARORING FRAMED PRINT',
+    shortTitle: 'Hungaroring',
+    category: 'circuits',
+    categoryLabel: 'CIRCUIT ART',
+    price: 19.99,
+    currency: 'GBP',
+    formattedPrice: '£19.99 GBP',
+    driver: null,
+    number: 'HU',
+    team: 'Mogyoród, Hungary',
+    description: 'The twisting Hungarian jewel. Wet track rain photography and precise technical circuit map with GPS coordinates.',
+    format: 'A4 / BLACK FRAME',
+    signature: 'Grand Prix Circuit Specification.',
+    amazonUrl: AMAZON_STORE_URL,
+    homeFrame: '/assets/products/hungaroring_home_frame.png',
+    defaultStyle: 'circuit',
+    styles: [
+      { id: 'circuit', label: 'CIRCUIT', image: '/assets/products/hungaroring_home_frame.png', caption: 'Technical Track Layout on Museum White' }
+    ],
+    gallery: [
+      '/assets/products/hungaroring_home_frame.png',
+      '/assets/products/frame_spec.jpg'
+    ],
+    details: [
+      'Archival 250gsm museum paper',
+      'Solid wooden timber frame ready to hang'
+    ],
+    dimensions: {
+      frame: '22.5 x 32.5 cm',
+      print: 'A4 (21 x 29.7 cm)',
+      depth: '18 mm',
+      glazing: 'Optical grade acrylic'
+    },
+    relatedIds: ['silverstone', 'monaco', 'barcelona', 'race-calendar']
+  },
+  {
+    id: 'barcelona',
+    slug: 'barcelona-framed-print',
+    title: 'BARCELONA FRAMED PRINT',
+    shortTitle: 'Barcelona',
+    category: 'circuits',
+    categoryLabel: 'CIRCUIT ART',
+    price: 19.99,
+    currency: 'GBP',
+    formattedPrice: '£19.99 GBP',
+    driver: null,
+    number: 'ES',
+    team: 'Montmeló, Catalonia, Spain',
+    description: 'Circuit de Barcelona-Catalunya. Classic high-speed layout with technical track specifications and sunlit track photo.',
+    format: 'A4 / BLACK FRAME',
+    signature: 'Grand Prix Circuit Specification.',
+    amazonUrl: AMAZON_STORE_URL,
+    homeFrame: '/assets/products/barcelona_home_frame.png',
+    defaultStyle: 'circuit',
+    styles: [
+      { id: 'circuit', label: 'CIRCUIT', image: '/assets/products/barcelona_home_frame.png', caption: 'Technical Track Layout on Museum White' }
+    ],
+    gallery: [
+      '/assets/products/barcelona_home_frame.png',
+      '/assets/products/frame_spec.jpg'
+    ],
+    details: [
+      'High-clarity print with official sector turns',
+      'Black wooden gallery frame ready to display'
+    ],
+    dimensions: {
+      frame: '22.5 x 32.5 cm',
+      print: 'A4 (21 x 29.7 cm)',
+      depth: '18 mm',
+      glazing: 'Optical grade acrylic'
+    },
+    relatedIds: ['silverstone', 'monaco', 'hungaroring', 'race-calendar']
+  },
+  {
+    id: 'all-helmets',
+    slug: 'all-helmets-framed-print',
+    title: 'F1 DRIVERS HELMETS GRID FRAMED PRINT',
+    shortTitle: 'Helmets Grid',
+    category: 'drivers',
+    categoryLabel: 'DRIVER PRINTS',
+    price: 19.99,
+    currency: 'GBP',
+    formattedPrice: '£19.99 GBP',
+    driver: null,
+    number: 'GRID',
+    team: 'Formula 1 World Championship',
+    description: 'The complete Formula 1 drivers grid helmets showcase. All 20 championship driver helmets meticulously rendered in vibrant color and detail on pitch black.',
+    format: 'A4 / BLACK FRAME',
+    signature: 'Championship Grid Edition.',
+    amazonUrl: AMAZON_STORE_URL,
+    homeFrame: '/assets/products/helmets_home_frame.png',
+    defaultStyle: 'grid',
+    styles: [
+      { id: 'grid', label: 'ALL HELMETS', image: '/assets/products/helmets_home_frame.png', caption: 'Formula 1 Drivers Grid Helmets' }
+    ],
+    gallery: [
+      '/assets/products/helmets_home_frame.png',
+      '/assets/products/frame_spec.jpg'
+    ],
+    details: [
+      'All 20 F1 driver helmets in official team liveries',
+      'Solid wooden frame with protective front',
+      'Ready to display on wall or tabletop'
+    ],
+    dimensions: {
+      frame: '22.5 x 32.5 cm',
+      print: 'A4 (21 x 29.7 cm)',
+      depth: '18 mm',
+      glazing: 'Shatterproof acrylic'
+    },
+    relatedIds: ['race-calendar', 'lando-norris', 'lewis-hamilton', 'silverstone']
   }
 ];
 
