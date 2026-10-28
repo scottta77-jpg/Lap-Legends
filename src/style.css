@@ -4760,3 +4760,265 @@ dialog.info-modal[open] .info-modal-card {
     gap: 16px;
   }
 }
+
+/* ==========================================================================
+   LANDO NORRIS STORE PRODUCT DETAIL PAGE (PDP) FOOTER
+   Exact Replica from landonorris.store/products/the-worker-jacket
+   ========================================================================== */
+
+body.page-is-pdp #siteFooter {
+  display: none !important;
+}
+
+.pdp-store-footer {
+  background-color: #1d2104; /* Official Lando Norris store dark olive tone rgb(29, 33, 4) */
+  color: #ffffff;
+  border-top: 1px solid rgba(210, 255, 0, 0.18);
+  font-family: 'Mona Sans Variable', 'Syne', sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 60px;
+}
+
+.radiant-footer-inner {
+  max-width: 1520px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.pdp-store-footer .top-area {
+  padding: 64px 44px 52px;
+}
+
+.pdp-store-footer .footer-flex {
+  display: grid;
+  grid-template-columns: 1.2fr 1.3fr 1.2fr 1.8fr;
+  gap: 48px;
+}
+
+.pdp-store-footer .footer-heading {
+  font-family: 'Mona Sans Variable', 'Syne', sans-serif;
+  font-size: 13.5px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #d2ff00; /* Electric lime heading */
+  margin-bottom: 24px;
+}
+
+.pdp-store-footer .footer-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pdp-store-footer .footer-pdp-link {
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.pdp-store-footer .footer-pdp-link:hover {
+  color: #d2ff00;
+  transform: translateX(2px);
+}
+
+.pdp-store-footer .footer-socials-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pdp-store-footer .social-icon-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.pdp-store-footer .social-icon-link svg {
+  color: #d2ff00; /* Electric lime social icons */
+  flex-shrink: 0;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.pdp-store-footer .social-icon-link:hover {
+  color: #d2ff00;
+  transform: translateX(3px);
+}
+
+.pdp-store-footer .social-icon-link:hover svg {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 8px rgba(210, 255, 0, 0.6));
+}
+
+.pdp-store-footer .newsletter-sub {
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  font-size: 13px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.72);
+  margin-bottom: 20px;
+}
+
+.pdp-newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.newsletter-input-group {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.newsletter-email-input {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(210, 255, 0, 0.35);
+  color: #d2ff00;
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  font-size: 12.5px;
+  padding: 14px 18px;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.newsletter-email-input:focus {
+  border-color: #d2ff00;
+  box-shadow: 0 0 12px rgba(210, 255, 0, 0.3);
+}
+
+.newsletter-email-input::placeholder {
+  color: rgba(210, 255, 0, 0.5);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.newsletter-submit-btn {
+  background-color: #d2ff00; /* Solid electric lime */
+  color: #1d2104; /* Dark olive text */
+  font-family: 'Mona Sans Variable', 'Syne', sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+
+.newsletter-submit-btn:hover {
+  background-color: #e2ff40;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 18px rgba(210, 255, 0, 0.45);
+}
+
+/* Bottom Copyright Bar */
+.pdp-store-footer .bottom-area {
+  padding: 22px 44px;
+  border-top: 1px solid rgba(210, 255, 0, 0.12);
+}
+
+.pdp-store-footer .bottom-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.pdp-store-footer .bottom-left {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.pdp-footer-copyright {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.65);
+  text-transform: uppercase;
+}
+
+.pdp-business-link {
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #d2ff00;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.pdp-business-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.payment-methods-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pay-badge {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.85);
+  padding: 5px 9px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+/* Responsive Styles for PDP Footer */
+@media screen and (max-width: 1024px) {
+  .pdp-store-footer .footer-flex {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .pdp-store-footer .top-area {
+    padding: 44px 24px 36px;
+  }
+  .pdp-store-footer .footer-flex {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .newsletter-input-group {
+    flex-direction: column;
+  }
+  .pdp-store-footer .bottom-area {
+    padding: 20px 24px;
+  }
+  .pdp-store-footer .bottom-flex {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}

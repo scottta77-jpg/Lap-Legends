@@ -521,6 +521,117 @@ export class StoreManager {
             </div>
           </div>
         </section>
+
+        <!-- =========================================================================
+             LANDO NORRIS STORE PRODUCT DETAIL PAGE (PDP) FOOTER
+             (Exact replica from landonorris.store/products/the-worker-jacket)
+             ========================================================================= -->
+        <footer id="shopify-section-radiant-footer" class="shopify-section radiant-footer pdp-store-footer">
+          <div class="radiant-footer-inner">
+            <!-- Top Area -->
+            <div class="top-area">
+              <div class="footer-flex flex f-grid--xl">
+
+                <!-- Column 1: LAP LEGENDS -->
+                <div class="footer-col footer-col--brand">
+                  <h4 class="footer-heading">LAP LEGENDS</h4>
+                  <ul class="footer-links-list">
+                    <li><a href="#about" class="footer-pdp-link js-open-story">About Us</a></li>
+                    <li><a href="#store" class="footer-pdp-link">Store Home</a></li>
+                    <li><a href="#shop" class="footer-pdp-link">Framed Prints</a></li>
+                    <li><a href="#circuitArtSection" class="footer-pdp-link">Circuit Collection</a></li>
+                    <li><a href="#landing" class="footer-pdp-link">Interactive Showcase ⚡</a></li>
+                  </ul>
+                </div>
+
+                <!-- Column 2: SUPPORT -->
+                <div class="footer-col footer-col--support">
+                  <h4 class="footer-heading">SUPPORT</h4>
+                  <ul class="footer-links-list">
+                    <li><a href="#support" class="footer-pdp-link js-open-support">FAQ's</a></li>
+                    <li><a href="#support" class="footer-pdp-link js-open-support">Manage Pre-orders</a></li>
+                    <li><a href="#support" class="footer-pdp-link js-open-support">Delivery Info (Free UK Tracked)</a></li>
+                    <li><a href="#support" class="footer-pdp-link js-open-support">Returns & Refunds (30-Day)</a></li>
+                    <li><a href="#support" class="footer-pdp-link js-open-support">Privacy Policy</a></li>
+                    <li><a href="mailto:support@laplegends.com" class="footer-pdp-link">Withdraw Orders - EU</a></li>
+                  </ul>
+                </div>
+
+                <!-- Column 3: SOCIAL -->
+                <div class="footer-col footer-col--social">
+                  <h4 class="footer-heading">SOCIAL</h4>
+                  <div class="footer-socials-grid">
+                    <a href="https://www.instagram.com/lando" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Instagram">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                      </svg>
+                      <span>Instagram</span>
+                    </a>
+                    <a href="https://www.tiktok.com/@landonorris" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="TikTok">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.85.12V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.82 4.48 6.27 6.27 0 0 0 1.94-4.52V8.92a8.28 8.28 0 0 0 4.83 1.54V7.01a4.85 4.85 0 0 1-1-.32z"/>
+                      </svg>
+                      <span>TikTok</span>
+                    </a>
+                    <a href="https://www.youtube.com/@LandoNorris" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="YouTube">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                      </svg>
+                      <span>YouTube</span>
+                    </a>
+                    <a href="https://www.twitch.tv/landonorris" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Twitch">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                        <path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/>
+                      </svg>
+                      <span>Twitch</span>
+                    </a>
+                    <a href="https://twitter.com/landonorris" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="X Twitter">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                      </svg>
+                      <span>X (Twitter)</span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Column 4: JOIN THE PADDOCK -->
+                <div class="footer-col footer-col--newsletter">
+                  <h4 class="footer-heading">JOIN THE PADDOCK</h4>
+                  <p class="newsletter-sub">Unlock exclusive access to new driver drops, limited releases and paddock events.</p>
+                  <form class="pdp-newsletter-form" id="pdpNewsletterForm" onsubmit="event.preventDefault(); this.querySelector('.newsletter-submit-btn').textContent = '✓ JOINED!'; this.querySelector('input').disabled = true;">
+                    <div class="newsletter-input-group">
+                      <input type="email" required placeholder="YOUR EMAIL ADDRESS" class="newsletter-email-input" aria-label="Email address" />
+                      <button type="submit" class="newsletter-submit-btn">SIGN UP</button>
+                    </div>
+                  </form>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Bottom Area -->
+            <div class="bottom-area">
+              <div class="bottom-flex">
+                <div class="bottom-left">
+                  <span class="pdp-footer-copyright">© 2026 LAP LEGENDS. ALL RIGHTS RESERVED.</span>
+                  <a href="mailto:business@landonorris.com" class="pdp-business-link">BUSINESS ENQUIRIES ↗</a>
+                </div>
+                <div class="bottom-right">
+                  <div class="payment-methods-row" aria-label="Payment methods">
+                    <span class="pay-badge">VISA</span>
+                    <span class="pay-badge">MC</span>
+                    <span class="pay-badge">AMEX</span>
+                    <span class="pay-badge">PAY</span>
+                    <span class="pay-badge">GPAY</span>
+                    <span class="pay-badge">PAYPAL</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
       </div>
     `;
 
