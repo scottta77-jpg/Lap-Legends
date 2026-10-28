@@ -4009,28 +4009,35 @@ dialog.info-modal[open] .info-modal-card {
 }
 
 /* --------------------------------------------------------------------------
-   3. "THE COLLECTION" Dark Luxury Techno-Chassis Reel
+   3. "THE COLLECTION" Dark Luxury Techno-Chassis Showcase
    -------------------------------------------------------------------------- */
 .collection-reel-section {
-  background: #0E100D;
-  padding: 95px 0 110px 0;
+  background: #0D100C;
+  padding: 85px 0 105px 0;
   position: relative;
   overflow: hidden;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+.collection-section-container {
+  width: 100%;
+  max-width: min(96vw, 1840px);
+  margin: 0 auto;
+  padding: 0 clamp(20px, 3vw, 56px);
+}
+
 .collection-reel-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 46px;
+  margin-bottom: 40px;
   gap: 24px;
   flex-wrap: wrap;
 }
 
 .collection-reel-title {
-  font-size: clamp(38px, 4.4vw, 68px);
+  font-size: clamp(34px, 4vw, 64px);
   margin: 0;
   line-height: 0.95;
   letter-spacing: -0.015em;
@@ -4058,16 +4065,16 @@ dialog.info-modal[open] .info-modal-card {
 }
 
 .collection-reel-subtitle-link {
-  font-family: var(--font-mono, monospace);
-  font-size: 13px;
-  color: rgba(250, 248, 243, 0.72);
+  font-family: var(--font-tech, 'Space Grotesk', sans-serif);
+  font-size: clamp(11.5px, 0.9vw, 13.5px);
+  color: #A3A89C;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
   transition: color 0.2s ease;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .collection-reel-subtitle-link:hover {
@@ -4083,64 +4090,51 @@ dialog.info-modal[open] .info-modal-card {
   transform: translateX(4px);
 }
 
+/* Track Wrapper — No horizontal scrolling on desktop */
 .collection-reel-track-wrap {
   width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  padding: 12px 4px 24px 4px;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(210, 255, 0, 0.3) rgba(255, 255, 255, 0.05);
-}
-
-.collection-reel-track-wrap::-webkit-scrollbar {
-  height: 6px;
-}
-
-.collection-reel-track-wrap::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.04);
-  border-radius: 3px;
-}
-
-.collection-reel-track-wrap::-webkit-scrollbar-thumb {
-  background: rgba(210, 255, 0, 0.35);
-  border-radius: 3px;
+  overflow: visible;
+  padding: 8px 0 16px 0;
 }
 
 .collection-reel-track {
   display: grid;
-  grid-template-columns: repeat(6, minmax(200px, 1fr));
-  gap: 20px;
-  min-width: 1240px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: clamp(14px, 1.5vw, 22px);
+  width: 100%;
+  min-width: 0;
 }
 
-/* Techno-Chassis Card with Asymmetric Curved Bottom-Right Corner */
+/* Techno-Chassis Card with Asymmetric Curved Bottom-Right Corner (1:1 with Reference) */
 .chassis-card {
   position: relative;
-  background: #141713;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 10px 10px 48px 10px;
-  padding: 24px 18px 20px 18px;
+  background: #111411;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 0 0 36px 0;
+  padding: clamp(16px, 1.3vw, 22px) clamp(14px, 1.1vw, 18px) 16px clamp(14px, 1.1vw, 18px);
   display: flex;
   flex-direction: column;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
   transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s ease, box-shadow 0.35s ease;
 }
 
 .chassis-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(210, 255, 0, 0.6);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), 0 0 20px rgba(210, 255, 0, 0.15);
+  transform: translateY(-6px);
+  border-color: rgba(210, 255, 0, 0.55);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.65), 0 0 24px rgba(210, 255, 0, 0.15);
 }
 
-/* Spotlight Highlight Card (Silverstone) */
+/* Spotlight Highlight Card (Card 3: Silverstone) */
 .chassis-card.is-highlight {
   border: 2px solid var(--electric-lime, #d2ff00);
-  background: #171b15;
-  box-shadow: 0 0 32px rgba(210, 255, 0, 0.28), inset 0 0 16px rgba(210, 255, 0, 0.06);
+  border-radius: 0 0 36px 0;
+  background: #141812;
+  box-shadow: 0 0 28px rgba(210, 255, 0, 0.28);
+  padding: 0 0 16px 0;
 }
 
 .chassis-card.is-highlight:hover {
-  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.6), 0 0 40px rgba(210, 255, 0, 0.45);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.65), 0 0 36px rgba(210, 255, 0, 0.42);
 }
 
 .chassis-card-link {
@@ -4152,20 +4146,28 @@ dialog.info-modal[open] .info-modal-card {
 
 .chassis-media-box {
   width: 100%;
-  height: 250px;
+  aspect-ratio: 4 / 5.2;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
-  border-radius: 4px;
+  margin-bottom: 14px;
+  border-radius: 2px;
   overflow: hidden;
-  background: rgba(0, 0, 0, 0.25);
+  background: transparent;
+}
+
+.chassis-card.is-highlight .chassis-media-box {
+  margin-bottom: 12px;
+  border-radius: 0;
+  height: auto;
+  aspect-ratio: 4 / 5.2;
 }
 
 .chassis-img {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.45));
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
@@ -4173,32 +4175,37 @@ dialog.info-modal[open] .info-modal-card {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: none;
 }
 
 .chassis-card:hover .chassis-img {
-  transform: scale(1.06);
+  transform: scale(1.03);
 }
 
 .chassis-footer {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding-top: 14px;
+  padding-top: 8px;
   margin-top: auto;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: none;
+}
+
+.chassis-card.is-highlight .chassis-footer {
+  padding: 0 clamp(14px, 1.1vw, 18px);
 }
 
 .chassis-meta {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
 }
 
 .chassis-title {
-  font-family: var(--font-tech, 'Syne', sans-serif);
-  font-size: 12px;
+  font-family: var(--font-tech, 'Space Grotesk', sans-serif);
+  font-size: clamp(10.5px, 0.82vw, 12.5px);
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.09em;
   color: #FAF8F3;
   text-transform: uppercase;
   margin: 0;
@@ -4211,25 +4218,47 @@ dialog.info-modal[open] .info-modal-card {
 }
 
 .chassis-price {
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-tech, 'Space Grotesk', sans-serif);
+  font-size: clamp(10px, 0.78vw, 12px);
+  font-weight: 500;
+  color: #7D8476;
+  letter-spacing: 0.04em;
+}
+
+.chassis-arrow-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: rgba(250, 248, 243, 0.42);
+  transition: color 0.25s ease, transform 0.25s ease;
+  margin-bottom: 2px;
+}
+
+.chassis-arrow-line {
+  display: inline-block;
+  width: 16px;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.25s ease;
+}
+
+.chassis-arrow-head {
+  font-family: var(--font-tech, 'Space Grotesk', sans-serif);
   font-size: 13px;
-  color: rgba(250, 248, 243, 0.6);
+  line-height: 1;
 }
 
-.chassis-arrow {
-  font-family: var(--font-tech, 'Syne', sans-serif);
-  font-size: 15px;
-  color: rgba(250, 248, 243, 0.45);
-  transition: transform 0.25s ease, color 0.2s ease;
+.chassis-card:hover .chassis-arrow-group,
+.chassis-card.is-highlight .chassis-arrow-group {
+  color: var(--electric-lime, #d2ff00);
 }
 
-.chassis-card:hover .chassis-arrow {
+.chassis-card:hover .chassis-arrow-group {
   transform: translateX(4px);
-  color: var(--electric-lime, #d2ff00);
 }
 
-.chassis-card.is-highlight .chassis-arrow {
-  color: var(--electric-lime, #d2ff00);
+.chassis-card:hover .chassis-arrow-line {
+  width: 22px;
 }
 
 /* --------------------------------------------------------------------------
@@ -4307,8 +4336,23 @@ dialog.info-modal[open] .info-modal-card {
   .collection-reel-title {
     font-size: 36px;
   }
+
+  .collection-reel-track {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
 }
 
+@media (max-width: 680px) {
+  .collection-reel-track {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
 
-
-
+@media (max-width: 440px) {
+  .collection-reel-track {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
