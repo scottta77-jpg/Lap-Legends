@@ -3807,45 +3807,17 @@ dialog.info-modal[open] .info-modal-card {
    -------------------------------------------------------------------------- */
 .moments-gallery-section {
   background-color: #F5F3EC;
-  padding: 90px 0 110px 0;
+  padding: 80px 0 110px 0;
   position: relative;
   overflow: hidden;
 }
 
-.moments-gallery-header {
-  text-align: center;
-  margin-bottom: 56px;
-}
-
-.moments-gallery-title {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(34px, 4vw, 56px);
-  font-weight: 400;
-  color: #171D15;
-  line-height: 1.18;
-  letter-spacing: -0.015em;
-  margin: 0;
-}
-
-.moments-gallery-title em {
-  font-style: italic;
-}
-
-.title-underline {
-  text-decoration: underline;
-  text-decoration-color: #171D15;
-  text-underline-offset: 6px;
-  text-decoration-thickness: 1.5px;
-}
-
 .moments-wall-stage {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  column-gap: 28px;
-  row-gap: 36px;
-  align-items: start;
-  max-width: 1360px;
+  position: relative;
+  width: 100%;
+  max-width: 1320px;
   margin: 0 auto;
+  height: clamp(560px, 48vw, 760px);
 }
 
 .gw-item {
@@ -3863,12 +3835,12 @@ dialog.info-modal[open] .info-modal-card {
   border-radius: 4px;
   overflow: hidden;
   background: transparent;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16), 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16), 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
 }
 
 .gw-frame-link:hover .gw-frame-box {
-  transform: translateY(-8px) scale(1.01);
+  transform: translateY(-6px) scale(1.015);
   box-shadow: 0 28px 56px rgba(0, 0, 0, 0.22), 0 8px 18px rgba(0, 0, 0, 0.12);
 }
 
@@ -3883,13 +3855,13 @@ dialog.info-modal[open] .info-modal-card {
   display: flex;
   flex-direction: column;
   gap: 3px;
-  margin-top: 14px;
+  margin-top: 10px;
   padding-left: 2px;
 }
 
 .gw-kicker {
-  font-family: var(--font-tech, 'Syne', sans-serif);
-  font-size: 11px;
+  font-family: var(--font-tech, 'Space Grotesk', sans-serif);
+  font-size: 10.5px;
   font-weight: 700;
   letter-spacing: 0.12em;
   color: #171D15;
@@ -3897,8 +3869,8 @@ dialog.info-modal[open] .info-modal-card {
 }
 
 .gw-cta {
-  font-family: var(--font-tech, 'Syne', sans-serif);
-  font-size: 11px;
+  font-family: var(--font-tech, 'Space Grotesk', sans-serif);
+  font-size: 10.5px;
   font-weight: 700;
   letter-spacing: 0.12em;
   color: #63695D;
@@ -3928,37 +3900,112 @@ dialog.info-modal[open] .info-modal-card {
   transform: translateX(4px);
 }
 
-/* Grid Coordinates for the Asymmetric Layout (Image 2) */
+/* --------------------------------------------------------------------------
+   Gallery Wall Placement (1:1 with Master Reference Mockup)
+   -------------------------------------------------------------------------- */
+/* 1. Top-Left Frame: Driver Artwork */
 .gw-item-driver {
-  grid-column: 1 / span 4;
-  grid-row: 1;
+  position: absolute;
+  left: 4.4%;
+  top: 2%;
+  width: 23.5%;
+  max-width: 310px;
   z-index: 2;
-  max-width: 380px;
 }
 
+/* 2. Nestled Header / Title above center hero frame */
+.gw-header-wrap {
+  position: absolute;
+  left: 28%;
+  right: 29.8%;
+  top: 5.5%;
+  text-align: right;
+  z-index: 6;
+  pointer-events: none;
+}
+
+.moments-gallery-title {
+  font-family: 'Playfair Display', 'Bodoni Moda', Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(22px, 2.5vw, 40px);
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  color: #171D15;
+  margin: 0;
+  pointer-events: auto;
+}
+
+.moments-gallery-title em {
+  font-style: italic;
+}
+
+.title-underline {
+  text-decoration: underline;
+  text-decoration-color: #171D15;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 1.5px;
+}
+
+/* 3. Center Landscape Frame: Silverstone Wet Grand Prix */
 .gw-item-silverstone {
-  grid-column: 3 / span 7;
-  grid-row: 2;
-  margin-top: -65px;
+  position: absolute;
+  left: 22.4%;
+  top: 29.5%;
+  width: 47.8%;
+  max-width: 630px;
   z-index: 4;
 }
 
+/* 4. Top-Right Frame: Technical Track Blueprint */
 .gw-item-blueprint {
-  grid-column: 10 / span 3;
-  grid-row: 1;
-  margin-top: -30px;
+  position: absolute;
+  left: 80%;
+  top: 4.5%;
+  width: 13.8%;
+  max-width: 185px;
   z-index: 2;
-  max-width: 270px;
-  margin-left: auto;
 }
 
+/* 5. Bottom-Right Frame: Helmet Collection */
 .gw-item-helmet {
-  grid-column: 9 / span 4;
-  grid-row: 2;
-  margin-top: 30px;
+  position: absolute;
+  left: 75.2%;
+  top: 44.5%;
+  width: 20.2%;
+  max-width: 270px;
   z-index: 3;
-  max-width: 360px;
-  margin-left: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .moments-wall-stage {
+    position: static;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    align-items: center;
+    max-width: 600px;
+    padding: 0 16px;
+  }
+
+  .gw-header-wrap {
+    position: static;
+    text-align: center;
+    order: -1;
+    margin-bottom: 8px;
+    width: 100%;
+  }
+
+  .gw-item-driver,
+  .gw-item-silverstone,
+  .gw-item-blueprint,
+  .gw-item-helmet {
+    position: static;
+    width: 100%;
+    max-width: 480px;
+  }
 }
 
 /* --------------------------------------------------------------------------
