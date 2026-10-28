@@ -3746,6 +3746,11 @@ dialog.info-modal[open] .info-modal-card {
   user-select: text;
 }
 
+.statement-banner-content *::selection {
+  background: var(--electric-lime, #d2ff00);
+  color: #161b13;
+}
+
 .statement-eyebrow {
   display: block;
   font-family: var(--font-tech, 'Syne', sans-serif);
