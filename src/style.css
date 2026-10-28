@@ -1195,9 +1195,9 @@ body.menu-locked, body.cart-open {
    ========================================================================== */
 .editorial-hero-section {
   background-color: #121512;
-  background-image: url('/assets/lifestyle/hero_bg_clean.jpg');
+  background-image: url('/assets/lifestyle/hero_background_3.png');
   background-size: cover;
-  background-position: center bottom;
+  background-position: center center;
   color: var(--bg-ivory);
   position: relative;
   overflow: hidden;
