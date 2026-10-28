@@ -2355,12 +2355,12 @@ body.menu-locked, body.cart-open {
 }
 
 .footer-bg-img {
-  width: 33rem;
-  max-width: 38vw;
+  width: 36rem;
+  max-width: 42vw;
   height: auto;
   object-fit: contain;
   position: relative;
-  bottom: -0.75rem;
+  bottom: -5.5rem;
   display: block;
 }
 
@@ -2473,8 +2473,9 @@ body.menu-locked, body.cart-open {
     font-size: 1.6rem;
   }
   .footer-bg-img {
-    width: 26rem;
-    max-width: 40vw;
+    width: 29rem;
+    max-width: 42vw;
+    bottom: -4.5rem;
   }
 }
 
@@ -2490,8 +2491,9 @@ body.menu-locked, body.cart-open {
     font-size: 1.35rem;
   }
   .footer-bg-img {
-    width: 22rem;
-    max-width: 44vw;
+    width: 24rem;
+    max-width: 46vw;
+    bottom: -3.8rem;
   }
 }
 
@@ -2524,8 +2526,9 @@ body.menu-locked, body.cart-open {
     font-size: 1.15rem;
   }
   .footer-bg-img {
-    width: 16rem;
+    width: 18rem;
     max-width: 65vw;
+    bottom: -2.8rem;
   }
   .footer-legal-links-w {
     position: relative;
