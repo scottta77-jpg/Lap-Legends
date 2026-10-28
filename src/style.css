@@ -1195,7 +1195,7 @@ body.menu-locked, body.cart-open {
    ========================================================================== */
 .editorial-hero-section {
   background-color: #121512;
-  background-image: radial-gradient(circle at 68% 46%, rgba(28, 36, 26, 0.4) 0%, rgba(14, 17, 14, 0.95) 75%), url('/assets/lifestyle/hero_bg_clean.jpg');
+  background-image: url('/assets/lifestyle/hero_bg_clean.jpg');
   background-size: cover;
   background-position: center bottom;
   color: var(--bg-ivory);
