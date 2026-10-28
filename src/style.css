@@ -2421,61 +2421,6 @@ body.menu-locked, body.cart-open {
   flex-shrink: 0;
 }
 
-/* Sponsor Marquee */
-.footer-marquee {
-  position: absolute;
-  bottom: 3.5rem;
-  left: 0;
-  right: 0;
-  height: 2.625rem;
-  overflow: hidden;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  pointer-events: none;
-}
-
-.footer-marquee-track {
-  display: flex;
-  align-items: center;
-  gap: 3.5rem;
-  white-space: nowrap;
-  animation: footerMarqueeScroll 28s linear infinite;
-  will-change: transform;
-}
-
-@keyframes footerMarqueeScroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.footer-marquee-item {
-  display: flex;
-  align-items: center;
-  gap: 3.5rem;
-  flex-shrink: 0;
-}
-
-.footer-marquee-logo-w {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 2.625rem;
-  flex-shrink: 0;
-}
-
-.footer-marquee-logo-w img,
-.footer-marquee-logo-w svg {
-  height: 2rem;
-  width: auto;
-  max-width: 110px;
-  object-fit: contain;
-  display: block;
-}
 
 /* Legal Links Bar at Bottom */
 .footer-legal-links-w {
