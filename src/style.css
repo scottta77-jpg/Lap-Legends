@@ -2134,7 +2134,7 @@ body.menu-locked, body.cart-open {
 .s.is-footer {
   position: relative;
   background-color: #d2ff00;
-  padding: 1.25rem 1.25rem 0 1.25rem;
+  padding: 1.25rem 1.25rem 0.75rem 1.25rem;
   overflow: hidden;
   z-index: 10;
   box-sizing: border-box;
@@ -2366,7 +2366,7 @@ body.menu-locked, body.cart-open {
 
 .footer-bg-bottom-btn-w {
   position: absolute;
-  bottom: 2rem;
+  bottom: 1.4rem;
   pointer-events: auto;
   z-index: 5;
 }
@@ -2378,11 +2378,11 @@ body.menu-locked, body.cart-open {
   background-color: #d2ff00;
   color: #111112;
   font-family: 'Mona Sans Variable', 'Syne', sans-serif;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 900;
   letter-spacing: -0.01em;
   text-transform: uppercase;
-  padding: 0.75rem 1.6rem;
+  padding: 0.65rem 1.4rem;
   border-radius: 9999px;
   text-decoration: none;
   border: none;
@@ -2402,17 +2402,17 @@ body.menu-locked, body.cart-open {
 }
 
 
-/* Legal Links Bar at Bottom (Slots into the side cutout notches of the card mask) */
+/* Legal Links Bar at Bottom (Slots aesthetically into the side cutout notches of the card mask) */
 .footer-legal-links-w {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   position: absolute;
-  bottom: 0.45rem;
+  bottom: 0.55rem;
   left: 0;
   right: 0;
-  padding: 0 1.6rem;
+  padding: 0 0.85rem;
   z-index: 10;
   pointer-events: none;
   box-sizing: border-box;
@@ -2424,10 +2424,12 @@ body.menu-locked, body.cart-open {
 
 .text-legal-copyright {
   font-family: 'Mona Sans Variable', 'Syne', sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
+  font-weight: 500;
   color: #111112;
   white-space: nowrap;
   line-height: 1;
+  letter-spacing: -0.01em;
 }
 
 .text-legal-copyright strong {
@@ -2442,7 +2444,7 @@ body.menu-locked, body.cart-open {
 
 .text-legal-link {
   font-family: 'Mona Sans Variable', 'Syne', sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -2457,15 +2459,9 @@ body.menu-locked, body.cart-open {
   opacity: 0.7;
 }
 
-/* Subtle Lime Glow Radial Background */
+/* Subtle Lime Glow Radial Background - disabled for pure solid electric lime floor */
 .footer-bg-gradient {
-  background-image: radial-gradient(circle farthest-corner at 50% -190%, rgba(210, 255, 0, 0) 68%, #d2ff00 83%);
-  pointer-events: none;
-  height: 100%;
-  position: absolute;
-  inset: auto 0% 0%;
-  overflow: clip;
-  z-index: 0;
+  display: none;
 }
 
 /* Responsive Breakpoints */
