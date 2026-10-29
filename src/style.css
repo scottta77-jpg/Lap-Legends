@@ -1389,18 +1389,23 @@ body.menu-locked, body.cart-open {
   margin-bottom: 10px;
 }
 
+.section-title,
 .section-title-serif {
-  font-family: 'Syne', 'Montserrat', sans-serif;
+  font-family: 'Syne', sans-serif;
   font-size: clamp(2.4rem, 4.4vw, 4rem);
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: -0.02em;
-  color: var(--dark-olive);
+  color: var(--dark-olive, #282C20);
   line-height: 1.05;
+  text-transform: uppercase;
 }
 
+.section-title em,
 .section-title-serif em {
+  font-family: 'Syne', sans-serif;
   font-style: italic;
-  font-weight: 700;
+  font-weight: 800;
+  color: var(--dark-olive, #282C20);
 }
 
 .category-cards-grid {
@@ -1548,16 +1553,21 @@ body.menu-locked, body.cart-open {
 }
 
 .collection-title {
-  font-family: 'Syne', 'Space Grotesk', sans-serif;
+  font-family: 'Syne', sans-serif;
   font-size: clamp(2.4rem, 4.4vw, 3.8rem);
   font-weight: 800;
-  letter-spacing: -0.025em;
-  color: #111111;
-  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--dark-olive, #282C20);
+  line-height: 1.05;
   text-transform: uppercase;
   margin: 0;
-  transform: scaleX(1.02);
-  transform-origin: left;
+}
+
+.collection-title em {
+  font-family: 'Syne', sans-serif;
+  font-style: italic;
+  font-weight: 800;
+  color: var(--dark-olive, #282C20);
 }
 
 .collection-subtitle {
@@ -1912,13 +1922,21 @@ body.menu-locked, body.cart-open {
 }
 
 .fan-favourites-title {
-  font-family: 'Syne', 'Montserrat', sans-serif;
+  font-family: 'Syne', sans-serif;
   font-size: clamp(2.2rem, 4.2vw, 3.6rem);
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: -0.02em;
-  color: var(--dark-olive);
-  line-height: 1;
+  color: var(--dark-olive, #282C20);
+  line-height: 1.05;
   text-transform: uppercase;
+  margin: 0;
+}
+
+.fan-favourites-title em {
+  font-family: 'Syne', sans-serif;
+  font-style: italic;
+  font-weight: 800;
+  color: var(--dark-olive, #282C20);
 }
 
 .fan-favourites-all-link {
@@ -2085,9 +2103,9 @@ body.menu-locked, body.cart-open {
 }
 
 .display-title {
-  font-family: 'Syne', 'Montserrat', sans-serif;
+  font-family: 'Syne', sans-serif;
   font-size: clamp(2.4rem, 4.4vw, 4rem);
-  font-weight: 900;
+  font-weight: 800;
   line-height: 0.98;
   letter-spacing: -0.02em;
   color: #FFFFFF;
