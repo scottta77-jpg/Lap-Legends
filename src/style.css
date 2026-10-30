@@ -1574,7 +1574,8 @@ body.menu-locked, body.cart-open {
   align-items: center;
 }
 
-.collection-view-all-btn {
+.collection-view-all-btn,
+.fan-favourites-all-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -1592,18 +1593,22 @@ body.menu-locked, body.cart-open {
   transition: all 0.2s var(--ease-out-expo);
 }
 
-.collection-view-all-btn:hover {
+.collection-view-all-btn:hover,
+.fan-favourites-all-link:hover {
   background: #111111;
   color: #FFFFFF;
   transform: translateY(-1px);
+  opacity: 1;
 }
 
-.collection-view-all-btn .arrow {
+.collection-view-all-btn .arrow,
+.fan-favourites-all-link .arrow {
   font-size: 13px;
   transition: transform 0.2s ease;
 }
 
-.collection-view-all-btn:hover .arrow {
+.collection-view-all-btn:hover .arrow,
+.fan-favourites-all-link:hover .arrow {
   transform: translate(2px, -2px);
 }
 
@@ -1906,9 +1911,10 @@ body.menu-locked, body.cart-open {
 
 .fan-favourites-header {
   display: flex;
-  align-items: baseline;
+  align-items: flex-end;
   justify-content: space-between;
   margin-bottom: 30px;
+  gap: 24px;
 }
 
 .fan-favourites-title {
@@ -1919,22 +1925,6 @@ body.menu-locked, body.cart-open {
   color: var(--dark-olive);
   line-height: 1;
   text-transform: uppercase;
-}
-
-.fan-favourites-all-link {
-  font-family: var(--font-tech);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  color: var(--dark-olive);
-  text-decoration: none;
-  opacity: 0.85;
-  transition: all 0.2s ease;
-}
-
-.fan-favourites-all-link:hover {
-  opacity: 1;
-  transform: translateX(3px);
 }
 
 .fan-favourites-grid {

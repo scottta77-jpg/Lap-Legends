@@ -256,7 +256,7 @@ export class StoreManager {
     const hash = rawHash.split('?')[0];
     const isStoreHome = !hash || hash === '#store' || hash === '#home';
     const titleEl = document.querySelector('.fan-favourites-title');
-    const viewAllEl = document.querySelector('.fan-favourites-view-all');
+    const viewAllEl = document.querySelector('.fan-favourites-view-all, .js-view-all');
 
     let filtered = getProductsByCategory(this.activeFilter);
 
@@ -265,7 +265,7 @@ export class StoreManager {
       filtered = fanFavouriteIds.map(id => getProductById(id)).filter(Boolean);
       if (titleEl) titleEl.textContent = 'FAN FAVOURITES';
       if (viewAllEl) {
-        viewAllEl.textContent = 'VIEW ALL →';
+        viewAllEl.innerHTML = '<span>VIEW ALL</span><span class="arrow">↗</span>';
         viewAllEl.href = '#shop';
       }
     } else {
@@ -276,7 +276,7 @@ export class StoreManager {
         else titleEl.textContent = 'ALL PRINTS';
       }
       if (viewAllEl) {
-        viewAllEl.textContent = 'FAN FAVOURITES →';
+        viewAllEl.innerHTML = '<span>FAN FAVOURITES</span><span class="arrow">↗</span>';
         viewAllEl.href = '#store';
       }
     }
