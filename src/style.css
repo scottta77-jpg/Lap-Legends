@@ -2105,6 +2105,40 @@ body.menu-locked, body.cart-open {
    LANDO NORRIS FOOTER (1:1 EXACT REPLICA)
    ========================================================================== */
 
+.text-hover-accessible {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.text-hover-label {
+  min-width: 0;
+}
+
+.text-roll-word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  line-height: inherit;
+  padding-inline: 0.12em;
+  margin-inline: -0.12em;
+}
+
+.text-roll-line {
+  display: block;
+  line-height: inherit;
+}
+
+.text-roll-word .char {
+  display: inline-block;
+  line-height: inherit;
+  text-shadow: 0 var(--text-roll-distance, 1.5em) currentColor;
+}
+
 @font-face {
   font-family: 'Brier';
   src: url('/assets/footer/Brier-Bold.woff2') format('woff2');
@@ -2227,6 +2261,7 @@ body.menu-locked, body.cart-open {
 }
 
 .text-impact-sm-mona.footer {
+  pointer-events: auto;
   font-family: 'Mona Sans Variable', 'Syne', sans-serif;
   font-size: clamp(3rem, 5.2vw, 6.2rem);
   font-weight: 900;

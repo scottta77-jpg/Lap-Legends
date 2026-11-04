@@ -7,6 +7,7 @@
 import { PRODUCTS, getProductById, getProductsByCategory, AMAZON_STORE_URL } from './products.js';
 import { cart } from './cart.js';
 import { sound } from './audio.js';
+import { initTextHoverEffects } from './text-hover.js';
 
 export class StoreManager {
   constructor(options = {}) {
@@ -302,6 +303,7 @@ export class StoreManager {
         </article>
       `;
     }).join('');
+    initTextHoverEffects(this.homeViewEl);
   }
 
   renderProductPage(product) {
@@ -636,6 +638,7 @@ export class StoreManager {
     `;
 
     this.bindPdpEvents(product);
+    initTextHoverEffects(this.pdpViewEl);
   }
 
   bindPdpEvents(product) {

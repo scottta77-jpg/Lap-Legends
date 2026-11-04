@@ -8,6 +8,8 @@
 
 /* --- Landing View Container --- */
 #landingView {
+  --ll-portrait-height: min(88vh, 1040px, calc(100vh - 112px));
+  --ll-portrait-height: min(88dvh, 1040px, calc(100dvh - 112px));
   position: fixed;
   inset: 0;
   width: 100vw;
@@ -48,7 +50,7 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
 
 /* =========================================================================
    THEME PALETTES & DUAL BACKGROUND CROSSFADE
-   Exact color matching for Cream (Lando), Black (Lewis), Red (Kimi)
+   Cream (Lando), warm ivory (Lewis), and crimson (Kimi)
    ========================================================================= */
 
 #landingView {
@@ -72,14 +74,14 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
   --ll-accent: #c8f700;
 }
 
-/* Theme: Pitch Black (Lewis Hamilton — Austin GP) */
-#landingView.theme-black {
-  --ll-text-primary: #ffffff;
-  --ll-text-muted: rgba(255, 255, 255, 0.68);
-  --ll-border: rgba(255, 255, 255, 0.2);
-  --ll-glass-bg: rgba(20, 22, 28, 0.5);
-  --ll-card-bg: rgba(14, 15, 20, 0.45);
-  --ll-bg-surface: #0a0b0e;
+/* Theme: Warm Ivory (Lewis Hamilton — Silverstone GP) */
+#landingView.theme-ivory {
+  --ll-text-primary: #30271d;
+  --ll-text-muted: rgba(48, 39, 29, 0.72);
+  --ll-border: rgba(48, 39, 29, 0.24);
+  --ll-glass-bg: rgba(255, 250, 237, 0.65);
+  --ll-card-bg: rgba(255, 250, 237, 0.8);
+  --ll-bg-surface: #eadbbd;
   --ll-accent: #c8f700;
 }
 
@@ -134,9 +136,9 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
   filter: invert(1) sepia(1) saturate(3) hue-rotate(5deg) brightness(0.65);
 }
 
-#landingView.theme-black .ll-topo-overlay {
-  opacity: 0.14;
-  filter: none;
+#landingView.theme-ivory .ll-topo-overlay {
+  opacity: 0.24;
+  filter: invert(1) sepia(1) saturate(2) brightness(0.65);
 }
 
 #landingView.theme-red .ll-topo-overlay {
@@ -162,8 +164,8 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
   background: radial-gradient(circle, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0) 65%);
 }
 
-#landingView.theme-black .ll-driver-spotlight {
-  background: radial-gradient(circle, rgba(255, 215, 0, 0.09) 0%, rgba(225, 6, 0, 0.04) 40%, rgba(0, 0, 0, 0) 70%);
+#landingView.theme-ivory .ll-driver-spotlight {
+  background: radial-gradient(circle, rgba(255, 250, 231, 0.68) 0%, rgba(255, 250, 231, 0) 68%);
 }
 
 #landingView.theme-red .ll-driver-spotlight {
@@ -250,12 +252,12 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
 }
 
 #landingView.theme-cream .ll-chequered-flags-img,
-#landingView.theme-cream .ll-monogram-img {
+#landingView.theme-cream .ll-monogram-img,
+#landingView.theme-ivory .ll-chequered-flags-img,
+#landingView.theme-ivory .ll-monogram-img {
   filter: none;
 }
 
-#landingView.theme-black .ll-chequered-flags-img,
-#landingView.theme-black .ll-monogram-img,
 #landingView.theme-red .ll-chequered-flags-img,
 #landingView.theme-red .ll-monogram-img {
   filter: invert(1) brightness(1.2);
@@ -265,21 +267,23 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
 .ll-header-right {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   pointer-events: auto;
 }
 
 .ll-store-pill-btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 22px;
+  gap: 10px;
+  min-height: 64px;
+  box-sizing: border-box;
+  padding: 18px 26px;
   border-radius: 10px;
   border: none;
   background: #c8f700;
   color: #0c0d10;
   font-family: 'Montserrat', sans-serif;
-  font-size: 12.5px;
+  font-size: 18px;
   font-weight: 800;
   letter-spacing: 0.8px;
   text-transform: uppercase;
@@ -290,6 +294,9 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
 }
 
 .ll-store-pill-btn svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
   stroke: #0c0d10;
 }
 
@@ -301,8 +308,11 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
 }
 
 .ll-menu-btn {
-  width: 44px;
-  height: 39px;
+  --ll-menu-line-width: 28px;
+  --ll-menu-short-width: 20px;
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
   border-radius: 10px;
   border: none;
   background: #c8f700;
@@ -310,7 +320,7 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 6px;
   cursor: pointer;
   padding: 0;
   transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
@@ -319,18 +329,18 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
 
 .ll-menu-line {
   display: block;
-  height: 2px;
+  height: 3px;
   background: #0c0d10;
   border-radius: 2px;
   transition: width 0.25s ease;
 }
 
 .ll-menu-line:nth-child(1) {
-  width: 18px;
+  width: var(--ll-menu-line-width);
 }
 
 .ll-menu-line:nth-child(2) {
-  width: 13px;
+  width: var(--ll-menu-short-width);
 }
 
 .ll-menu-btn:hover {
@@ -344,7 +354,7 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
 }
 
 .ll-menu-btn:hover .ll-menu-line:nth-child(2) {
-  width: 18px;
+  width: var(--ll-menu-line-width);
 }
 
 /* =========================================================================
@@ -353,6 +363,7 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
    ========================================================================= */
 
 .ll-drivers-stage {
+  /* The final exports share a square canvas: one size and baseline for all drivers. */
   position: absolute;
   inset: 0;
   width: 100%;
@@ -364,7 +375,8 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
 
 .ll-driver-item {
   position: absolute;
-  bottom: -14px;
+  /* Keep the exports' cropped shoulder ends below the viewport, including at peak idle. */
+  bottom: calc(var(--ll-portrait-height) * -0.075 - 8px);
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -379,7 +391,7 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
 }
 
 .ll-driver-img {
-  height: clamp(760px, 98vh, 1200px);
+  height: var(--ll-portrait-height);
   width: auto;
   max-width: none;
   object-fit: contain;
@@ -437,21 +449,23 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
 }
 
 /* =========================================================================
-   PRIMARY NEON LIME CTA BUTTON & SUBTITLE
-   Centered horizontally, sitting directly on the driver collar/chest
+   LEFT HERO COPY & PRIMARY NEON LIME CTA
+   Live typography matching the supplied hero layout mockup
    ========================================================================= */
 
 .ll-col-center {
   position: absolute;
-  bottom: 38px;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: max(35vh, 308px);
+  bottom: max(35dvh, 308px);
+  left: 48px;
+  width: clamp(270px, calc(50vw - var(--ll-portrait-height) * 0.4 - 76px), 500px);
+  container-type: inline-size;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   z-index: 55;
   pointer-events: auto;
-  text-align: center;
+  text-align: left;
 }
 
 .ll-hero-cta {
@@ -459,6 +473,8 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
   align-items: center;
   justify-content: center;
   gap: 12px;
+  max-width: 100%;
+  box-sizing: border-box;
   padding: 13.5px 34px;
   border-radius: 9px;
   background: #c8f700;
@@ -479,6 +495,13 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
   user-select: none;
   -webkit-user-select: none;
   white-space: nowrap;
+}
+
+.ll-col-center .ll-hero-cta {
+  width: fit-content;
+  max-width: 100%;
+  padding: 17px clamp(14px, 5cqw, 26px);
+  font-size: clamp(11px, 4cqw, 20px);
 }
 
 .ll-cta-arrow {
@@ -506,21 +529,25 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
 }
 
 .ll-hero-subtag {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 9.5px;
-  font-weight: 800;
-  letter-spacing: 2.8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(26px, 10.2cqw, 52px);
+  font-weight: 900;
+  line-height: 0.94;
+  letter-spacing: -0.045em;
   text-transform: uppercase;
-  color: #ffffff;
-  margin-top: 12px;
-  padding: 2px 8px;
+  color: var(--ll-text-primary);
+  margin: 22px 0 28px;
   transition: color 0.6s ease;
-  text-shadow: -1px -1px 0 rgba(0,0,0,0.95), 1px -1px 0 rgba(0,0,0,0.95), -1px 1px 0 rgba(0,0,0,0.95), 1px 1px 0 rgba(0,0,0,0.95), 0 2px 8px rgba(0, 0, 0, 0.9);
   user-select: text !important;
   -webkit-user-select: text !important;
   cursor: text !important;
   pointer-events: auto !important;
   display: inline-block;
+}
+
+.ll-hero-subtag span {
+  display: block;
+  white-space: nowrap;
 }
 
 /* =========================================================================
@@ -548,18 +575,11 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
   pointer-events: auto;
 }
 
-.ll-tagline-wrap {
-  margin-bottom: 12px;
-  pointer-events: auto;
-  user-select: text;
-  -webkit-user-select: text;
-}
-
 .ll-subheadline {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 10.5px;
+  font-size: clamp(9px, 3.05cqw, 15px);
   font-weight: 700;
-  letter-spacing: 2.8px;
+  letter-spacing: 0.17em;
   text-transform: uppercase;
   color: var(--ll-text-primary);
   margin: 0;
@@ -616,10 +636,10 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
   -webkit-backdrop-filter: blur(10px);
 }
 
-/* Black theme: sleek dark translucent card with crisp border */
-#landingView.theme-black .ll-card-bg-border {
-  fill: rgba(18, 20, 26, 0.72);
-  stroke: rgba(255, 255, 255, 0.25);
+/* Ivory theme: warm light card with a dark border */
+#landingView.theme-ivory .ll-card-bg-border {
+  fill: rgba(255, 250, 237, 0.8);
+  stroke: rgba(48, 39, 29, 0.28);
   stroke-width: 1.8;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -727,11 +747,11 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
   transition: filter 0.6s ease;
 }
 
-#landingView.theme-cream .ll-race-wreath-img {
+#landingView.theme-cream .ll-race-wreath-img,
+#landingView.theme-ivory .ll-race-wreath-img {
   filter: none;
 }
 
-#landingView.theme-black .ll-race-wreath-img,
 #landingView.theme-red .ll-race-wreath-img {
   filter: invert(1) brightness(1.2);
 }
@@ -775,28 +795,47 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
     left: 32px;
   }
 
-  .ll-subheadline {
-    font-size: 9px;
-    letter-spacing: 2px;
-  }
-
-  .ll-driver-img {
-    height: 88vh;
+  #landingView {
+    --ll-portrait-height: min(82vh, calc(100vh - 104px));
+    --ll-portrait-height: min(82dvh, calc(100dvh - 104px));
   }
 
   .ll-col-center {
-    bottom: 32px;
+    bottom: max(35vh, 304px);
+    bottom: max(35dvh, 304px);
+    left: 32px;
+    width: clamp(250px, calc(50vw - var(--ll-portrait-height) * 0.4 - 60px), 500px);
   }
 
-  .ll-hero-cta {
-    padding: 13px 30px;
-    font-size: 12.5px;
+  .ll-col-center .ll-hero-cta {
+    padding-top: 14px;
+    padding-bottom: 14px;
   }
 }
 
 @media (max-width: 768px) {
   .ll-hero-header {
     padding: 18px 20px;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 10px;
+  }
+
+  .ll-header-center {
+    position: static;
+    transform: none !important;
+    justify-self: center;
+    min-width: 0;
+    width: 100%;
+    max-width: 60px;
+  }
+
+  .ll-header-center .ll-flags-badge {
+    width: 100%;
+  }
+
+  .ll-header-center .ll-chequered-flags-img {
+    max-width: 100%;
   }
 
   .ll-brand-wordmark {
@@ -806,12 +845,35 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
   .ll-chequered-flags-img,
   .ll-monogram-img {
     height: 28px;
-    max-width: 75px;
+    max-width: 60px;
+  }
+
+  .ll-header-right {
+    gap: 10px;
   }
 
   .ll-store-pill-btn {
-    padding: 8px 16px;
-    font-size: 11px;
+    min-height: 48px;
+    padding: 12px;
+    font-size: 12px;
+    gap: 7px;
+  }
+
+  .ll-store-pill-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .ll-menu-btn {
+    --ll-menu-line-width: 22px;
+    --ll-menu-short-width: 16px;
+    width: 48px;
+    height: 48px;
+    gap: 5px;
+  }
+
+  .ll-menu-line {
+    height: 2px;
   }
 
   .ll-col-left {
@@ -826,24 +888,76 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
   }
 
   .ll-subheadline {
-    font-size: 8px;
-    letter-spacing: 1.5px;
-    margin-bottom: 12px;
+    font-size: 9px;
+    letter-spacing: 0.14em;
   }
 
-  .ll-driver-img {
-    height: 75vh;
+  #landingView {
+    --ll-portrait-height: min(75vh, calc(100vh - 90px));
+    --ll-portrait-height: min(75dvh, calc(100dvh - 90px));
   }
 
   .ll-col-center {
-    bottom: 24px;
-    width: 90%;
+    top: 96px;
+    bottom: auto;
+    left: 20px;
+    width: min(420px, calc(100% - 40px));
   }
 
-  .ll-hero-cta {
-    width: 100%;
-    max-width: 320px;
+  .ll-hero-subtag {
+    font-size: clamp(25px, 8.5cqw, 36px);
+    line-height: 1;
+    margin: 14px 0 18px;
+  }
+
+  .ll-col-center .ll-hero-cta {
+    width: auto;
     padding: 13px 20px;
     font-size: 12px;
+  }
+}
+
+@media (min-width: 769px) and (max-height: 600px) {
+  .ll-col-center {
+    left: auto;
+    right: 32px;
+    bottom: 32px;
+    width: 250px;
+  }
+
+  .ll-hero-subtag {
+    font-size: 25px;
+    margin: 14px 0 18px;
+  }
+}
+
+@media (max-width: 359px) {
+  .ll-hero-header {
+    padding-inline: 12px;
+    gap: 8px;
+  }
+
+  .ll-header-right {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 768px) and (max-height: 700px) {
+  .ll-col-center {
+    top: 72px;
+  }
+
+  .ll-subheadline {
+    font-size: 8px;
+  }
+
+  .ll-hero-subtag {
+    font-size: 24px;
+    margin: 10px 0 12px;
+  }
+
+  .ll-col-center .ll-hero-cta {
+    padding: 10px 16px;
+    font-size: 11px;
   }
 }

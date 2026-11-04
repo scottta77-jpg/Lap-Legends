@@ -25,8 +25,8 @@ export const DRIVER_SLIDES = [
     team: 'SCUDERIA FERRARI',
     era: 'SINCE 2025',
     nextRace: 'SILVERSTONE GP',
-    theme: 'theme-black',
-    bgGradient: 'radial-gradient(ellipse at 50% 45%, #14151b 0%, #090a0d 60%, #030405 100%)',
+    theme: 'theme-ivory',
+    bgGradient: 'radial-gradient(ellipse at 50% 40%, #fff5dc 0%, #eadbbd 58%, #d6bf97 100%)',
     trackD: SILVERSTONE_PATH_D,
     trackViewBox: '8 4 150 114',
     wreathImg: '/assets/hero/wreath_helmet_clean.png'
@@ -83,7 +83,7 @@ export class DriverLandingStage {
     }
 
     if (this.container) {
-      this.container.classList.remove('theme-cream', 'theme-black', 'theme-red');
+      this.container.classList.remove('theme-cream', 'theme-black', 'theme-ivory', 'theme-red');
       this.container.classList.add(DRIVER_SLIDES[0].theme);
     }
 
@@ -180,7 +180,7 @@ export class DriverLandingStage {
     }
 
     if (this.container) {
-      this.container.classList.remove('theme-cream', 'theme-black', 'theme-red');
+      this.container.classList.remove('theme-cream', 'theme-black', 'theme-ivory', 'theme-red');
       this.container.classList.add(slide.theme);
     }
   }
