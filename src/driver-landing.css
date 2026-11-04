@@ -24,12 +24,12 @@
 }
 
 #landingView ::selection {
-  background: #c8f700;
+  background: var(--electric-lime, #d2ff00);
   color: #0c0d10;
 }
 
 #landingView ::-moz-selection {
-  background: #c8f700;
+  background: var(--electric-lime, #d2ff00);
   color: #0c0d10;
 }
 
@@ -60,7 +60,7 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
   --ll-glass-bg: rgba(0, 0, 0, 0.3);
   --ll-card-bg: rgba(0, 0, 0, 0.25);
   --ll-bg-surface: #0a0b0e;
-  --ll-accent: #c8f700;
+  --ll-accent: var(--electric-lime, #d2ff00);
 }
 
 /* Theme: Cream (Lando Norris — Miami GP) */
@@ -71,7 +71,7 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
   --ll-glass-bg: rgba(255, 255, 255, 0.45);
   --ll-card-bg: rgba(255, 255, 255, 0.32);
   --ll-bg-surface: #fbf8f2;
-  --ll-accent: #c8f700;
+  --ll-accent: var(--electric-lime, #d2ff00);
 }
 
 /* Theme: Warm Ivory (Lewis Hamilton — Silverstone GP) */
@@ -82,7 +82,7 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
   --ll-glass-bg: rgba(255, 250, 237, 0.65);
   --ll-card-bg: rgba(255, 250, 237, 0.8);
   --ll-bg-surface: #eadbbd;
-  --ll-accent: #c8f700;
+  --ll-accent: var(--electric-lime, #d2ff00);
 }
 
 /* Theme: Deep Racing Crimson (Kimi Antonelli — Austin GP) */
@@ -93,7 +93,7 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
   --ll-glass-bg: rgba(60, 4, 4, 0.5);
   --ll-card-bg: rgba(45, 2, 2, 0.4);
   --ll-bg-surface: #580303;
-  --ll-accent: #c8f700;
+  --ll-accent: var(--electric-lime, #d2ff00);
 }
 
 /* Dual-layer background with seamless gradient crossfade */
@@ -263,7 +263,7 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
   filter: invert(1) brightness(1.2);
 }
 
-/* Right: Solid Yellow STORE Button and Menu Trigger */
+/* Right: Solid Lime STORE Button and Menu Trigger */
 .ll-header-right {
   display: flex;
   align-items: center;
@@ -280,7 +280,7 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
   padding: 18px 26px;
   border-radius: 10px;
   border: none;
-  background: #c8f700;
+  background: var(--electric-lime, #d2ff00);
   color: #0c0d10;
   font-family: 'Montserrat', sans-serif;
   font-size: 18px;
@@ -290,7 +290,7 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
   text-decoration: none;
   cursor: pointer;
   transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
-  box-shadow: 0 4px 18px rgba(200, 247, 0, 0.42), 0 2px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 18px rgba(210, 255, 0, 0.42), 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .ll-store-pill-btn svg {
@@ -301,10 +301,10 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
 }
 
 .ll-store-pill-btn:hover {
-  background: #d4ff00;
+  background: var(--electric-lime, #d2ff00);
   color: #0c0d10;
   transform: translateY(-1px) scale(1.03);
-  box-shadow: 0 6px 24px rgba(200, 247, 0, 0.65), 0 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 24px rgba(210, 255, 0, 0.65), 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .ll-menu-btn {
@@ -315,7 +315,7 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
   flex-shrink: 0;
   border-radius: 10px;
   border: none;
-  background: #c8f700;
+  background: var(--electric-lime, #d2ff00);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -324,7 +324,7 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
   cursor: pointer;
   padding: 0;
   transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
-  box-shadow: 0 4px 18px rgba(200, 247, 0, 0.42), 0 2px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 18px rgba(210, 255, 0, 0.42), 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .ll-menu-line {
@@ -344,9 +344,9 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
 }
 
 .ll-menu-btn:hover {
-  background: #d4ff00;
+  background: var(--electric-lime, #d2ff00);
   transform: scale(1.05);
-  box-shadow: 0 6px 24px rgba(200, 247, 0, 0.65), 0 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 24px rgba(210, 255, 0, 0.65), 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .ll-menu-btn:hover .ll-menu-line {
@@ -477,7 +477,7 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
   box-sizing: border-box;
   padding: 13.5px 34px;
   border-radius: 9px;
-  background: #c8f700;
+  background: var(--electric-lime, #d2ff00);
   color: #0c0d10;
   font-family: 'Space Grotesk', 'Montserrat', sans-serif;
   font-size: 13.5px;
@@ -487,7 +487,7 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
   text-decoration: none;
   cursor: pointer;
   border: none;
-  box-shadow: 0 4px 22px rgba(200, 247, 0, 0.45), 0 3px 10px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 22px rgba(210, 255, 0, 0.45), 0 3px 10px rgba(0, 0, 0, 0.35);
   transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
               box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1),
               background 0.2s ease;
@@ -516,8 +516,8 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
 
 .ll-hero-cta:hover {
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 8px 32px rgba(200, 247, 0, 0.65), 0 5px 14px rgba(0, 0, 0, 0.4);
-  background: #d4ff00;
+  box-shadow: 0 8px 32px rgba(210, 255, 0, 0.65), 0 5px 14px rgba(0, 0, 0, 0.4);
+  background: var(--electric-lime, #d2ff00);
 }
 
 .ll-hero-cta:hover .ll-cta-arrow {
@@ -690,11 +690,11 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
 
 .ll-track-path-ray {
   fill: none;
-  stroke: #c8f700;
+  stroke: var(--electric-lime, #d2ff00);
   stroke-width: 3.5;
   stroke-linecap: round;
   stroke-linejoin: round;
-  filter: drop-shadow(0 0 4px #c8f700) drop-shadow(0 0 8px #c8f700);
+  filter: drop-shadow(0 0 4px var(--electric-lime, #d2ff00)) drop-shadow(0 0 8px var(--electric-lime, #d2ff00));
   stroke-dasharray: 14 86;
   stroke-dashoffset: 100;
   animation: traceTrackRay 2.4s linear infinite;

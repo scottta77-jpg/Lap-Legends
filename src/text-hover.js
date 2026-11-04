@@ -146,7 +146,7 @@ export function initTextHoverEffects(root = document) {
   if (root.matches?.(textTargets)) prepareTextRoll(root);
   root.querySelectorAll(textTargets).forEach(prepareTextRoll);
 
-  // 2. Interactive Pill Buttons ("BUSINESS ENQUIRIES ↗" & "STORE" Pills)
+  // 2. Interactive Pill Buttons ("CONTACT US ↗" & "STORE" Pills)
   const pillButtons = root.querySelectorAll('.btn-w.is-footer-btn, .ll-store-pill-btn, .btn-lime');
 
   pillButtons.forEach((btn) => {

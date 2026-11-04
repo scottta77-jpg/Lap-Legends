@@ -1,0 +1,446 @@
+/* Homepage styling also scopes the shared store navigation. Product content
+   and the footer retain their existing styles. */
+#productNavigation { display: none; }
+body.page-is-pdp #productNavigation { display: block; }
+
+:is(#storeHomeView, .store-nav-scope) {
+  --home-cream: #faf6ef;
+  --home-ink: #10110e;
+  --home-lime: var(--electric-lime, #d2ff00);
+  --home-gutter: clamp(24px, 5.4vw, 96px);
+  color: var(--home-ink);
+  background: var(--home-cream);
+}
+
+:is(#storeHomeView, .store-nav-scope) .home-cream {
+  position: relative;
+  isolation: isolate;
+  background: var(--home-cream);
+}
+:is(#storeHomeView, .store-nav-scope) .home-cream::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: url('/assets/homepage/cream-contours.webp') center / cover;
+  filter: grayscale(1);
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+:is(#storeHomeView, .store-nav-scope) .home-header { position: relative; z-index: 5; }
+:is(#storeHomeView, .store-nav-scope) .home-delivery {
+  background: var(--home-lime);
+  color: var(--home-ink);
+  padding: 14px 20px 12px;
+  text-align: center;
+  font: 800 clamp(11px, 1.15vw, 15px)/1.15 'Mona Sans Variable', Arial, sans-serif;
+  font-variation-settings: "wdth" 86;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+:is(#storeHomeView, .store-nav-scope) .home-nav {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 24px;
+  padding: 25px var(--home-gutter) 18px;
+}
+:is(#storeHomeView, .store-nav-scope) .home-brand { width: fit-content; }
+:is(#storeHomeView, .store-nav-scope) .home-brand img {
+  width: clamp(124px, 13.7vw, 192px);
+  height: auto;
+  display: block;
+}
+:is(#storeHomeView, .store-nav-scope) .home-flags { display: block; }
+:is(#storeHomeView, .store-nav-scope) .home-flags img {
+  display: block;
+  width: clamp(64px, 6.3vw, 90px);
+  height: auto;
+}
+:is(#storeHomeView, .store-nav-scope) .home-nav-actions { display: flex; justify-content: flex-end; align-items: center; gap: 28px; }
+:is(#storeHomeView, .store-nav-scope) .home-shop-pill,
+:is(#storeHomeView, .store-nav-scope) .home-button,
+:is(#storeHomeView, .store-nav-scope) .home-menu-toggle,
+:is(#storeHomeView, .store-nav-scope) .home-category-arrow {
+  color: var(--home-ink);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 0;
+  cursor: pointer;
+  transition: background-color 0.25s, box-shadow 0.25s, transform 0.3s;
+}
+:is(#storeHomeView, .store-nav-scope) .home-shop-pill {
+  gap: 16px;
+  background: var(--home-lime);
+  border-radius: 100px;
+  min-height: 48px;
+  padding: 14px 28px;
+  font: 800 12px/1.4 'Montserrat', sans-serif;
+  letter-spacing: 0.1em;
+}
+:is(#storeHomeView, .store-nav-scope) .home-menu-toggle {
+  width: 48px;
+  height: 48px;
+  border: 2px solid currentColor;
+  border-radius: 4px;
+  background: transparent;
+}
+:is(#storeHomeView, .store-nav-scope) .home-shop-pill:hover,
+:is(#storeHomeView, .store-nav-scope) .home-button-lime:hover,
+:is(#storeHomeView, .store-nav-scope) .home-category-arrow:hover {
+  background-color: var(--home-lime);
+  box-shadow: 0 5px 24px rgba(210, 255, 0, 0.2);
+  transform: translateY(-2px);
+}
+:is(#storeHomeView, .store-nav-scope) .home-menu-toggle:hover { background: var(--home-lime); }
+:is(#storeHomeView, .store-nav-scope) a:focus-visible,
+:is(#storeHomeView, .store-nav-scope) button:focus-visible { outline: 3px solid currentColor; outline-offset: 5px; }
+
+:is(#storeHomeView, .store-nav-scope) .home-hero {
+  position: relative;
+  isolation: isolate;
+  min-height: clamp(620px, 70vw, 1040px);
+  overflow: hidden;
+}
+:is(#storeHomeView, .store-nav-scope) .home-driver-number {
+  position: absolute;
+  top: -5%;
+  left: 33%;
+  font: italic 500 clamp(280px, 32vw, 510px)/1 'Montserrat', sans-serif;
+  letter-spacing: -0.1em;
+  color: transparent;
+  -webkit-text-stroke: 1px #bdb8ae;
+  pointer-events: none;
+  z-index: -1;
+}
+:is(#storeHomeView, .store-nav-scope) .home-hero-copy {
+  position: relative;
+  z-index: 2;
+  padding: clamp(52px, 6.6vw, 104px) 0 154px var(--home-gutter);
+  width: 60%;
+  pointer-events: none;
+}
+:is(#storeHomeView, .store-nav-scope) .home-hero-copy a { pointer-events: auto; }
+:is(#storeHomeView, .store-nav-scope) .home-eyebrow {
+  font: 800 clamp(11px, 1.3vw, 18px)/1.45 'Montserrat', sans-serif;
+  letter-spacing: 0.11em;
+}
+:is(#storeHomeView, .store-nav-scope) .home-hero-title {
+  margin-top: 30px;
+  font: 900 clamp(78px, 10vw, 150px)/0.87 'Montserrat', sans-serif;
+  letter-spacing: -0.065em;
+}
+:is(#storeHomeView, .store-nav-scope) .home-hero-title > span { display: block; width: fit-content; transform: scaleX(1.15); transform-origin: left; }
+:is(#storeHomeView, .store-nav-scope) .home-hero-title em {
+  position: relative;
+  display: block;
+  width: fit-content;
+  white-space: nowrap;
+  margin-top: -0.2em;
+  font: italic 500 clamp(70px, 9.8vw, 150px)/0.95 'Bodoni Moda', Georgia, serif;
+  letter-spacing: -0.065em;
+}
+:is(#storeHomeView, .store-nav-scope) .home-hero-title em::after {
+  content: '';
+  position: absolute;
+  width: 28%;
+  height: 7px;
+  bottom: -3px;
+  left: 30%;
+  background: var(--home-lime);
+  border-radius: 8px;
+  transform: rotate(-0.5deg);
+}
+:is(#storeHomeView, .store-nav-scope) .home-hero-description {
+  margin: 48px 0 30px;
+  font: 500 clamp(15px, 1.65vw, 23px)/1.5 'DM Sans', sans-serif;
+  letter-spacing: -0.025em;
+}
+:is(#storeHomeView, .store-nav-scope) .home-button {
+  min-height: 54px;
+  gap: 24px;
+  padding: 17px 27px;
+  font: 800 clamp(11px, 1.15vw, 15px)/1.4 'Montserrat', sans-serif;
+  letter-spacing: 0.13em;
+}
+:is(#storeHomeView, .store-nav-scope) .home-button .arrow,
+:is(#storeHomeView, .store-nav-scope) .home-shop-pill .arrow { font-size: 1.5em; line-height: 0.8; transition: transform 0.3s; }
+:is(#storeHomeView, .store-nav-scope) .home-button:hover .arrow,
+:is(#storeHomeView, .store-nav-scope) .home-shop-pill:hover .arrow { transform: translateX(4px); }
+:is(#storeHomeView, .store-nav-scope) .home-button-lime { background: var(--home-lime); }
+:is(#storeHomeView, .store-nav-scope) .home-hero-art {
+  display: block;
+  position: absolute;
+  width: 100%;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+:is(#storeHomeView, .store-nav-scope) .home-hero-art img { display: block; width: 100%; height: auto; }
+:is(#storeHomeView, .store-nav-scope) .home-collection-tag {
+  position: absolute;
+  right: 2.6%;
+  bottom: 31%;
+  z-index: 3;
+  background: var(--home-lime);
+  color: var(--home-ink);
+  padding: 15px 19px;
+  font: 800 clamp(10px, 1vw, 14px)/1.3 'Montserrat', sans-serif;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+:is(#storeHomeView, .store-nav-scope) .home-hero-categories {
+  position: absolute;
+  z-index: 3;
+  bottom: 30px;
+  left: var(--home-gutter);
+  right: var(--home-gutter);
+  display: flex;
+  gap: clamp(28px, 4.5vw, 72px);
+  border-bottom: 1px solid #25251c40;
+}
+:is(#storeHomeView, .store-nav-scope) .home-hero-categories a {
+  position: relative;
+  padding: 18px 0 23px;
+  text-decoration: none;
+  color: inherit;
+  font: 800 clamp(11px, 1.2vw, 16px)/1.4 'Montserrat', sans-serif;
+  letter-spacing: 0.1em;
+}
+:is(#storeHomeView, .store-nav-scope) .home-hero-categories a::after {
+  content: '';
+  position: absolute;
+  height: 4px;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  background: var(--home-lime);
+  transition: width 0.3s;
+}
+:is(#storeHomeView, .store-nav-scope) .home-hero-categories a.is-current::after { width: 66%; }
+:is(#storeHomeView, .store-nav-scope) .home-hero-categories a:hover::after { width: 100%; }
+
+:is(#storeHomeView, .store-nav-scope) .home-favourites {
+  position: relative;
+  isolation: isolate;
+  min-height: clamp(590px, 63.4vw, 960px);
+  overflow: hidden;
+  background: #28291e url('/assets/homepage/dark-contours.webp') center / cover;
+  color: #f5ecda;
+}
+:is(#storeHomeView, .store-nav-scope) .home-favourites > .home-eyebrow {
+  position: absolute;
+  top: 7%;
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+}
+:is(#storeHomeView, .store-nav-scope) .home-profile {
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  width: auto;
+  max-width: none;
+  pointer-events: none;
+}
+/* Account for the transparent inset around each portrait when aligning the faces. */
+:is(#storeHomeView, .store-nav-scope) .home-profile-helmet { right: 83%; transform: translateX(12%); }
+:is(#storeHomeView, .store-nav-scope) .home-profile-face { left: 83%; transform: translateX(-14%); }
+:is(#storeHomeView, .store-nav-scope) .home-category-columns {
+  position: relative;
+  z-index: 2;
+  width: 48%;
+  margin: 0 auto;
+  padding-top: clamp(150px, 16.3vw, 246px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(24px, 4vw, 60px);
+}
+:is(#storeHomeView, .store-nav-scope) .home-category { min-width: 0; }
+:is(#storeHomeView, .store-nav-scope) .home-category-number {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font: 700 clamp(11px, 1.25vw, 17px)/1.4 'Montserrat', sans-serif;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+}
+:is(#storeHomeView, .store-nav-scope) .home-category-number::after { content: ''; width: 65px; height: 1px; background: currentColor; opacity: 0.65; }
+:is(#storeHomeView, .store-nav-scope) .home-category h3 { font: 800 clamp(34px, 4.35vw, 66px)/1.04 'Montserrat', sans-serif; letter-spacing: -0.055em; }
+:is(#storeHomeView, .store-nav-scope) .home-category h3 a { display: block; text-decoration: none; color: inherit; }
+:is(#storeHomeView, .store-nav-scope) .home-category h3 em { display: block; font: italic 500 1.3em/0.94 'Bodoni Moda', Georgia, serif; letter-spacing: -0.06em; }
+:is(#storeHomeView, .store-nav-scope) .home-category-name { display: block; width: fit-content; position: relative; }
+:is(#storeHomeView, .store-nav-scope) .home-category-name-drivers::after {
+  content: '';
+  position: absolute;
+  bottom: -16px;
+  left: 20%;
+  width: 58%;
+  height: 6px;
+  background: var(--home-lime);
+  border-radius: 50%;
+  transform: rotate(-3deg);
+}
+:is(#storeHomeView, .store-nav-scope) .home-category-description { margin: 38px 0 22px; font: 400 clamp(13px, 1.5vw, 21px)/1.5 'DM Sans', sans-serif; letter-spacing: -0.025em; }
+:is(#storeHomeView, .store-nav-scope) .home-category-arrow { width: 56px; height: 56px; border-radius: 8px; background: var(--home-lime); }
+:is(#storeHomeView, .store-nav-scope) .home-category-arrow svg { transition: transform 0.3s; }
+:is(#storeHomeView, .store-nav-scope) .home-category-arrow:hover svg { transform: translateX(3px); }
+:is(#storeHomeView, .store-nav-scope) .home-view-all {
+  position: absolute;
+  bottom: 14%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  padding: 7px 0;
+  border-bottom: 2px solid currentColor;
+  color: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  font: 800 clamp(13px, 1.5vw, 20px)/1.4 'Montserrat', sans-serif;
+  letter-spacing: 0.1em;
+  z-index: 3;
+}
+
+:is(#storeHomeView, .store-nav-scope) .home-calendar {
+  position: relative;
+  display: grid;
+  background: var(--home-lime);
+  overflow: hidden;
+}
+:is(#storeHomeView, .store-nav-scope) .home-calendar-art {
+  grid-area: 1 / 1;
+  align-self: end;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+:is(#storeHomeView, .store-nav-scope) .home-calendar-copy { grid-area: 1 / 1; align-self: center; position: relative; padding: 5.2vw 0 5.2vw var(--home-gutter); width: 54%; }
+:is(#storeHomeView, .store-nav-scope) .home-calendar-eyebrow { display: flex; gap: 24px; align-items: center; font-size: clamp(10px, 1.1vw, 15px); }
+:is(#storeHomeView, .store-nav-scope) .home-calendar-eyebrow::after { content: ''; height: 1px; width: 135px; background: currentColor; }
+:is(#storeHomeView, .store-nav-scope) .home-calendar-title { margin: 30px 0 35px; font: 900 clamp(52px, 6.2vw, 94px)/0.94 'Montserrat', sans-serif; letter-spacing: -0.06em; }
+:is(#storeHomeView, .store-nav-scope) .home-calendar-title > span { display: block; }
+:is(#storeHomeView, .store-nav-scope) .home-calendar-title em { display: block; font: italic 500 1.05em/0.95 'Bodoni Moda', Georgia, serif; letter-spacing: -0.07em; }
+:is(#storeHomeView, .store-nav-scope) .home-button-dark { background: #161713; color: #fffaf0; }
+:is(#storeHomeView, .store-nav-scope) .home-button-dark:hover { background: #33362b; transform: translateY(-2px); }
+
+:is(#storeHomeView, .store-nav-scope) .home-catalog { display: none; min-height: 60vh; }
+body.page-is-catalog :is(#storeHomeView, .store-nav-scope) .home-editorial { display: none; }
+body.page-is-catalog :is(#storeHomeView, .store-nav-scope) .home-catalog { display: block; }
+:is(#storeHomeView, .store-nav-scope) .home-catalog-filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 34px; }
+:is(#storeHomeView, .store-nav-scope) .home-catalog-filters button {
+  background: transparent;
+  border: 1px solid #282c2040;
+  border-radius: 100px;
+  padding: 12px 18px;
+  font: 700 12px/1.4 'Montserrat', sans-serif;
+  color: inherit;
+  cursor: pointer;
+}
+:is(#storeHomeView, .store-nav-scope) .home-catalog-filters button.is-active { background: var(--home-lime); border-color: var(--home-lime); }
+
+:is(#storeHomeView, .store-nav-scope) .home-navigation { position: fixed; inset: 0 0 0 auto; width: min(480px, 100%); height: 100dvh; max-height: none; margin: 0; max-width: 100%; border: 0; background: var(--home-cream); color: var(--home-ink); padding: 0; }
+:is(#storeHomeView, .store-nav-scope) .home-navigation::backdrop { background: #15171199; backdrop-filter: blur(6px); }
+:is(#storeHomeView, .store-nav-scope) .home-navigation-inner { min-height: 100%; display: flex; flex-direction: column; padding: 34px; }
+:is(#storeHomeView, .store-nav-scope) .home-navigation-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 54px; }
+:is(#storeHomeView, .store-nav-scope) .home-navigation-heading h2 { font: 900 19px/1.2 'Montserrat', sans-serif; letter-spacing: -0.04em; }
+:is(#storeHomeView, .store-nav-scope) .home-navigation-heading button { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid currentColor; background: transparent; color: inherit; border-radius: 4px; cursor: pointer; }
+:is(#storeHomeView, .store-nav-scope) .home-navigation nav { display: grid; gap: 25px; }
+:is(#storeHomeView, .store-nav-scope) .home-navigation nav a { width: fit-content; text-decoration: none; color: inherit; font: 800 clamp(23px, 3vw, 32px)/1.3 'Montserrat', sans-serif; letter-spacing: -0.04em; }
+:is(#storeHomeView, .store-nav-scope) .home-navigation-utilities { display: grid; gap: 22px; margin-top: auto; padding-top: 54px; }
+:is(#storeHomeView, .store-nav-scope) .home-navigation-utilities > * { text-decoration: none; text-align: left; border: 0; background: transparent; color: inherit; cursor: pointer; font: 700 12px/1.5 'Montserrat', sans-serif; letter-spacing: 0.07em; width: fit-content; }
+
+@media (min-width: 1700px) {
+  :is(#storeHomeView, .store-nav-scope) .home-hero-art { width: 1560px; right: calc((100% - 1700px) / 2); }
+  :is(#storeHomeView, .store-nav-scope) .home-hero-copy { padding-left: max(var(--home-gutter), calc((100% - 1510px) / 2)); }
+  :is(#storeHomeView, .store-nav-scope) .home-category-columns { width: 800px; }
+}
+
+@media (max-width: 1000px) {
+  :is(#storeHomeView, .store-nav-scope) .home-nav { padding-top: 17px; }
+  :is(#storeHomeView, .store-nav-scope) .home-nav-actions { gap: 22px; }
+  :is(#storeHomeView, .store-nav-scope) .home-shop-pill { min-height: 40px; padding: 12px 24px; font-size: 10px; }
+  :is(#storeHomeView, .store-nav-scope) .home-menu-toggle { width: 40px; height: 40px; }
+  :is(#storeHomeView, .store-nav-scope) .home-hero-title { margin-top: 24px; }
+  :is(#storeHomeView, .store-nav-scope) .home-hero-description { margin-top: 45px; }
+  :is(#storeHomeView, .store-nav-scope) .home-button { min-height: 46px; padding: 14px 22px; gap: 18px; }
+  :is(#storeHomeView, .store-nav-scope) .home-category-arrow { width: 45px; height: 45px; }
+  :is(#storeHomeView, .store-nav-scope) .home-category-number { margin-bottom: 17px; }
+  :is(#storeHomeView, .store-nav-scope) .home-category-description { margin-top: 35px; }
+  :is(#storeHomeView, .store-nav-scope) .home-calendar-title { margin-top: 24px; margin-bottom: 28px; }
+}
+
+@media (max-width: 700px) {
+  :is(#storeHomeView, .store-nav-scope) { --home-gutter: 24px; }
+  :is(#storeHomeView, .store-nav-scope) .home-delivery { font-size: 11px; padding: 11px 16px; }
+  :is(#storeHomeView, .store-nav-scope) .home-nav { grid-template-columns: minmax(0, 1fr) auto auto; gap: 12px; padding: 14px 24px; }
+  :is(#storeHomeView, .store-nav-scope) .home-brand img { width: 111px; }
+  :is(#storeHomeView, .store-nav-scope) .home-flags img { width: 40px; }
+  :is(#storeHomeView, .store-nav-scope) .home-nav-actions { gap: 10px; }
+  :is(#storeHomeView, .store-nav-scope) .home-shop-pill { padding: 11px 15px; gap: 8px; min-height: 38px; font-size: 9px; letter-spacing: 0.07em; }
+  :is(#storeHomeView, .store-nav-scope) .home-menu-toggle { width: 38px; height: 38px; }
+  :is(#storeHomeView, .store-nav-scope) .home-hero { min-height: 0; padding-bottom: 73px; }
+  :is(#storeHomeView, .store-nav-scope) .home-hero-copy { padding: 35px 24px 0; width: 100%; }
+  :is(#storeHomeView, .store-nav-scope) .home-eyebrow { font-size: 11px; }
+  :is(#storeHomeView, .store-nav-scope) .home-driver-number { font-size: 300px; left: 28%; top: 30px; }
+  :is(#storeHomeView, .store-nav-scope) .home-hero-title { font-size: clamp(76px, 18vw, 122px); margin-top: 25px; }
+  :is(#storeHomeView, .store-nav-scope) .home-hero-title em { font-size: clamp(72px, 17.8vw, 116px); }
+  :is(#storeHomeView, .store-nav-scope) .home-hero-title em::after { height: 5px; }
+  :is(#storeHomeView, .store-nav-scope) .home-hero-description { margin: 28px 0 22px; font-size: 15px; }
+  :is(#storeHomeView, .store-nav-scope) .home-hero-art { position: relative; width: 170%; margin-left: -66%; margin-top: -48px; right: auto; bottom: auto; }
+  :is(#storeHomeView, .store-nav-scope) .home-collection-tag { bottom: 27%; padding: 12px 15px; right: 20px; font-size: 9px; }
+  :is(#storeHomeView, .store-nav-scope) .home-hero-categories { bottom: 22px; gap: 0; justify-content: space-between; }
+  :is(#storeHomeView, .store-nav-scope) .home-hero-categories a { font-size: 10px; letter-spacing: 0.03em; padding-bottom: 16px; }
+  :is(#storeHomeView, .store-nav-scope) .home-favourites { min-height: 800px; }
+  :is(#storeHomeView, .store-nav-scope) .home-favourites > .home-eyebrow { top: 34px; }
+  :is(#storeHomeView, .store-nav-scope) .home-category-columns { width: 100%; padding: 100px 24px 0; gap: 24px; }
+  :is(#storeHomeView, .store-nav-scope) .home-category h3 { font-size: clamp(28px, 8vw, 48px); }
+  :is(#storeHomeView, .store-nav-scope) .home-category h3 em { font-size: 1.45em; }
+  :is(#storeHomeView, .store-nav-scope) .home-category-number { font-size: 11px; margin-bottom: 22px; }
+  :is(#storeHomeView, .store-nav-scope) .home-category-description { font-size: 13px; margin: 34px 0 22px; }
+  :is(#storeHomeView, .store-nav-scope) .home-category-description br { display: none; }
+  :is(#storeHomeView, .store-nav-scope) .home-profile { height: 365px; transform: none; }
+  :is(#storeHomeView, .store-nav-scope) .home-profile-helmet { left: calc(50% - 350px); right: auto; }
+  :is(#storeHomeView, .store-nav-scope) .home-profile-face { right: calc(50% - 350px); left: auto; }
+  :is(#storeHomeView, .store-nav-scope) .home-view-all { top: 397px; bottom: auto; font-size: 12px; }
+  :is(#storeHomeView, .store-nav-scope) .home-calendar-art { grid-area: auto; width: 160%; max-width: none; margin-left: -60%; }
+  :is(#storeHomeView, .store-nav-scope) .home-calendar-copy { grid-area: 1 / 1; padding: 42px 24px 24px; width: 100%; }
+  :is(#storeHomeView, .store-nav-scope) .home-calendar-eyebrow { font-size: 10px; gap: 20px; }
+  :is(#storeHomeView, .store-nav-scope) .home-calendar-eyebrow::after { width: 70px; }
+  :is(#storeHomeView, .store-nav-scope) .home-calendar-title { font-size: clamp(60px, 15vw, 90px); margin: 26px 0; }
+  :is(#storeHomeView, .store-nav-scope) .home-calendar .home-button { position: relative; z-index: 1; }
+  :is(#storeHomeView, .store-nav-scope) .home-catalog .section-container { padding: 36px 24px 60px; }
+  :is(#storeHomeView, .store-nav-scope) .home-catalog .fan-favourites-header { align-items: flex-start; gap: 20px; }
+  :is(#storeHomeView, .store-nav-scope) .home-catalog .fan-favourites-title { font-size: 28px; }
+  :is(#storeHomeView, .store-nav-scope) .home-catalog .fan-favourites-view-all { font-size: 10px; }
+  :is(#storeHomeView, .store-nav-scope) .home-catalog-filters { gap: 8px; }
+  :is(#storeHomeView, .store-nav-scope) .home-catalog-filters button { padding: 10px 13px; font-size: 10px; }
+}
+
+@media (max-width: 370px) {
+  :is(#storeHomeView, .store-nav-scope) .home-nav { padding-inline: 16px; gap: 8px; }
+  :is(#storeHomeView, .store-nav-scope) .home-brand img { width: 94px; }
+  :is(#storeHomeView, .store-nav-scope) .home-flags img { width: 30px; }
+  :is(#storeHomeView, .store-nav-scope) .home-nav-actions { gap: 8px; }
+  :is(#storeHomeView, .store-nav-scope) .home-shop-pill { padding-inline: 10px; gap: 6px; font-size: 8px; }
+  :is(#storeHomeView, .store-nav-scope) .home-hero-title { font-size: 72px; }
+  :is(#storeHomeView, .store-nav-scope) .home-hero-title em { font-size: 64px; }
+  :is(#storeHomeView, .store-nav-scope) .home-category-columns { padding-inline: 20px; gap: 20px; }
+  :is(#storeHomeView, .store-nav-scope) .home-category h3 { font-size: 26px; }
+  :is(#storeHomeView, .store-nav-scope) .home-category-description { font-size: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(#storeHomeView, .store-nav-scope) .home-shop-pill,
+  :is(#storeHomeView, .store-nav-scope) .home-button,
+  :is(#storeHomeView, .store-nav-scope) .home-category-arrow,
+  :is(#storeHomeView, .store-nav-scope) .home-menu-toggle,
+  :is(#storeHomeView, .store-nav-scope) .arrow,
+  :is(#storeHomeView, .store-nav-scope) .home-category-arrow svg { transition: none; }
+}

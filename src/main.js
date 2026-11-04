@@ -6,6 +6,7 @@ import { CartDrawerUI } from './cart.js';
 import { StoreManager } from './store.js';
 import { DriverLandingStage } from './driver-landing.js';
 import { initTextHoverEffects } from './text-hover.js';
+import { initHomepage } from './homepage.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
   const container = document.getElementById('lapLegendsHero');
@@ -107,6 +108,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Initialize Full Store & PDP Controller
   const storeManager = new StoreManager({ cartDrawer });
+  initHomepage();
 
   // Sound toggle button
   if (soundToggleBtn) {
