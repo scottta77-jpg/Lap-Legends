@@ -18,7 +18,17 @@
   z-index: 100;
   opacity: 1;
   transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  user-select: none;
+  user-select: auto;
+}
+
+#landingView ::selection {
+  background: #c8f700;
+  color: #0c0d10;
+}
+
+#landingView ::-moz-selection {
+  background: #c8f700;
+  color: #0c0d10;
 }
 
 #landingView.is-hidden {
@@ -449,33 +459,41 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
   align-items: center;
   justify-content: center;
   gap: 12px;
-  padding: 14px 36px;
-  border-radius: 8px;
+  padding: 13.5px 34px;
+  border-radius: 9px;
   background: #c8f700;
   color: #0c0d10;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Space Grotesk', 'Montserrat', sans-serif;
   font-size: 13.5px;
-  font-weight: 900;
-  letter-spacing: 0.8px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
   border: none;
-  box-shadow: 0 4px 26px rgba(200, 247, 0, 0.45), 0 2px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              background 0.25s ease;
+  box-shadow: 0 4px 22px rgba(200, 247, 0, 0.45), 0 3px 10px rgba(0, 0, 0, 0.35);
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.2s ease;
   will-change: transform, box-shadow;
+  user-select: none;
+  -webkit-user-select: none;
+  white-space: nowrap;
 }
 
 .ll-cta-arrow {
+  width: 18px;
+  height: 18px;
   stroke: currentColor;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  stroke-width: 2.6px;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-block;
+  flex-shrink: 0;
 }
 
 .ll-hero-cta:hover {
-  transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 8px 36px rgba(200, 247, 0, 0.65), 0 4px 12px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 32px rgba(200, 247, 0, 0.65), 0 5px 14px rgba(0, 0, 0, 0.4);
   background: #d4ff00;
 }
 
@@ -491,12 +509,18 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 9.5px;
   font-weight: 800;
-  letter-spacing: 3px;
+  letter-spacing: 2.8px;
   text-transform: uppercase;
   color: #ffffff;
-  margin-top: 13px;
+  margin-top: 12px;
+  padding: 2px 8px;
   transition: color 0.6s ease;
-  text-shadow: -1px -1px 0 rgba(0,0,0,0.9), 1px -1px 0 rgba(0,0,0,0.9), -1px 1px 0 rgba(0,0,0,0.9), 1px 1px 0 rgba(0,0,0,0.9), 0 2px 8px rgba(0, 0, 0, 0.8);
+  text-shadow: -1px -1px 0 rgba(0,0,0,0.95), 1px -1px 0 rgba(0,0,0,0.95), -1px 1px 0 rgba(0,0,0,0.95), 1px 1px 0 rgba(0,0,0,0.95), 0 2px 8px rgba(0, 0, 0, 0.9);
+  user-select: text !important;
+  -webkit-user-select: text !important;
+  cursor: text !important;
+  pointer-events: auto !important;
+  display: inline-block;
 }
 
 /* =========================================================================
@@ -526,6 +550,9 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
 
 .ll-tagline-wrap {
   margin-bottom: 12px;
+  pointer-events: auto;
+  user-select: text;
+  -webkit-user-select: text;
 }
 
 .ll-subheadline {
@@ -536,9 +563,15 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
   text-transform: uppercase;
   color: var(--ll-text-primary);
   margin: 0;
+  padding: 2px 4px 2px 0;
   line-height: 1.4;
   transition: color 0.6s ease;
   white-space: nowrap;
+  user-select: text !important;
+  -webkit-user-select: text !important;
+  cursor: text !important;
+  pointer-events: auto !important;
+  display: inline-block;
 }
 
 /* Track & Race Team Card (Stepped Tab Badge with SVG light ray) */

@@ -265,8 +265,23 @@ export class DriverLandingStage {
     // Clicking background advances slide smoothly
     if (this.container) {
       this.container.addEventListener('click', (e) => {
-        // Do not advance if user clicked a link or button
-        if (e.target.closest('a') || e.target.closest('button')) return;
+        // Do not advance if user selected text
+        const selection = window.getSelection();
+        if (selection && selection.toString().trim().length > 0) return;
+
+        // Do not advance if user clicked a link, button, or interactive text container
+        if (
+          e.target.closest('a') ||
+          e.target.closest('button') ||
+          e.target.closest('.ll-col-left') ||
+          e.target.closest('.ll-col-center') ||
+          e.target.closest('.ll-hero-header') ||
+          e.target.closest('.ll-subheadline') ||
+          e.target.closest('.ll-hero-subtag')
+        ) {
+          return;
+        }
+
         this.nextSlide();
         this.startAutoPlay();
       });
