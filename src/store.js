@@ -8,6 +8,7 @@ import { PRODUCTS, getProductById, getProductsByCategory, AMAZON_STORE_URL } fro
 import { cart } from './cart.js';
 import { sound } from './audio.js';
 import { initTextHoverEffects } from './text-hover.js';
+import { PageTransition } from './page-transition.js';
 
 export class StoreManager {
   constructor(options = {}) {
@@ -25,6 +26,8 @@ export class StoreManager {
     this.pdpViewEl = document.getElementById('storePdpView');
     this.catalogGridEl = document.getElementById('catalogGrid');
     this.filterBtns = document.querySelectorAll('.js-filter-tab');
+    this.pageTransition = new PageTransition();
+    this.currentRoute = null;
 
     this.init();
   }
@@ -42,6 +45,16 @@ export class StoreManager {
   bindEvents() {
     // Hash change router (multi-page state switching)
     window.addEventListener('hashchange', () => this.handleRoute());
+
+    // Selecting the current catalog route again should also return to the page top.
+    document.addEventListener('click', (e) => {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      const link = e.target.closest('a[href="#shop"], a[href^="#shop?"]');
+      if (link && link.getAttribute('href') === window.location.hash) {
+        e.preventDefault();
+        this.handleRoute();
+      }
+    });
 
     // Catalog filter buttons
     this.filterBtns.forEach(btn => {
@@ -112,6 +125,38 @@ export class StoreManager {
 
   handleRoute() {
     const rawHash = window.location.hash || '';
+    const render = () => {
+      this.renderRoute(rawHash);
+      this.currentRoute = rawHash;
+      document.dispatchEvent(new Event('lap:route-rendered'));
+      if (document.body.classList.contains('page-is-landing')) return this.landingViewEl;
+      if (document.body.classList.contains('page-is-pdp')) return this.pdpViewEl;
+      return this.homeViewEl;
+    };
+
+    // Cold loads and repeat selections keep their immediate top-of-page behaviour.
+    if (this.currentRoute === null || (rawHash === this.currentRoute && !this.pageTransition.active)) render();
+    else {
+      this.cartDrawer?.close();
+      this.pageTransition.navigate({ label: this.getRouteLabel(rawHash), render });
+    }
+  }
+
+  getRouteLabel(rawHash) {
+    const [path, query = ''] = rawHash.split('?');
+    if (path.startsWith('#product/')) {
+      const product = getProductById(path.slice('#product/'.length)) || PRODUCTS[0];
+      return product.shortTitle || product.title;
+    }
+    if (path.startsWith('#shop')) {
+      const category = new URLSearchParams(query).get('category');
+      return { drivers: 'Driver Prints', circuits: 'Circuit Art', calendars: 'Race Calendars' }[category] || 'All Prints';
+    }
+    if (!path || ['#', '#/', '#landing'].includes(path)) return 'Driver Showcase';
+    return 'Lap Legends Store';
+  }
+
+  renderRoute(rawHash) {
     const hash = rawHash.split('?')[0];
 
     document.body.classList.toggle('page-is-catalog', hash.startsWith('#shop'));
@@ -133,10 +178,6 @@ export class StoreManager {
         const params = new URLSearchParams(query);
         const cat = params.get('category') || 'all';
         this.setFilter(cat);
-        const grid = document.getElementById('shopCatalogSection');
-        if (grid) {
-          setTimeout(() => grid.scrollIntoView({ behavior: 'smooth' }), 60);
-        }
       } else {
         this.activeFilter = 'all';
         this.renderCatalog();
@@ -149,7 +190,9 @@ export class StoreManager {
   }
 
   navigateToCatalog(category = 'all') {
-    window.location.hash = `#shop?category=${category}`;
+    const route = `#shop?category=${category}`;
+    if (window.location.hash === route) this.handleRoute();
+    else window.location.hash = route;
   }
 
   navigateToStore() {

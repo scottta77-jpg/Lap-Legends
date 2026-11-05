@@ -27,8 +27,7 @@ export function initHomepage() {
   menu.addEventListener('click', event => {
     if (event.target === menu || event.target.closest('a, .js-cart-trigger')) closeMenu();
   });
-  window.addEventListener('hashchange', () => {
-    closeMenu();
-    placeHeader();
-  });
+  window.addEventListener('hashchange', closeMenu);
+  document.addEventListener('lap:transition-start', closeMenu);
+  document.addEventListener('lap:route-rendered', placeHeader);
 }

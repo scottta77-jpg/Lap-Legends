@@ -104,7 +104,7 @@ body.page-is-pdp #productNavigation { display: block; }
 :is(#storeHomeView, .store-nav-scope) .home-hero {
   position: relative;
   isolation: isolate;
-  min-height: clamp(620px, 70vw, 1040px);
+  min-height: max(620px, 70vw);
   overflow: hidden;
 }
 :is(#storeHomeView, .store-nav-scope) .home-driver-number {
@@ -357,6 +357,7 @@ body.page-is-catalog :is(#storeHomeView, .store-nav-scope) .home-catalog { displ
 :is(#storeHomeView, .store-nav-scope) .home-navigation-utilities > * { text-decoration: none; text-align: left; border: 0; background: transparent; color: inherit; cursor: pointer; font: 700 12px/1.5 'Montserrat', sans-serif; letter-spacing: 0.07em; width: fit-content; }
 
 @media (min-width: 1700px) {
+  :is(#storeHomeView, .store-nav-scope) .home-hero { min-height: 1100px; }
   :is(#storeHomeView, .store-nav-scope) .home-hero-art { width: 1560px; right: calc((100% - 1700px) / 2); }
   :is(#storeHomeView, .store-nav-scope) .home-hero-copy { padding-left: max(var(--home-gutter), calc((100% - 1510px) / 2)); }
   :is(#storeHomeView, .store-nav-scope) .home-category-columns { width: 800px; }
