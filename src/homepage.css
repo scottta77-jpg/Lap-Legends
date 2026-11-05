@@ -333,17 +333,27 @@ body.page-is-pdp #productNavigation { display: block; }
 :is(#storeHomeView, .store-nav-scope) .home-catalog { display: none; min-height: 60vh; }
 body.page-is-catalog :is(#storeHomeView, .store-nav-scope) .home-editorial { display: none; }
 body.page-is-catalog :is(#storeHomeView, .store-nav-scope) .home-catalog { display: block; }
-:is(#storeHomeView, .store-nav-scope) .home-catalog-filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 34px; }
+:is(#storeHomeView, .store-nav-scope) .home-catalog .section-container {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 28px var(--home-gutter) 84px;
+}
+:is(#storeHomeView, .store-nav-scope) .home-catalog-filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 42px; }
 :is(#storeHomeView, .store-nav-scope) .home-catalog-filters button {
   background: transparent;
-  border: 1px solid #282c2040;
+  border: 1px solid rgba(40, 44, 32, 0.16);
   border-radius: 100px;
-  padding: 12px 18px;
-  font: 700 12px/1.4 'Montserrat', sans-serif;
+  padding: 10px 20px;
+  font: 700 11px/1.3 'Montserrat', sans-serif;
+  letter-spacing: 0.03em;
   color: inherit;
   cursor: pointer;
+  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
 }
-:is(#storeHomeView, .store-nav-scope) .home-catalog-filters button.is-active { background: var(--home-lime); border-color: var(--home-lime); }
+:is(#storeHomeView, .store-nav-scope) .home-catalog-filters button:hover {
+  border-color: rgba(40, 44, 32, 0.45);
+}
+:is(#storeHomeView, .store-nav-scope) .home-catalog-filters button.is-active { background: var(--home-lime); border-color: var(--home-lime); color: var(--home-ink); }
 
 :is(#storeHomeView, .store-nav-scope) .home-navigation { position: fixed; inset: 0 0 0 auto; width: min(480px, 100%); height: 100dvh; max-height: none; margin: 0; max-width: 100%; border: 0; background: var(--home-cream); color: var(--home-ink); padding: 0; }
 :is(#storeHomeView, .store-nav-scope) .home-navigation::backdrop { background: #15171199; backdrop-filter: blur(6px); }

@@ -392,25 +392,43 @@ export class StoreManager {
       }
     }
 
-    this.catalogGridEl.innerHTML = filtered.map(product => {
+    const isBento = !isStoreHome && filtered.length >= 5;
+    this.catalogGridEl.dataset.count = String(filtered.length);
+    this.catalogGridEl.classList.toggle('is-bento-grid', isBento);
+
+    this.catalogGridEl.innerHTML = filtered.map((product, index) => {
       const defaultImg = product.styles.find(s => s.id === product.defaultStyle)?.image || product.styles[0].image;
       const displayImg = product.homeFrame || defaultImg;
+      const isFeatured = isBento && index === 0;
+      const hasCornerAccent = !isStoreHome && index === 0;
+      const showRowDivider = isBento && index >= 4 && (index - 4) % 3 === 0 && index < filtered.length - 1;
 
       return `
-        <article class="product-card" data-product-id="${product.id}">
+        <article class="product-card ${isFeatured ? 'is-featured' : ''}" data-product-id="${product.id}" data-grid-index="${index}">
           <a href="#product/${product.id}" class="product-card-link js-open-product" data-product-id="${product.id}" aria-label="View ${product.title}">
             <div class="product-card-media">
-              <img src="${displayImg}" alt="${product.title}" class="product-card-img" loading="lazy" />
+              <div class="product-card-frame-wrap">
+                ${hasCornerAccent ? '<span class="product-card-corner-accent" aria-hidden="true"></span>' : ''}
+                <img src="${displayImg}" alt="${product.title}" class="product-card-img" loading="lazy" />
+              </div>
               <button type="button" class="product-card-quick-add js-quick-add" data-product-id="${product.id}" aria-label="Add ${product.shortTitle || product.title} to bag">
                 + BAG
               </button>
             </div>
             <div class="product-card-info">
-              <h3 class="product-card-title">${product.shortTitle || product.title}</h3>
-              <span class="product-card-price">£${product.price.toFixed(2)}</span>
+              <div class="product-card-meta">
+                <h3 class="product-card-title">${product.shortTitle || product.title}</h3>
+                <span class="product-card-price">£${product.price.toFixed(2)}</span>
+              </div>
+              <span class="product-card-arrow" aria-hidden="true">
+                <svg viewBox="0 0 14 14" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3.5 10.5L10.5 3.5M10.5 3.5H4.5M10.5 3.5V9.5" />
+                </svg>
+              </span>
             </div>
           </a>
         </article>
+        ${showRowDivider ? '<div class="catalog-grid-divider" aria-hidden="true"></div>' : ''}
       `;
     }).join('');
     initTextHoverEffects(this.homeViewEl);
@@ -618,14 +636,23 @@ export class StoreManager {
                 <article class="product-card" data-product-id="${rel.id}">
                   <a href="#product/${rel.id}" class="product-card-link js-open-product" data-product-id="${rel.id}" aria-label="View ${rel.title}">
                     <div class="product-card-media">
-                      <img src="${rel.homeFrame || rel.styles[0].image}" alt="${rel.title}" class="product-card-img" loading="lazy" />
+                      <div class="product-card-frame-wrap">
+                        <img src="${rel.homeFrame || rel.styles[0].image}" alt="${rel.title}" class="product-card-img" loading="lazy" />
+                      </div>
                       <button type="button" class="product-card-quick-add js-quick-add" data-product-id="${rel.id}" aria-label="Add ${rel.shortTitle || rel.title} to bag">
                         + BAG
                       </button>
                     </div>
                     <div class="product-card-info">
-                      <h3 class="product-card-title">${rel.shortTitle || rel.title}</h3>
-                      <span class="product-card-price">£${rel.price.toFixed(2)}</span>
+                      <div class="product-card-meta">
+                        <h3 class="product-card-title">${rel.shortTitle || rel.title}</h3>
+                        <span class="product-card-price">£${rel.price.toFixed(2)}</span>
+                      </div>
+                      <span class="product-card-arrow" aria-hidden="true">
+                        <svg viewBox="0 0 14 14" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M3.5 10.5L10.5 3.5M10.5 3.5H4.5M10.5 3.5V9.5" />
+                        </svg>
+                      </span>
                     </div>
                   </a>
                 </article>
