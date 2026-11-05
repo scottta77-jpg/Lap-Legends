@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1200, height=630, initial-scale=1.0" />
+  <title>Lap Legends — Open Graph Rich Link Preview</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      background: #0d0f0a;
+    }
+    .collage-grid {
+      display: grid;
+      width: 1200px;
+      height: 630px;
+      grid-template-columns: repeat(3, 400px);
+      grid-template-rows: repeat(2, 315px);
+      gap: 0;
+    }
+    .collage-cell {
+      position: relative;
+      overflow: hidden;
+      width: 400px;
+      height: 315px;
+    }
+    .collage-cell img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    /* 1. Landing Hero (Kimi Antonelli Red) */
+    .cell-1 img {
+      object-position: 0% center;
+    }
+    /* 2. Store Hero (Built For The Obsessed) */
+    .cell-2 img {
+      object-position: center center;
+    }
+    /* 3. Split Drivers / Circuits */
+    .cell-3 img {
+      object-position: center top;
+    }
+    /* 4. PDP (Kimi Antonelli Framed Print) */
+    .cell-4 img {
+      height: 342px;
+      object-position: 43% top;
+    }
+    /* 5. All Prints Bento Catalog */
+    .cell-5 img {
+      object-position: 50% top;
+    }
+    /* 6. Footer (Always Bringing The Fight) */
+    .cell-6 {
+      background: #282b20;
+      border-top: 10px solid #d2ff00;
+    }
+    .cell-6 img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center bottom;
+    }
+  </style>
+</head>
+<body>
+  <div class="collage-grid">
+    <div class="collage-cell cell-1">
+      <img src="./1.png" alt="Lap Legends Driver Showcase" />
+    </div>
+    <div class="collage-cell cell-2">
+      <img src="./2.png" alt="Built For The Obsessed Store Hero" />
+    </div>
+    <div class="collage-cell cell-3">
+      <img src="./3.png" alt="The Drivers and The Circuits" />
+    </div>
+    <div class="collage-cell cell-4">
+      <img src="./4.png" alt="Kimi Antonelli Framed Print" />
+    </div>
+    <div class="collage-cell cell-5">
+      <img src="./5.png" alt="All Prints Collection" />
+    </div>
+    <div class="collage-cell cell-6">
+      <img src="./6.png" alt="Lap Legends Footer" />
+    </div>
+  </div>
+</body>
+</html>
