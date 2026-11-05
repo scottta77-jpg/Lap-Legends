@@ -1976,7 +1976,7 @@ body.menu-locked, body.cart-open {
   align-items: stretch;
 }
 
-.fan-favourites-grid[data-count="1"] {
+.fan-favourites-grid[data-count="1"]:not(.is-bento-grid) {
   grid-template-columns: minmax(0, 440px);
 }
 

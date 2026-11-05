@@ -392,7 +392,7 @@ export class StoreManager {
       }
     }
 
-    const isBento = !isStoreHome && filtered.length >= 5;
+    const isBento = !isStoreHome;
     this.catalogGridEl.dataset.count = String(filtered.length);
     this.catalogGridEl.classList.toggle('is-bento-grid', isBento);
 
