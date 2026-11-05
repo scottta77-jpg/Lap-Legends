@@ -2286,6 +2286,7 @@ body.menu-locked, body.cart-open {
 
 /* Navigation Links (Left & Right) */
 .footer-links-w {
+  --footer-menu-gutter: 10.5rem;
   position: absolute;
   top: 45%;
   transform: translateY(-50%);
@@ -2293,12 +2294,13 @@ body.menu-locked, body.cart-open {
   right: 0;
   display: flex;
   justify-content: space-between;
-  padding: 0 10.5rem;
+  padding: 0 var(--footer-menu-gutter);
   z-index: 4;
   pointer-events: auto;
 }
 
 .footer-links-col {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2427,60 +2429,32 @@ body.menu-locked, body.cart-open {
 }
 
 
-/* Legal Links Bar at Bottom (Slots aesthetically into the side cutout notches of the card mask) */
-.footer-legal-links-w {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+/* Stack both credits on the Pages menu's centre line inside the dark footer. */
+.footer-credits {
   position: absolute;
-  bottom: 0.55rem;
-  left: 0;
-  right: 0;
-  padding: 0 0.85rem;
-  z-index: 10;
-  pointer-events: none;
-  box-sizing: border-box;
-}
-
-.footer-legal-links-col {
-  pointer-events: auto;
-}
-
-.text-legal-copyright {
-  font-family: 'Mona Sans Variable', 'Syne', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: #111112;
-  white-space: nowrap;
-  line-height: 1;
-  letter-spacing: -0.01em;
-}
-
-.text-legal-copyright strong {
-  font-weight: 800;
-}
-
-.links-legal-items {
+  top: calc(100% + 3.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: calc(100% + 2 * var(--footer-menu-gutter) - 2rem);
   display: flex;
-  align-items: center;
-  gap: 1.25rem;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.text-legal-link {
-  font-family: 'Mona Sans Variable', 'Syne', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #111112;
+.footer-copyright.btn-text.is-footer,
+.footer-credit.btn-text.is-footer {
+  color: var(--electric-lime);
+  text-transform: none;
+  text-align: center;
   text-decoration: none;
-  white-space: nowrap;
-  line-height: 1;
   transition: opacity 0.2s ease;
 }
 
-.text-legal-link:hover {
+.footer-copyright > span,
+.footer-credit > span { display: block; }
+
+.footer-credit:hover {
   opacity: 0.7;
 }
 
@@ -2492,7 +2466,7 @@ body.menu-locked, body.cart-open {
 /* Responsive Breakpoints */
 @media screen and (max-width: 1280px) {
   .footer-links-w {
-    padding: 0 4.5rem;
+    --footer-menu-gutter: 4.5rem;
   }
   .btn-text.is-footer {
     font-size: 1.6rem;
@@ -2509,8 +2483,11 @@ body.menu-locked, body.cart-open {
     min-height: 600px;
   }
   .footer-links-w {
-    padding: 0 2rem;
+    --footer-menu-gutter: 2rem;
     top: 48%;
+  }
+  .footer-credits {
+    top: calc(100% + 2.5rem);
   }
   .btn-text.is-footer {
     font-size: 1.35rem;
@@ -2527,10 +2504,11 @@ body.menu-locked, body.cart-open {
     padding: 0.75rem 0.75rem 0.5rem 0.75rem;
   }
   .footer-layout-clip {
-    aspect-ratio: 382 / 628;
+    aspect-ratio: auto;
+    height: max(740px, calc((100vw - 1.5rem) * 628 / 382));
     -webkit-mask-image: url('/assets/footer/footer_mask_mobile.svg');
     mask-image: url('/assets/footer/footer_mask_mobile.svg');
-    min-height: 580px;
+    min-height: 740px;
   }
   .footer-statement-w {
     top: 8%;
@@ -2544,28 +2522,19 @@ body.menu-locked, body.cart-open {
     font-size: 2.4rem;
   }
   .footer-links-w {
-    top: 38%;
-    padding: 0 1.25rem;
+    --footer-menu-gutter: 1.25rem;
+    top: 35%;
   }
   .btn-text.is-footer {
     font-size: 1.15rem;
+  }
+  .footer-credits {
+    top: calc(100% + 1.5rem);
   }
   .footer-bg-img {
     width: 18rem;
     max-width: 65vw;
     bottom: -1.8rem;
-  }
-  .footer-legal-links-w {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    right: auto;
-    flex-direction: column;
-    gap: 0.5rem;
-    text-align: center;
-    padding: 0.75rem 0.5rem;
-    margin-top: 1rem;
-    pointer-events: auto;
   }
 }
 
@@ -2725,7 +2694,7 @@ body.menu-locked, body.cart-open {
 
 .style-options-group {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   border: 1px solid rgba(40, 44, 32, 0.3);
   border-radius: 6px;
   overflow: hidden;
@@ -2734,6 +2703,10 @@ body.menu-locked, body.cart-open {
 
 .style-option-btn {
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
   background: transparent;
   border: none;
   border-right: 1px solid rgba(40, 44, 32, 0.3);

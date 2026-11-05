@@ -662,7 +662,7 @@ export class StoreManager {
             <div class="bottom-area">
               <div class="bottom-flex">
                 <div class="bottom-left">
-                  <span class="pdp-footer-copyright">© 2026 LAP LEGENDS. ALL RIGHTS RESERVED.</span>
+                  <span class="pdp-footer-copyright">© 2026 LAP LEGENDS.</span>
                   <a href="mailto:business@laplegends.com" class="pdp-business-link" aria-label="Contact us">CONTACT US ↗</a>
                 </div>
                 <div class="bottom-right">
@@ -698,8 +698,11 @@ export class StoreManager {
     // Style switcher
     styleBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        styleBtns.forEach(b => b.classList.remove('is-active'));
-        btn.classList.add('is-active');
+        styleBtns.forEach(b => {
+          const selected = b === btn;
+          b.classList.toggle('is-active', selected);
+          b.setAttribute('aria-checked', String(selected));
+        });
         this.selectedStyleId = btn.dataset.styleId;
 
         const foundStyle = product.styles.find(s => s.id === this.selectedStyleId) || product.styles[0];

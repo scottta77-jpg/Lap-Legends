@@ -1,0 +1,7 @@
+reference/
+scratch/
+phase-1-settings.json
+node_modules/
+dist/
+.git/
+.DS_Store

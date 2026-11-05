@@ -72,11 +72,11 @@ export const PRODUCTS = [
     defaultStyle: 'helmet',
     styles: [
       { id: 'helmet', label: 'HELMET & CAR', image: '/assets/products/lewis_home_frame.png', caption: 'Official #44 Helmet & Car with Signature' },
-      { id: 'standing', label: 'PORTRAIT', image: '/assets/products/lewis_framed.png', caption: 'Lewis Hamilton Scuderia Ferrari Race Suit Portrait' }
+      { id: 'standing', label: 'PORTRAIT', image: '/assets/products/updated/lewis-hamilton-portrait-c8051283.png', caption: 'Lewis Hamilton Scuderia Ferrari Race Suit Portrait' }
     ],
     gallery: [
       '/assets/products/lewis_home_frame.png',
-      '/assets/products/lewis_framed.png',
+      '/assets/products/updated/lewis-hamilton-portrait-c8051283.png',
       '/assets/products/frame_spec.png'
     ],
     details: [
