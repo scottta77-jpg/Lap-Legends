@@ -3,7 +3,7 @@
  * Handles adding items, quantity updates, slide-out drawer, and checkout to Amazon storefront.
  */
 
-import { AMAZON_STORE_URL } from './products.js';
+import { AMAZON_STORE_URL, getProductById } from './products.js';
 
 class CartStore {
   constructor() {
@@ -15,7 +15,11 @@ class CartStore {
   loadCart() {
     try {
       const data = localStorage.getItem(this.storageKey);
-      return data ? JSON.parse(data) : [];
+      return data ? JSON.parse(data).map(item => {
+        const product = getProductById(item.id);
+        const style = product?.styles.find(style => style.id === item.styleId);
+        return style ? { ...item, image: style.image } : item;
+      }) : [];
     } catch {
       return [];
     }

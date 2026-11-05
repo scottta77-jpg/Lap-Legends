@@ -190,13 +190,13 @@ export const PRODUCTS = [
     format: 'A4 / BLACK FRAME',
     signature: 'Reproduced digital signature.',
     amazonUrl: AMAZON_STORE_URL,
-    homeFrame: '/assets/products/oscar_home_frame.png',
+    homeFrame: '/assets/products/updated/oscar-piastri-mclaren-56cc8bd4.png',
     defaultStyle: 'car',
     styles: [
-      { id: 'car', label: 'HELMET & CAR', image: '/assets/products/oscar_home_frame.png', caption: 'McLaren Car #81 and Helmet Presentation' }
+      { id: 'car', label: 'HELMET & CAR', image: '/assets/products/updated/oscar-piastri-mclaren-56cc8bd4.png', caption: 'McLaren Car #81 and Helmet Presentation' }
     ],
     gallery: [
-      '/assets/products/oscar_home_frame.png',
+      '/assets/products/updated/oscar-piastri-mclaren-56cc8bd4.png',
       '/assets/products/frame_spec.png'
     ],
     details: [
@@ -268,13 +268,13 @@ export const PRODUCTS = [
     format: 'A4 / BLACK FRAME',
     signature: 'Reproduced digital signature.',
     amazonUrl: AMAZON_STORE_URL,
-    homeFrame: '/assets/products/charles_home_frame.png',
+    homeFrame: '/assets/products/updated/charles-leclerc-ferrari-e89829e4.png',
     defaultStyle: 'helmet',
     styles: [
-      { id: 'helmet', label: 'HELMET & CAR', image: '/assets/products/charles_home_frame.png', caption: 'Scuderia Ferrari #16 Official Helmet & Car' }
+      { id: 'helmet', label: 'HELMET & CAR', image: '/assets/products/updated/charles-leclerc-ferrari-e89829e4.png', caption: 'Scuderia Ferrari #16 Official Helmet & Car' }
     ],
     gallery: [
-      '/assets/products/charles_home_frame.png',
+      '/assets/products/updated/charles-leclerc-ferrari-e89829e4.png',
       '/assets/products/frame_spec.png'
     ],
     details: [
@@ -500,15 +500,15 @@ export const PRODUCTS = [
     format: 'A4 / BLACK FRAME',
     signature: 'Reproduced Charles Leclerc signature.',
     amazonUrl: AMAZON_STORE_URL,
-    homeFrame: '/assets/products/driver_art_leclerc.png',
+    homeFrame: '/assets/products/updated/charles-leclerc-racing-legend-df7ccfe1.png',
     signatureIcon: '/assets/products/sig_leclerc.png',
     rating: 4.5,
     defaultStyle: 'framed',
     styles: [
-      { id: 'framed', label: 'FRAMED ART', image: '/assets/products/driver_art_leclerc.png', caption: 'Charles Leclerc #16 Racing Legend Art' }
+      { id: 'framed', label: 'FRAMED ART', image: '/assets/products/updated/charles-leclerc-racing-legend-df7ccfe1.png', caption: 'Charles Leclerc #16 Racing Legend Art' }
     ],
     gallery: [
-      '/assets/products/driver_art_leclerc.png',
+      '/assets/products/updated/charles-leclerc-racing-legend-df7ccfe1.png',
       '/assets/products/frame_spec.png'
     ],
     details: [
@@ -543,15 +543,15 @@ export const PRODUCTS = [
     format: 'A4 / BLACK FRAME',
     signature: 'Reproduced Max Verstappen signature.',
     amazonUrl: AMAZON_STORE_URL,
-    homeFrame: '/assets/products/driver_art_verstappen.png',
+    homeFrame: '/assets/products/updated/max-verstappen-race-day-f3b54637.png',
     signatureIcon: '/assets/products/sig_verstappen.png',
     rating: 5.0,
     defaultStyle: 'framed',
     styles: [
-      { id: 'framed', label: 'FRAMED ART', image: '/assets/products/driver_art_verstappen.png', caption: 'Max Verstappen #1 Race Day Art' }
+      { id: 'framed', label: 'FRAMED ART', image: '/assets/products/updated/max-verstappen-race-day-f3b54637.png', caption: 'Max Verstappen #1 Race Day Art' }
     ],
     gallery: [
-      '/assets/products/driver_art_verstappen.png',
+      '/assets/products/updated/max-verstappen-race-day-f3b54637.png',
       '/assets/products/frame_spec.png'
     ],
     details: [
@@ -586,15 +586,15 @@ export const PRODUCTS = [
     format: 'A4 / BLACK FRAME',
     signature: 'Reproduced Lewis Hamilton signature.',
     amazonUrl: AMAZON_STORE_URL,
-    homeFrame: '/assets/products/driver_art_hamilton.png',
+    homeFrame: '/assets/products/updated/lewis-hamilton-champion-8b6a05c3.png',
     signatureIcon: '/assets/products/sig_hamilton.png',
     rating: 4.5,
     defaultStyle: 'framed',
     styles: [
-      { id: 'framed', label: 'FRAMED ART', image: '/assets/products/driver_art_hamilton.png', caption: 'Lewis Hamilton #44 The Champion Art' }
+      { id: 'framed', label: 'FRAMED ART', image: '/assets/products/updated/lewis-hamilton-champion-8b6a05c3.png', caption: 'Lewis Hamilton #44 The Champion Art' }
     ],
     gallery: [
-      '/assets/products/driver_art_hamilton.png',
+      '/assets/products/updated/lewis-hamilton-champion-8b6a05c3.png',
       '/assets/products/frame_spec.png'
     ],
     details: [
@@ -629,15 +629,15 @@ export const PRODUCTS = [
     format: 'A4 / BLACK FRAME',
     signature: 'Reproduced Lando Norris signature.',
     amazonUrl: AMAZON_STORE_URL,
-    homeFrame: '/assets/products/driver_art_norris.png',
+    homeFrame: '/assets/products/updated/lando-norris-pole-position-0ddf2fd9.png',
     signatureIcon: '/assets/products/sig_norris.png',
     rating: 5.0,
     defaultStyle: 'framed',
     styles: [
-      { id: 'framed', label: 'FRAMED ART', image: '/assets/products/driver_art_norris.png', caption: 'Lando Norris #4 Pole Position Art' }
+      { id: 'framed', label: 'FRAMED ART', image: '/assets/products/updated/lando-norris-pole-position-0ddf2fd9.png', caption: 'Lando Norris #4 Pole Position Art' }
     ],
     gallery: [
-      '/assets/products/driver_art_norris.png',
+      '/assets/products/updated/lando-norris-pole-position-0ddf2fd9.png',
       '/assets/products/frame_spec.png'
     ],
     details: [
@@ -708,7 +708,7 @@ export const DRIVER_COLLECTION_PRODUCTS = [
     id: 'racing-legend-leclerc',
     title: 'Racing Legend',
     subtitle: 'Available in A4, A3, A2',
-    image: '/assets/products/driver_art_leclerc.png',
+    image: '/assets/products/updated/charles-leclerc-racing-legend-df7ccfe1.png',
     sigIcon: '/assets/products/sig_leclerc.png',
     rating: 4.5,
     price: 19.99,
@@ -719,7 +719,7 @@ export const DRIVER_COLLECTION_PRODUCTS = [
     id: 'race-day-verstappen',
     title: 'Race Day',
     subtitle: 'Available in A4, A3, A2',
-    image: '/assets/products/driver_art_verstappen.png',
+    image: '/assets/products/updated/max-verstappen-race-day-f3b54637.png',
     sigIcon: '/assets/products/sig_verstappen.png',
     rating: 5.0,
     price: 19.99,
@@ -730,7 +730,7 @@ export const DRIVER_COLLECTION_PRODUCTS = [
     id: 'the-champion-hamilton',
     title: 'The Champion',
     subtitle: 'Available in A4, A3, A2',
-    image: '/assets/products/driver_art_hamilton.png',
+    image: '/assets/products/updated/lewis-hamilton-champion-8b6a05c3.png',
     sigIcon: '/assets/products/sig_hamilton.png',
     rating: 4.5,
     price: 19.99,
@@ -741,7 +741,7 @@ export const DRIVER_COLLECTION_PRODUCTS = [
     id: 'pole-position-norris',
     title: 'Pole Position',
     subtitle: 'Available in A4, A3, A2',
-    image: '/assets/products/driver_art_norris.png',
+    image: '/assets/products/updated/lando-norris-pole-position-0ddf2fd9.png',
     sigIcon: '/assets/products/sig_norris.png',
     rating: 5.0,
     price: 19.99,
