@@ -72,7 +72,6 @@ export class DriverLandingStage {
     this.raceTeamTitle = document.getElementById('llRaceTeamTitle');
     this.raceTeamSub = document.getElementById('llRaceTeamSub');
     this.heroCtaBtn = document.getElementById('llHeroCtaBtn');
-    this.slidePills = Array.from(document.querySelectorAll('.ll-slide-pill'));
 
     // Initial Background Layer setup
     if (this.bgContainerA) {
@@ -189,14 +188,6 @@ export class DriverLandingStage {
   updateDetails(targetIndex) {
     const slide = DRIVER_SLIDES[targetIndex];
 
-    if (this.slidePills && this.slidePills.length) {
-      this.slidePills.forEach((pill, idx) => {
-        const active = idx === targetIndex;
-        pill.classList.toggle('is-active', active);
-        pill.setAttribute('aria-selected', String(active));
-      });
-    }
-
     // Subtle micro-fade for Next Race card
     // (Note: LAP LEGENDS logo, chequered flags icon, STORE button, and CTA buttons remain fixed)
     if (this.raceCard) {
@@ -269,21 +260,6 @@ export class DriverLandingStage {
     if (this.heroCtaBtn) {
       this.heroCtaBtn.addEventListener('mouseenter', () => this.pause());
       this.heroCtaBtn.addEventListener('mouseleave', () => this.resume());
-    }
-
-    // Slide indicator pills click handling
-    if (this.slidePills && this.slidePills.length) {
-      this.slidePills.forEach((pill) => {
-        pill.addEventListener('click', (e) => {
-          e.stopPropagation();
-          const idx = parseInt(pill.dataset.slideIndex, 10);
-          if (!Number.isNaN(idx) && idx !== this.currentIndex) {
-            const dir = idx > this.currentIndex ? 1 : -1;
-            this.goToSlide(idx, dir);
-            this.startAutoPlay();
-          }
-        });
-      });
     }
 
     // Clicking background advances slide smoothly
