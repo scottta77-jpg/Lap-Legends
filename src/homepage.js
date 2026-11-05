@@ -1,6 +1,7 @@
 export function initHomepage() {
   const menu = document.getElementById('homeNavigation');
   const trigger = document.getElementById('homeMenuToggle');
+  const landingTrigger = document.getElementById('llMenuBtn');
   const header = document.querySelector('.home-header');
   const homeHeaderSlot = document.querySelector('#storeHomeView .home-cream');
   const productHeaderSlot = document.getElementById('productNavigation');
@@ -13,14 +14,18 @@ export function initHomepage() {
   };
   placeHeader();
 
-  const closeMenu = () => { if (menu.open) menu.close(); };
-  trigger.addEventListener('click', () => {
+  const openMenu = () => {
     menu.showModal();
     trigger.setAttribute('aria-expanded', 'true');
+    if (landingTrigger) landingTrigger.setAttribute('aria-expanded', 'true');
     document.body.classList.add('menu-locked');
-  });
+  };
+  const closeMenu = () => { if (menu.open) menu.close(); };
+  trigger.addEventListener('click', openMenu);
+  if (landingTrigger) landingTrigger.addEventListener('click', openMenu);
   menu.addEventListener('close', () => {
     trigger.setAttribute('aria-expanded', 'false');
+    if (landingTrigger) landingTrigger.setAttribute('aria-expanded', 'false');
     document.body.classList.remove('menu-locked');
   });
   menu.querySelector('[data-home-menu-close]').addEventListener('click', closeMenu);

@@ -345,6 +345,14 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
   width: var(--ll-menu-short-width);
 }
 
+.ll-menu-line-third {
+  display: none;
+}
+
+.ll-slide-indicators {
+  display: none;
+}
+
 .ll-menu-btn:hover {
   background: var(--electric-lime, #d2ff00);
   transform: scale(1.05);
@@ -847,38 +855,40 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
 }
 
 @media (max-width: 768px) {
+  #landingView {
+    --ll-portrait-height: min(65vh, 124vw, calc(100vh - 210px));
+    --ll-portrait-height: min(65dvh, 124vw, calc(100dvh - 210px));
+  }
+
+  /* --- Top Header Bar with Horizontal Divider Line --- */
   .ll-hero-header {
-    padding: 18px 20px;
-    display: grid;
-    grid-template-columns: auto minmax(0, 1fr) auto;
-    gap: 10px;
+    padding: 18px 20px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .ll-hero-header::after {
+    content: '';
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 0;
+    height: 1px;
+    background: var(--ll-border);
+    transition: background 0.6s ease;
+    pointer-events: none;
   }
 
   .ll-header-center {
-    position: static;
-    transform: none !important;
-    justify-self: center;
-    min-width: 0;
-    width: 100%;
-    max-width: 60px;
-  }
-
-  .ll-header-center .ll-flags-badge {
-    width: 100%;
-  }
-
-  .ll-header-center .ll-chequered-flags-img {
-    max-width: 100%;
+    display: none;
   }
 
   .ll-brand-wordmark {
-    font-size: 18px;
-  }
-
-  .ll-chequered-flags-img,
-  .ll-monogram-img {
-    height: 28px;
-    max-width: 60px;
+    font-size: 20px;
+    line-height: 0.92;
+    letter-spacing: -0.03em;
   }
 
   .ll-header-right {
@@ -886,66 +896,238 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
   }
 
   .ll-store-pill-btn {
-    min-height: 48px;
-    padding: 12px;
-    font-size: 12px;
-    gap: 7px;
+    width: 46px;
+    height: 46px;
+    min-height: 46px;
+    padding: 0;
+    border-radius: 12px;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .ll-store-pill-btn > span {
+    display: none !important;
   }
 
   .ll-store-pill-btn svg {
-    width: 18px;
-    height: 18px;
+    width: 21px;
+    height: 21px;
+    stroke-width: 2.1;
   }
 
   .ll-menu-btn {
-    --ll-menu-line-width: 22px;
-    --ll-menu-short-width: 16px;
-    width: 48px;
-    height: 48px;
-    gap: 5px;
+    --ll-menu-line-width: 20px;
+    --ll-menu-short-width: 20px;
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    gap: 4.5px;
   }
 
   .ll-menu-line {
     height: 2px;
+    width: 20px !important;
   }
 
-  .ll-col-left {
-    bottom: 120px;
-    left: 20px;
+  .ll-menu-line-third {
+    display: block;
   }
 
-  .ll-race-card {
-    width: 122px;
-    height: 186px;
-    padding: 34px 8px 16px 8px;
+  /* --- Top Headline & Bottom Full-Width CTA Container --- */
+  .ll-col-center {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    padding: 90px 20px 20px;
+    box-sizing: border-box;
+    container-type: inline-size;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    pointer-events: none;
   }
 
   .ll-subheadline {
-    font-size: 9px;
-  }
-
-  #landingView {
-    --ll-portrait-height: min(75vh, calc(100vh - 90px));
-    --ll-portrait-height: min(75dvh, calc(100dvh - 90px));
-  }
-
-  .ll-col-center {
-    top: 96px;
-    bottom: auto;
-    left: 20px;
-    width: min(420px, calc(100% - 40px));
+    display: none !important;
   }
 
   .ll-hero-subtag {
-    font-size: clamp(25px, 8.5cqw, 36px);
-    line-height: 1;
-    margin: 14px 0 18px;
+    width: 100%;
+    font-size: clamp(25px, 11.45cqw, 48px);
+    line-height: 0.88;
+    letter-spacing: -0.06em;
+    margin: 0;
+    pointer-events: auto !important;
   }
 
-  .ll-col-center .ll-hero-cta {
-    width: auto;
-    padding: 13px 20px;
+  .ll-hero-subtag > span {
+    transform: scaleX(1.15);
+    transform-origin: left;
+  }
+
+  .ll-hero-subtag > em {
+    margin-top: -0.05em;
+    font: italic 500 clamp(38px, 17.1cqw, 72px)/0.94 'Bodoni Moda', Georgia, serif;
+    letter-spacing: -0.055em;
+  }
+
+  .ll-hero-subtag > em::after {
+    left: 0;
+    bottom: -11px;
+    width: 31%;
+    height: 5.5px;
+    border-radius: 999px;
+    transform: none;
+  }
+
+  /* --- Center Driver Portrait Stage with Soft Bottom Shoulder Fade --- */
+  .ll-driver-item {
+    bottom: 148px;
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 78%, rgba(0, 0, 0, 0.4) 90%, transparent 99%);
+    mask-image: linear-gradient(180deg, #000 0%, #000 78%, rgba(0, 0, 0, 0.4) 90%, transparent 99%);
+  }
+
+  /* --- Bottom Slide Pills & Two-Column Race/Team Row --- */
+  .ll-col-left {
+    bottom: 92px;
+    left: 20px;
+    right: 20px;
+    width: calc(100% - 40px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .ll-slide-indicators {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .ll-slide-pill {
+    width: 24px;
+    height: 5px;
+    border-radius: 999px;
+    border: none;
+    padding: 0;
+    background: var(--ll-border);
+    cursor: pointer;
+    transition: background 0.35s ease, box-shadow 0.35s ease, transform 0.25s ease;
+  }
+
+  .ll-slide-pill.is-active {
+    background: var(--electric-lime, #d2ff00);
+    box-shadow: 0 0 8px rgba(210, 255, 0, 0.45);
+  }
+
+  .ll-race-card {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    padding: 0;
+  }
+
+  .ll-race-card:hover {
+    transform: none;
+  }
+
+  .ll-card-bg-svg {
+    display: none;
+  }
+
+  .ll-card-inner {
+    display: grid;
+    grid-template-columns: auto auto 1px auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "track race divider crest team"
+      "track race divider crest era";
+    align-items: center;
+    justify-content: center;
+    column-gap: 12px;
+    row-gap: 1px;
+  }
+
+  .ll-race-track-wrap {
+    grid-area: track;
+    width: 50px;
+    height: 36px;
+  }
+
+  .ll-track-svg {
+    max-height: 36px;
+  }
+
+  .ll-race-title {
+    grid-area: race;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    margin: 0;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  .ll-race-divider {
+    grid-area: divider;
+    width: 1px;
+    height: 34px;
+    margin: 0 4px;
+    background: var(--ll-border);
+  }
+
+  .ll-race-wreath-wrap {
+    grid-area: crest;
+    width: 34px;
+    height: 34px;
+  }
+
+  .ll-race-wreath-img {
+    width: 34px;
+    max-width: 34px;
+    height: 34px;
+    max-height: 34px;
+  }
+
+  .ll-race-team-title {
+    grid-area: team;
+    align-self: end;
     font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-align: left;
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  .ll-race-team-sub {
+    grid-area: era;
+    align-self: start;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-align: left;
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  /* --- Bottom Full-Width Primary CTA Button --- */
+  .ll-col-center .ll-hero-cta {
+    width: 100%;
+    max-width: 100%;
+    min-height: 56px;
+    padding: 16px 20px;
+    border-radius: 12px;
+    font-size: clamp(12.5px, 4.1cqw, 16px);
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    justify-content: center;
+    gap: 12px;
+    pointer-events: auto;
   }
 }
 
@@ -963,33 +1145,67 @@ body.page-is-landing .cart-drawer-overlay:not(.is-open) {
   }
 }
 
-@media (max-width: 359px) {
+@media (max-width: 374px) {
   .ll-hero-header {
-    padding-inline: 12px;
-    gap: 8px;
+    padding-inline: 14px;
   }
 
-  .ll-header-right {
-    gap: 8px;
+  .ll-hero-header::after {
+    left: 14px;
+    right: 14px;
+  }
+
+  .ll-col-center {
+    padding-inline: 14px;
+  }
+
+  .ll-col-left {
+    left: 14px;
+    right: 14px;
+    width: calc(100% - 28px);
+  }
+
+  .ll-card-inner {
+    column-gap: 8px;
+  }
+
+  .ll-race-track-wrap {
+    width: 42px;
+    height: 30px;
+  }
+
+  .ll-race-title,
+  .ll-race-team-title {
+    font-size: 11px;
+  }
+
+  .ll-race-team-sub {
+    font-size: 9px;
   }
 }
 
 @media (max-width: 768px) and (max-height: 700px) {
+  #landingView {
+    --ll-portrait-height: min(53vh, 102vw, calc(100vh - 235px));
+    --ll-portrait-height: min(53dvh, 102vw, calc(100dvh - 235px));
+  }
+
   .ll-col-center {
-    top: 72px;
+    padding-top: 82px;
+    padding-bottom: 14px;
   }
 
-  .ll-subheadline {
-    font-size: 8px;
+  .ll-col-left {
+    bottom: 78px;
+    gap: 10px;
   }
 
-  .ll-hero-subtag {
-    font-size: 24px;
-    margin: 10px 0 12px;
+  .ll-driver-item {
+    bottom: 120px;
   }
 
   .ll-col-center .ll-hero-cta {
-    padding: 10px 16px;
-    font-size: 11px;
+    min-height: 50px;
+    padding: 13px 16px;
   }
 }

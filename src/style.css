@@ -2622,6 +2622,19 @@ body.menu-locked, body.cart-open {
   font-weight: 800;
 }
 
+@media (max-width: 700px) {
+  .pdp-breadcrumbs {
+    padding-inline: 24px;
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+
+  .pdp-breadcrumbs > * {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+}
+
 .pdp-main-grid {
   max-width: 1440px;
   margin: 0 auto;

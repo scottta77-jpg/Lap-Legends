@@ -419,7 +419,7 @@ body.page-is-catalog :is(#storeHomeView, .store-nav-scope) .home-catalog { displ
   :is(#storeHomeView, .store-nav-scope) .home-catalog .section-container { padding: 36px 24px 60px; }
   :is(#storeHomeView, .store-nav-scope) .home-catalog .fan-favourites-header { align-items: flex-start; gap: 20px; }
   :is(#storeHomeView, .store-nav-scope) .home-catalog .fan-favourites-title { font-size: 28px; }
-  :is(#storeHomeView, .store-nav-scope) .home-catalog .fan-favourites-view-all { font-size: 10px; }
+  :is(#storeHomeView, .store-nav-scope) .home-catalog .fan-favourites-view-all { display: none; }
   :is(#storeHomeView, .store-nav-scope) .home-catalog-filters { gap: 8px; }
   :is(#storeHomeView, .store-nav-scope) .home-catalog-filters button { padding: 10px 13px; font-size: 10px; }
 }
@@ -435,6 +435,7 @@ body.page-is-catalog :is(#storeHomeView, .store-nav-scope) .home-catalog { displ
   :is(#storeHomeView, .store-nav-scope) .home-category-columns { padding-inline: 20px; gap: 20px; }
   :is(#storeHomeView, .store-nav-scope) .home-category h3 { font-size: 26px; }
   :is(#storeHomeView, .store-nav-scope) .home-category-description { font-size: 12px; }
+  :is(#storeHomeView, .store-nav-scope) .home-catalog .fan-favourites-title { font-size: 24px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

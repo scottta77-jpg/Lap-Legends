@@ -10,6 +10,35 @@ import { sound } from './audio.js';
 import { initTextHoverEffects } from './text-hover.js';
 import { PageTransition } from './page-transition.js';
 
+export const PAGE_METADATA = {
+  landing: {
+    title: 'Lap Legends — The Drivers. The Helmets. The Legends.',
+    description: 'Shop Formula 1 inspired framed prints, iconic racing circuit artwork and race calendars. Discover motorsport wall art for your home or office at Lap Legends.'
+  },
+  store: {
+    title: 'Lap Legends Store — Framed Formula 1 Prints & Motorsport Wall Art',
+    description: 'Explore the Lap Legends Store for framed Formula 1 driver portraits, Grand Prix circuit layouts and 2027 race calendars with free UK tracked delivery.'
+  },
+  collections: {
+    all: {
+      title: 'All Prints — Framed F1 Drivers, Circuits & Calendars | Lap Legends',
+      description: 'Browse the full Lap Legends collection of A4 framed Formula 1 wall art, from driver and helmet portraits to technical Grand Prix track maps and race calendars.'
+    },
+    drivers: {
+      title: 'Driver Prints — Framed F1 Driver & Helmet Wall Art | Lap Legends',
+      description: 'Shop framed Formula 1 driver and helmet prints featuring Norris, Hamilton, Verstappen, Leclerc, Piastri, Antonelli and Russell with reproduced signatures.'
+    },
+    circuits: {
+      title: 'Circuit Art — Framed F1 Track Layouts & Grand Prix Maps | Lap Legends',
+      description: 'Discover framed Formula 1 circuit artwork with technical track layouts, GPS coordinates and Grand Prix photography for Silverstone, Monaco, Hungaroring and Barcelona.'
+    },
+    calendars: {
+      title: 'Race Calendars — Framed 2027 F1 Season Track Calendar | Lap Legends',
+      description: 'Track every Grand Prix with the framed 2027 Formula 1 Race Calendar print, featuring all 24 championship circuit layouts, track names and national flags.'
+    }
+  }
+};
+
 export class StoreManager {
   constructor(options = {}) {
     this.cartDrawer = options.cartDrawer;
@@ -156,9 +185,46 @@ export class StoreManager {
     return 'Lap Legends Store';
   }
 
+  getRouteMeta(rawHash) {
+    const [path, query = ''] = (rawHash || '').split('?');
+    if (path.startsWith('#product/')) {
+      const product = getProductById(path.slice('#product/'.length).trim()) || PRODUCTS[0];
+      const productName = product.shortTitle || product.title;
+      return {
+        title: `${productName} Framed Print — ${product.categoryLabel || 'Motorsport Wall Art'} | Lap Legends`,
+        description: `${product.description} Presented in an A4 black wooden frame with free UK tracked delivery at Lap Legends.`
+      };
+    }
+    if (path.startsWith('#shop') || rawHash.includes('category=')) {
+      const category = new URLSearchParams(query).get('category') || 'all';
+      return PAGE_METADATA.collections[category] || PAGE_METADATA.collections.all;
+    }
+    if (!path || ['#', '#/', '#landing'].includes(path)) {
+      return PAGE_METADATA.landing;
+    }
+    return PAGE_METADATA.store;
+  }
+
+  updatePageMeta(rawHash) {
+    const { title, description } = this.getRouteMeta(rawHash);
+    document.title = title;
+
+    const setMeta = (selector, content) => {
+      const el = document.querySelector(selector);
+      if (el) el.setAttribute('content', content);
+    };
+
+    setMeta('meta[name="description"]', description);
+    setMeta('meta[property="og:title"]', title);
+    setMeta('meta[property="og:description"]', description);
+    setMeta('meta[name="twitter:title"]', title);
+    setMeta('meta[name="twitter:description"]', description);
+  }
+
   renderRoute(rawHash) {
     const hash = rawHash.split('?')[0];
 
+    this.updatePageMeta(rawHash);
     document.body.classList.toggle('page-is-catalog', hash.startsWith('#shop'));
 
     // Route 1: Landing Page (Default: /, #, #/, #landing)

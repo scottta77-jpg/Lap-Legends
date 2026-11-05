@@ -4,7 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title>Lap Legends — The Drivers. The Helmets. The Legends.</title>
-  <meta name="description" content="Experience Lap Legends: front-facing monumental Formula 1 driver portraits with interactive pointer-driven helmet reveals. Motorsport made personal." />
+  <meta name="description" content="Shop Formula 1 inspired framed prints, iconic racing circuit artwork and race calendars. Discover motorsport wall art for your home or office at Lap Legends." />
+  <meta property="og:title" content="Lap Legends — The Drivers. The Helmets. The Legends." />
+  <meta property="og:description" content="Shop Formula 1 inspired framed prints, iconic racing circuit artwork and race calendars. Discover motorsport wall art for your home or office at Lap Legends." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Lap Legends" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lap Legends — The Drivers. The Helmets. The Legends." />
+  <meta name="twitter:description" content="Shop Formula 1 inspired framed prints, iconic racing circuit artwork and race calendars. Discover motorsport wall art for your home or office at Lap Legends." />
 
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -71,6 +78,7 @@
         <button class="ll-menu-btn" id="llMenuBtn" aria-label="Toggle Navigation Menu">
           <span class="ll-menu-line"></span>
           <span class="ll-menu-line"></span>
+          <span class="ll-menu-line ll-menu-line-third"></span>
         </button>
       </div>
     </header>
@@ -79,6 +87,13 @@
     <div class="ll-content-grid">
       <!-- Bottom-left Next Race Card -->
       <div class="ll-col-left">
+        <!-- Mobile Slide Progress Pills (No 01/04 text) -->
+        <div class="ll-slide-indicators" id="llSlideIndicators" role="tablist" aria-label="Driver slides">
+          <button type="button" class="ll-slide-pill is-active" data-slide-index="0" role="tab" aria-selected="true" aria-label="Lando Norris"></button>
+          <button type="button" class="ll-slide-pill" data-slide-index="1" role="tab" aria-selected="false" aria-label="Lewis Hamilton"></button>
+          <button type="button" class="ll-slide-pill" data-slide-index="2" role="tab" aria-selected="false" aria-label="Kimi Antonelli"></button>
+        </div>
+
         <!-- Track & Race Team Card (Stepped-Tab Badge with Light Ray Circuit) -->
         <div class="ll-race-card" id="llRaceCard">
           <svg class="ll-card-bg-svg" viewBox="0 0 160 244" fill="none" preserveAspectRatio="none">
@@ -365,23 +380,6 @@
 
     </div>
 
-    <div id="sharedStoreMenu" class="store-nav-scope">
-      <dialog class="home-navigation" id="homeNavigation" aria-labelledby="homeNavigationTitle">
-        <div class="home-navigation-inner">
-          <div class="home-navigation-heading"><h2 id="homeNavigationTitle">LAP LEGENDS</h2><button type="button" data-home-menu-close aria-label="Close navigation"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6" /></svg></button></div>
-          <nav aria-label="Main navigation">
-            <a href="#store">HOME</a>
-            <a href="#shop">SHOP ALL</a>
-            <a href="#shop?category=drivers">DRIVERS</a>
-            <a href="#shop?category=circuits">CIRCUITS</a>
-            <a href="#shop?category=calendars">CALENDARS</a>
-            <a href="#landing">DRIVER SHOWCASE</a>
-          </nav>
-          <div class="home-navigation-utilities"><button type="button" class="js-cart-trigger">YOUR BAG <span class="js-cart-count">0</span></button><a href="#support" class="js-open-support">DELIVERY &amp; SUPPORT</a></div>
-        </div>
-      </dialog>
-    </div>
-
     <!-- =========================================================================
          PRODUCT DETAIL PAGE (PDP) (#product/:productId)
          (Rendered dynamically by store.js)
@@ -481,6 +479,23 @@
       <div class="footer-bg-gradient" aria-hidden="true"></div>
     </footer>
 
+  </div>
+
+  <div id="sharedStoreMenu" class="store-nav-scope">
+    <dialog class="home-navigation" id="homeNavigation" aria-labelledby="homeNavigationTitle">
+      <div class="home-navigation-inner">
+        <div class="home-navigation-heading"><h2 id="homeNavigationTitle">LAP LEGENDS</h2><button type="button" data-home-menu-close aria-label="Close navigation"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6" /></svg></button></div>
+        <nav aria-label="Main navigation">
+          <a href="#store">HOME</a>
+          <a href="#shop">SHOP ALL</a>
+          <a href="#shop?category=drivers">DRIVERS</a>
+          <a href="#shop?category=circuits">CIRCUITS</a>
+          <a href="#shop?category=calendars">CALENDARS</a>
+          <a href="#landing">DRIVER SHOWCASE</a>
+        </nav>
+        <div class="home-navigation-utilities"><button type="button" class="js-cart-trigger">YOUR BAG <span class="js-cart-count">0</span></button><a href="#support" class="js-open-support">DELIVERY &amp; SUPPORT</a></div>
+      </div>
+    </dialog>
   </div>
 
   <!-- =========================================================================
